@@ -10,9 +10,52 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_03_06_120309) do
+ActiveRecord::Schema[7.0].define(version: 2023_03_06_151901) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "adventures", force: :cascade do |t|
+    t.bigint "characters_id", null: false
+    t.string "character_name"
+    t.string "difficulty"
+    t.boolean "choices"
+    t.text "save"
+    t.bigint "users_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["characters_id"], name: "index_adventures_on_characters_id"
+    t.index ["users_id"], name: "index_adventures_on_users_id"
+  end
+
+  create_table "characters", force: :cascade do |t|
+    t.text "description"
+    t.text "parameters"
+    t.bigint "universes_id", null: false
+    t.integer "strenght"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["universes_id"], name: "index_characters_on_universes_id"
+  end
+
+  create_table "prompts", force: :cascade do |t|
+    t.string "name"
+    t.text "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "universes", force: :cascade do |t|
+    t.string "theme"
+    t.text "description"
+    t.text "parameters"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -22,8 +65,12 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_120309) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "adventures", "characters", column: "characters_id"
+  add_foreign_key "adventures", "users", column: "users_id"
+  add_foreign_key "characters", "universes", column: "universes_id"
 end
