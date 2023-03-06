@@ -15,23 +15,23 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_151901) do
   enable_extension "plpgsql"
 
   create_table "adventures", force: :cascade do |t|
-    t.bigint "characters_id", null: false
+    t.bigint "character_id", null: false
     t.string "character_name"
     t.string "difficulty"
     t.boolean "choices"
-    t.text "save"
-    t.bigint "users_id", null: false
+    t.text "save_adventure"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["characters_id"], name: "index_adventures_on_characters_id"
-    t.index ["users_id"], name: "index_adventures_on_users_id"
+    t.index ["character_id"], name: "index_adventures_on_character_id"
+    t.index ["user_id"], name: "index_adventures_on_user_id"
   end
 
   create_table "characters", force: :cascade do |t|
     t.text "description"
     t.text "parameters"
-    t.bigint "universes_id", null: false
-    t.integer "strenght"
+    t.bigint "universe_id", null: false
+    t.integer "strength"
     t.integer "dexterity"
     t.integer "constitution"
     t.integer "intelligence"
@@ -39,7 +39,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_151901) do
     t.integer "charisma"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["universes_id"], name: "index_characters_on_universes_id"
+    t.index ["universe_id"], name: "index_characters_on_universe_id"
   end
 
   create_table "prompts", force: :cascade do |t|
@@ -75,7 +75,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_151901) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "adventures", "characters", column: "characters_id"
-  add_foreign_key "adventures", "users", column: "users_id"
-  add_foreign_key "characters", "universes", column: "universes_id"
+  add_foreign_key "adventures", "characters"
+  add_foreign_key "adventures", "users"
+  add_foreign_key "characters", "universes"
 end
