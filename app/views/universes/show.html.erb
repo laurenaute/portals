@@ -1,2 +1,17 @@
 <h1>Universes#show</h1>
 <p>Find me in app/views/universes/show.html.erb</p>
+<% @universe.characters.each do |character|%>
+  <div class="adventure">
+    <p><%= character.name %></p>
+    <p><%= character.description %></p>
+    <p><%= character.parameters %></p>
+    <img src=<%= character.image_url %> alt="">
+    <p><%= character.universe_id %></p>
+    <p><%= character.strength %></p>
+    <p><%= character.dexterity %></p>
+    <p><%= character.constitution %></p>
+    <p><%= character.intelligence %></p>
+    <p><%= character.wisdom %></p>
+    <p><%= character.charisma %></p>
+  </div>
+<% end %>
