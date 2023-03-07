@@ -28,8 +28,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_151901) do
   end
 
   create_table "characters", force: :cascade do |t|
+    t.string "name"
     t.text "description"
     t.text "parameters"
+    t.string "image_url"
     t.bigint "universe_id", null: false
     t.integer "strength"
     t.integer "dexterity"
@@ -53,6 +55,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_151901) do
     t.string "theme"
     t.text "description"
     t.text "parameters"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -71,6 +74,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_06_151901) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "username"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
