@@ -1,2 +1,10 @@
 <h1>Universes#index</h1>
 <p>Find me in app/views/universes/index.html.erb</p>
+<% @universes.each do |universe|%>
+  <div class="adventure">
+    <p><%= universe.theme %></p>
+    <p><%= universe.description %></p>
+    <p><%= universe.parameters %></p>
+    <img src=<%= universe.image_url %> alt="">
+  </div>
+<% end %>

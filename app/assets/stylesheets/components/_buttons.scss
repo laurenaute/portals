@@ -1,0 +1,30 @@
+.btn-home {
+  border-radius: 15px;
+  background-color: $color-btn;
+  padding: 20px 50px;
+  border: 1px solid $color-btn;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition-duration: 0.8s;
+  &:hover{
+    color: $color-btn;
+    background-color: white ;
+  }
+}
+
+.btn-play {
+  border-radius: 15px;
+  background-color: $color-btn;
+  padding: 10px 25px;
+  border: 1px solid $color-btn;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  transition-duration: 0.8s;
+  &:hover{
+    color: $color-btn;
+    background-color: white ;
+  }
+  margin-left: .3em;
+}
