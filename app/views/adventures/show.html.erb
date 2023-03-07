@@ -1,2 +1,52 @@
 <h1>Adventures#show</h1>
 <p>Find me in app/views/adventures/show.html.erb</p>
+  <div class="adventure">
+    <p><%= @adventure.character_id %></p>
+    <p><%= @adventure.character_name %></p>
+    <p><%= @adventure.difficulty %></p>
+    <p><%= @adventure.choices %></p>
+    <p><%= @adventure.save_adventure %></p>
+    <p><%= @adventure.user_id %></p>
+  </div>
+
+
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adventureStart">
+  Launch demo modal
+</button>
+
+<%# <div data-controller="adventure-modal">
+  <div class="modal fade" id="adventureStart" tabindex="-1" aria-labelledby="adventureStartLabel" aria-modal="true" role="dialog" style="display: none;" aria-hidden="true" data-adventure-modal-target="adventureStart">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-4" id="adventureStartLabel">Full screen modal</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div> %>
+<div data-controller="adventure-modal">
+  <div class="modal fade show d-block" id="adventureStart" tabindex="-1" aria-labelledby="adventureStartLabel" aria-modal="true" role="dialog" data-adventure-modal-target="adventureStart">
+      <div class="modal-dialog modal-fullscreen">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-4" id="adventureStartLabel">Full screen modal</h1>
+            <button type="button" class="btn-close" data-action="click->adventure-modal#close" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            ...
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-action="click->adventure-modal#close">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
