@@ -1,13 +1,87 @@
-/*  .navbar-lewagon {
-  justify-content: space-between;
-  background: white;
+#side-bar {
+  position: absolute;
+  width: 230px;
+  height: 100%;
+  background: $color-navbar;
+  top: 0;
+  left: -230px;
+  transition: 0.5s ease-out;
+  z-index: 4;
+
+#side-bar.non-visible {
+  position: absolute;
+  width: 230px;
+  height: 100%;
+  background: $color-navbar;
+  top: 0;
+  left: 0px;
+  transition: 0.5s ease-out;
+  z-index: 4;
 }
 
-.navbar-lewagon .navbar-collapse {
-  flex-grow: 0;
+.non-visible ~ .content{
+  opacity: 0.3;
 }
 
-.navbar-lewagon .navbar-brand img {
-  width: 40px;
+.non-visible span{
+  position: absolute;
+}
+.non-visible span:nth-child(1){
+transform: rotate(-45deg);
+}
+.non-visible span:nth-child(2){
+opacity: 0;
+}
+.non-visible span:nth-child(3){
+  transform: rotate(45deg);
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 30px;
+  left: 240px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+}
+.toggle-btn span {
+  width: 60px;
+  height: 10px;
+  border-radius: 5px;
+  background: $color-navbar;
+  display: block;
+  margin-top: 4px;
+  transition: 0.3s ease;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  height: 100%;
+}
+
+.top-navbar {
+  flex-grow: 1;
+}
+
+.ul-navbar {
+  padding-left: 0;
+}
+
+.li-navbar {
+  color: rgba(255, 255, 255, 0.45);;
+  list-style: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0em 1em;
+}
+.li-navbar:hover {
+  background: #292929;
+  color: #fcfcfb;
+}
+
+.blur {
+  filter: blur(1px);
 }
 */
