@@ -1,10 +1,28 @@
-<h1>Universes#index</h1>
-<p>Find me in app/views/universes/index.html.erb</p>
-<% @universes.each do |universe|%>
-  <div class="adventure">
-    <p><%= universe.theme %></p>
-    <p><%= universe.description %></p>
-    <p><%= universe.parameters %></p>
-    <img src=<%= universe.image_url %> alt="">
+<div class="move-background">
+  <div class="center">
   </div>
-<% end %>
+  <div class="title-universe"><h1><strong>Universes<strong></h1></div>
+  <div class="container-universe">
+    <%= link_to universe_path(@universes[0]) do %>
+      <div class="card-uni card-1">
+        <div class="card-content">
+          <div class="title-theme">Sci-Fi</div>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to universe_path(@universes[1]) do %>
+      <div class="card-uni card-2">
+        <div class="card-content">
+          <div class="title-theme">Fantasy</div>
+        </div>
+      </div>
+    <% end %>
+    <%= link_to universe_path(@universes[2]) do %>
+      <div class="card-uni card-3">
+        <div class="card-content text-decoration:none">
+          <div class="title-theme text-center">Post-Apocalyptic</div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

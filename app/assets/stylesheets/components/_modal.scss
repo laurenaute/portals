@@ -1,0 +1,38 @@
+.modal-dialog {
+  background-image: url('https://cdn.midjourney.com/461e3adc-3c57-4ee0-a136-5db797c8bae7/grid_0.png');
+}
+
+.modal-content {
+  background-color: transparent;
+}
+
+.img-modal {
+  width: 400px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.character-modal {
+  .modal-dialog {
+    width: 80vw;
+    max-width: unset !important;
+    border-radius: 10px;
+  }
+}
+
+.modal-display {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+ // ca peut poser des problemes
+.modal-link {
+  text-decoration: none;
+  color: white;
+}
+.modal-link:hover {
+  color: white;
+}
