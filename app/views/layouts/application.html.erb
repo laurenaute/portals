@@ -14,7 +14,6 @@
     <% unless devise_controller? %>
       <%= render "shared/navbar" if action_name != 'home' %>
     <% end %>
-
     <%= render "shared/flashes" %>
     <%= yield %>
   </body>

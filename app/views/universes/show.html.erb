@@ -1,17 +1,51 @@
-<h1>Universes#show</h1>
-<p>Find me in app/views/universes/show.html.erb</p>
-<% @universe.characters.each do |character|%>
-  <div class="adventure">
-    <p><%= character.name %></p>
-    <p><%= character.description %></p>
-    <p><%= character.parameters %></p>
-    <img src=<%= character.image_url %> alt="">
-    <p><%= character.universe_id %></p>
-    <p><%= character.strength %></p>
-    <p><%= character.dexterity %></p>
-    <p><%= character.constitution %></p>
-    <p><%= character.intelligence %></p>
-    <p><%= character.wisdom %></p>
-    <p><%= character.charisma %></p>
+<div class="universe-background">
+  <h1 class="text-center">Universes#show</h1>
+  <div class="container">
+    <div class="description">
+     <%= @universe.description %>
+    </div>
+
+    <div class="card-display">
+      <% @universe.characters.each do |character|%>
+        <button type="card" class="card-product" data-bs-toggle="modal" data-bs-target="#modal-<%= character.id %>">
+              <img class="class-img" src=<%= character.image_url %> alt="">
+              <div class="card-product-infos">
+                <h3 class="text-center"><%= character.name %></h3>
+                <p><%= character.parameters %></p>
+                <div class="characteristics">
+                  <div class="d-flex justify-content-around">
+                    <p><i class="fa-solid fa-hand-fist"> <%= character.strength %></i></p>
+                    <p><i class="fa-solid fa-person-running"> <%= character.dexterity %></i></p>
+                  </div>
+                  <div class="d-flex justify-content-around">
+                    <p><i class="fa-solid fa-kit-medical"> <%= character.constitution %></i></p>
+                    <p><i class="fa-solid fa-lightbulb"> <%= character.intelligence %></i></p>
+                  </div>
+                  <div class="d-flex justify-content-around">
+                    <p><i class="fas fa-book"> <%= character.wisdom %></i></p>
+                    <p><i class="fa-solid fa-hand-sparkles"> <%= character.charisma %></i></p>
+                  </div>
+                </div>
+              </div>
+        </button>
+        <div class="modal fade" id="modal-<%= character.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="modal-title fs-5" id="ModalLabel">Description</h1>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <%= character.description %>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary"><%= link_to 'Select', new_character_adventure_path(character) %></button>
+                </div>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
   </div>
-<% end %>
+</div>
