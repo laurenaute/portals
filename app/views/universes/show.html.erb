@@ -7,40 +7,47 @@
 
     <div class="card-display">
       <% @universe.characters.each do |character|%>
-        <button type="card" class="card-product" data-bs-toggle="modal" data-bs-target="#modal-<%= character.id %>">
+        <button type="" class="card-product" data-bs-toggle="modal" data-bs-target="#ModalCenter-<%= character.id %>">
               <img class="class-img" src=<%= character.image_url %> alt="">
               <div class="card-product-infos">
                 <h3 class="text-center"><%= character.name %></h3>
                 <p><%= character.parameters %></p>
                 <div class="characteristics">
                   <div class="d-flex justify-content-around">
-                    <p><i class="fa-solid fa-hand-fist"> <%= character.strength %></i></p>
-                    <p><i class="fa-solid fa-person-running"> <%= character.dexterity %></i></p>
-                  </div>
-                  <div class="d-flex justify-content-around">
-                    <p><i class="fa-solid fa-kit-medical"> <%= character.constitution %></i></p>
-                    <p><i class="fa-solid fa-lightbulb"> <%= character.intelligence %></i></p>
-                  </div>
-                  <div class="d-flex justify-content-around">
-                    <p><i class="fas fa-book"> <%= character.wisdom %></i></p>
-                    <p><i class="fa-solid fa-hand-sparkles"> <%= character.charisma %></i></p>
+                    <p> <%= character.get_max_asset.first.capitalize %> : <%= character.get_max_asset.last %></p>
+                    <p> <%= character.get_min_asset.first.capitalize %> : <%= character.get_min_asset.last%></p>
                   </div>
                 </div>
               </div>
         </button>
-        <div class="modal fade" id="modal-<%= character.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
+        <div class="modal fade character-modal" id="ModalCenter-<%= character.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-centered" role="document">
               <div class="modal-content">
                 <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="ModalLabel">Description</h1>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  <h1 class="modal-title" id="ModalLabel"><%= character.name %></h1>
                 </div>
                 <div class="modal-body">
-                  <%= character.description %>
+                  <div class="character-card">
+                    <img class="img-modal" src="<%=character.image_url%>" alt="">
+                    <div class="modal-display">
+                      <%= character.description %>
+                      <div class="modal-characteristic">
+                        <div class="d-flex justify-content-around">
+                          <p>Strength: <%= character.strength %></p>
+                          <p>Dexterity: <%= character.dexterity %></p>
+                          <p>Constitution: <%= character.constitution %></p>
+                        </div>
+                        <div class="d-flex justify-content-around">
+                          <p>Intelligence: <%= character.intelligence %></p>
+                          <p>Wisdom: <%= character.wisdom %></p>
+                          <p>Charisma: <%= character.charisma %></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary"><%= link_to 'Select', new_character_adventure_path(character) %></button>
+                  <button type="button" class="btn btn-secondary"><%= link_to 'Select', new_character_adventure_path(character), class:"modal-link" %></button>
                 </div>
               </div>
           </div>
