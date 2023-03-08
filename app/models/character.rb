@@ -10,4 +10,18 @@ class Character < ApplicationRecord
   validates :intelligence, presence: true
   validates :wisdom, presence: true
   validates :charisma, presence: true
+
+  def get_best_asset
+    assets = {
+      strength: strength,
+      dexterity: dexterity,
+      constitution: constitution,
+      intelligence: intelligence,
+      wisdom: wisdom,
+      charisma: charisma
+    }
+    # recuperer le nom de la cle dont la valeur est la plus grande
+    assets.max
+    # renvoyer un hash avec la clé et al valeur associé
+  end
 end

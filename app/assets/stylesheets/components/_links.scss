@@ -1,0 +1,23 @@
+.sign-up-link{
+  text-decoration: none;
+  transition-duration: 0.5s;
+  &:hover{
+    color: $color-btn;
+  }
+}
+
+.forgot-your-password-link{
+  text-decoration: none;
+  transition-duration: 0.5s;
+  &:hover{
+    color: $color-btn;
+  }
+}
+
+.log-in-link{
+  text-decoration: none;
+  transition-duration: 0.5s;
+  &:hover{
+    color: $color-btn;
+  }
+}
