@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
 
-background-universe {
+.main-background {
     background-image: url('https://cdn.midjourney.com/857edd52-5aec-4e3d-9c0d-260db6f1e522/grid_0.png');
-  background-size:cover;
+    background-size:cover;
         -webkit-animation: slidein 100s;
         animation: slidein 100s;
 
@@ -14,6 +14,7 @@ background-universe {
 
         -webkit-animation-direction: alternate;
         animation-direction: alternate;
+        min-height: 100vh;
 }
 
 @-webkit-keyframes slidein {

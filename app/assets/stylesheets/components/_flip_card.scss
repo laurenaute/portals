@@ -18,14 +18,15 @@
 
 .card-uni {
     position: relative;
-    height: 320px;
-    width: 200px;
+    height: 420px;
+    width: 300px;
     box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.25);
     background-color: rgba(0, 0, 0, 0.2);
     overflow: hidden;
-    -webkit-border-radius: 100px / 160px;
-    -moz-border-radius:    100px / 160px;
-    border-radius:         100px / 160px;
+    -webkit-border-radius: 200px / 260px;
+    -moz-border-radius:    200px / 260px;
+    border-radius:         200px / 260px;
+    z-index: 10;
 
     &::before {
         content: '';
@@ -45,6 +46,7 @@
             background-position: center;
             border-radius:         100px / 160px;
 
+
         }
     }
 
@@ -63,6 +65,7 @@
             background-position: center;
             border-radius:         100px / 160px;
 
+
         }
     }
 
@@ -78,6 +81,7 @@
         color: #FFF;
         transition: background-color .25s ease, opacity .25s ease;
         opacity: 0;
+
 
         .title-theme {
             font-size: 1.5rem;
@@ -123,3 +127,5 @@
         }
     }
 }
+
+a:link {text-decoration:none}
