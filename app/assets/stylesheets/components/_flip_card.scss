@@ -42,8 +42,8 @@
 
     &.card-1 {
         &::before {
-            background-image: url("https://cdn.midjourney.com/650aba53-94e4-464f-8030-2974cddf8614/grid_0.png");
-            background-position: center;
+            background-image: url("https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png");
+            background-position: left;
             border-radius:         100px / 160px;
 
 
@@ -52,8 +52,8 @@
 
     &.card-2 {
         &::before {
-            background-image: url("https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png");
-            background-position: left;
+            background-image: url("https://cdn.midjourney.com/650aba53-94e4-464f-8030-2974cddf8614/grid_0.png");
+            background-position: center;
             border-radius:         100px / 160px;
 
         }
