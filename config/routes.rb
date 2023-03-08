@@ -10,5 +10,5 @@ Rails.application.routes.draw do
     resources :adventures, only: %i[new create]
   end
   resources :adventures, only: %i[index show update]
-  resources :user, only: %i[show]
+  resources :users, only: %i[show]
 end
