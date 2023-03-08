@@ -55,19 +55,27 @@ opacity: 0;
   transition: 0.3s ease;
 }
 
-.ul-navbar {
+.navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
   height: 100%;
 }
 
-.li-navbar {
-  color: #292929;
-  list-style: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding-left: 5px;
-  & :hover {
+.top-navbar {
+  flex-grow: 1;
+}
 
-  }
+.ul-navbar {
+  padding-left: 0;
+}
+
+.li-navbar {
+  color: rgba(255, 255, 255, 0.45);;
+  list-style: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0em 1em;
 }
 .li-navbar:hover {
   background: #292929;
@@ -76,14 +84,4 @@ opacity: 0;
 
 .blur {
   filter: blur(1px);
-}
-
-#profil-sidebar{
-  position: relative;
-  bottom: -68%;
-}
-
-#log-out-sidebar {
-  position: relative;
-  bottom: -68%;
 }
