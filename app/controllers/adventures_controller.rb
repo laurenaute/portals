@@ -1,3 +1,5 @@
+require 'openai'
+
 class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy]
 
@@ -6,6 +8,38 @@ class AdventuresController < ApplicationController
   end
 
   def show
+    @message = Message.new
+    @messages = @adventure.messages
+    # @chat_history = session[:chat_history] || []
+
+    # client = OpenAI::Client.new
+    # response1 = client.chat(
+    #   parameters: {
+    #     model: "gpt-3.5-turbo", # Required.
+    #     messages: [
+    #       { role: "system", content: "You are a helpful assistant." },
+    #       # { role: "assistant", content: "What is"},
+    #       { role: "user", content: "what is star wars?" }
+    #     ], # Required.
+    #     temperature: 0.7,
+    #     max_tokens: 5,
+    #     user: current_user.api_token
+    #   }
+    # )
+    # # @response1 = response1
+    # @response1 = response1.dig("choices", 0, "message", "content")
+    # @response1 = response1
+    # response2 = client.chat(
+    #   parameters: {
+    #     model: "gpt-3.5-turbo", # Required.
+    #     messages: response1.dig("choices", 0, "message"), # Required.
+    #     temperature: 0.7,
+    #     max_tokens: 500,
+    #     user: current_user.api_token
+    #   }
+    # )
+    # @response2 = response2.dig("choices", 0, "message", "content")
+    # @response2 = response2
   end
 
   def new
@@ -24,6 +58,11 @@ class AdventuresController < ApplicationController
   end
 
   def update
+    user_prompt = params[:user_message]
+    session[:chat_history] ||= []
+
+    session[:chat_history] << "You: #{user_prompt}"
+
     @adventure.update(adventure_params)
     redirect_to adventure_path(@adventure)
   end

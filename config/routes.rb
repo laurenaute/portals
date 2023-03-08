@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   resources :characters, only: %i[show] do
     resources :adventures, only: %i[new create]
   end
-  resources :adventures, only: %i[index show update]
+  resources :adventures, only: %i[index show update] do
+    resources :messages, only: %i[create]
+  end
   resources :user, only: %i[show]
 end

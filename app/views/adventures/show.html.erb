@@ -1,13 +1,14 @@
-<div class="modal-dialog modal-fullscreen">
-  <h1>Modal</h1>
+
+<h1>Adventure</h1>
+<div class="adventure">
+  <% @messages.each do |message| %>
+    <div class="d-flex">
+      <p class="me-3"><strong><%= message.role %></strong></p>
+      <p><%= message.content %></p>
+    </div>
+  <% end %>
+  <%= simple_form_for [@adventure, @message] do |f| %>
+    <%= f.input :content %>
+    <%= f.button :submit %>
+  <% end %>
 </div>
-<h1>Adventures#show</h1>
-<p>Find me in app/views/adventures/show.html.erb</p>
-  <div class="adventure">
-    <p><%= @adventure.character_id %></p>
-    <p><%= @adventure.character_name %></p>
-    <p><%= @adventure.difficulty %></p>
-    <p><%= @adventure.choices %></p>
-    <p><%= @adventure.save_adventure %></p>
-    <p><%= @adventure.user_id %></p>
-  </div>

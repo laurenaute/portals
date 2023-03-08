@@ -15,6 +15,9 @@ module Portals
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
+    OpenAI.configure do |config|
+      config.access_token = ENV.fetch('OPENAI_ACCESS_TOKEN')
+    end
 
     # Configuration for the application, engines, and railties goes here.
     #
