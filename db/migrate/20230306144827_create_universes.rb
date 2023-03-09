@@ -4,6 +4,7 @@ class CreateUniverses < ActiveRecord::Migration[7.0]
       t.string :theme
       t.text :description
       t.text :parameters
+      t.text :initializer
       t.string :image_url
 
       t.timestamps

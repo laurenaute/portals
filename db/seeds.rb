@@ -1,20 +1,3 @@
-puts "Creating sci-fi universe"
-Universe.create(
-  theme: "Sci-Fi",
-  description: "
-  Welcome to the year 2323, where space travel is common and humanity has colonized many planets
-  in the galaxy. In this sci-fi adventure, you will play as a lone space explorer who is
-  on a mission to uncover the mysteries of a distant planet.\n
-  The planet, known as Zeta-12, has long been considered a dead planet, with no signs of life
-  detected. However, recent satellite scans have revealed an anomaly in the planet's surface,
-  indicating the presence of a hidden structure.\n
-  You has been tasked with landing on Zeta-12 and exploring the structure.
-  But the planet is not as lifeless as it seems, and you will have to fight for your
-  lives against the planet's native inhabitants, who are not happy about the humans' presence.",
-  parameters: "- Sci-fi world with aliens, space travel, and futuristic technology\n",
-  image_url: "https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png"
-)
-puts "Created sci-fi universe"
 
 puts "Creating fantasy universe"
 Universe.create(
@@ -32,10 +15,68 @@ Universe.create(
    You soon find yourself standing at the foot of a steep peak, staring up at the entrance to the tomb.
    The entrance is overgrown with vines and surrounded by ancient, crumbling pillars. You feel a shiver
    run down your spine as you realize that this is the place where your adventure truly begins.\n",
-  parameters: "- Fantasy world with magic, mythical creatures, and ancient ruins\n",
+  parameters: "Act with the following rules :
+  - Act as if you are a Gamemaster of a gamebook in the D&D world and we are playing
+  - I, the user, is the player
+  - You describe the environment and can create dialogue for the NPCs
+  - Don't ever break out of your character, and you must not refer to yourself in any way
+  - If I want to give you instructions outside the context of the game, I will use curly brackets {like this} but otherwise you are to stick to being the text adventure program
+  - Be descriptive
+  - Never explain yourself
+  - Always finish by listing actions the player
+  ",
+  initializer: "Act with the following rules :
+  - Act as if you are a Gamemaster of a gamebook in the D&D world and we are playing
+  - I, the user, is the player
+  - You describe the environment and can create dialogue for the NPCs
+  - Don't ever break out of your character, and you must not refer to yourself in any way
+  - If I want to give you instructions outside the context of the game, I will use curly brackets {like this} but otherwise you are to stick to being the text adventure program
+  - Be descriptive
+  - Never explain yourself
+  - Always finish by listing actions the player
+  - the adventure start in a inn
+  ",
   image_url: "https://cdn.midjourney.com/650aba53-94e4-464f-8030-2974cddf8614/grid_0.png"
 )
 puts "Created fantasy universe"
+
+puts "Creating sci-fi universe"
+Universe.create(
+  theme: "Sci-Fi",
+  description: "
+  Welcome to the year 2323, where space travel is common and humanity has colonized many planets
+   in the galaxy. In this sci-fi adventure, you will play as a lone space explorer who is
+   on a mission to uncover the mysteries of a distant planet.\n
+  The planet, known as Zeta-12, has long been considered a dead planet, with no signs of life
+   detected. However, recent satellite scans have revealed an anomaly in the planet's surface,
+   indicating the presence of a hidden structure.\n
+  You has been tasked with landing on Zeta-12 and exploring the structure.
+   But the planet is not as lifeless as it seems, and you will have to fight for your
+    lives against the planet's native inhabitants, who are not happy about the humans' presence.",
+  parameters: "Act with the following rules :
+  - Act as if you are a Gamemaster of a gamebook in the star wars universe and we are playing
+  - I, the user, is the player
+  - You describe the environment and can create dialogue for the NPCs
+  - Don't ever break out of your character, and you must not refer to yourself in any way
+  - If I want to give you instructions outside the context of the game, I will use curly brackets {like this} but otherwise you are to stick to being the text adventure program
+  - Be descriptive
+  - Never explain yourself
+  - Always finish by listing actions the player
+  ",
+  initializer: "Act with the following rules :
+  - Act as if you are a Gamemaster of a gamebook in the star wars universe and we are playing
+  - I, the user, is the player
+  - You describe the environment and can create dialogue for the NPCs
+  - Don't ever break out of your character, and you must not refer to yourself in any way
+  - If I want to give you instructions outside the context of the game, I will use curly brackets {like this} but otherwise you are to stick to being the text adventure program
+  - Be descriptive
+  - Never explain yourself
+  - Always finish by listing actions the player
+  - The adventure start in a space ship
+  ",
+  image_url: "https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png"
+)
+puts "Created sci-fi universe"
 
 puts "Creating post-apocalyptic universe"
 Universe.create(

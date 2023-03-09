@@ -4,7 +4,7 @@
   <% @messages.each do |message| %>
     <div class="d-flex">
       <p class="me-3"><strong><%= message.role %></strong></p>
-      <p><%= message.content %></p>
+      <p style="white-space: pre-line;"><%= message.content %></p>
     </div>
   <% end %>
   <%= simple_form_for [@adventure, @message] do |f| %>
