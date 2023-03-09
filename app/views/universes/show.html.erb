@@ -4,7 +4,7 @@
     <div class="description">
      <%= @universe.description %>
     </div>
-
+s
     <div class="card-display">
       <% @universe.characters.each do |character|%>
         <button type="" class="card-product" data-bs-toggle="modal" data-bs-target="#ModalCenter-<%= character.id %>">
@@ -15,7 +15,7 @@
               <div class="card-product-infos">
                 <p><%= character.parameters %></p>
                 <div class="characteristics">
-                  <div class="d-flex justify-content-around">
+                  <div class="d-flex justify-content-around height">
                     <div> <%= character.get_max_asset.first.capitalize %> : <%= character.get_max_asset.last %></div>
                     <div> <%= character.get_min_asset.first.capitalize %> : <%= character.get_min_asset.last%></div>
                   </div>
