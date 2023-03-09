@@ -1,51 +1,82 @@
-@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:200');
-
-.move-background {
-    background-image: url('https://cdn.midjourney.com/857edd52-5aec-4e3d-9c0d-260db6f1e522/grid_0.png');
-    background-size:cover;
-        -webkit-animation: slidein 100s;
-        animation: slidein 100s;
-
-        -webkit-animation-fill-mode: forwards;
-        animation-fill-mode: forwards;
-
-        -webkit-animation-iteration-count: infinite;
-        animation-iteration-count: infinite;
-
-        -webkit-animation-direction: alternate;
-        animation-direction: alternate;
-        min-height: 100vh;
+#parent{
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  overflow:hidden;
 }
 
-@-webkit-keyframes slidein {
-from {background-position: top; background-size:3000px; }
-to {background-position: -100px 0px;background-size:2750px;}
+.dynBG {
+  width: 100%;
+  height: 100%;
+  top: -50%;
+  left: -50%;
 }
 
-@keyframes slidein {
-from {background-position: top;background-size:3000px; }
-to {background-position: -100px 0px;background-size:2750px;}
+  .dynBG div {
+    width: 100%;
+    height: 100%;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out; }
 
-}
+   .dynBG .bg1 {
+     z-index: 100;
+     animation-name: bg1Anim;
+     animation-duration: 10s;
+     background-image: url(https://t3.ftcdn.net/jpg/04/74/13/10/240_F_474131081_SwhJcfuc3WVkaMzUxSKX71rfJnDGp2S8.jpg); }
 
+  .dynBG .bg2 {
+    z-index: 100;
+    animation-name: bg2Anim;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    background-image: url(https://t3.ftcdn.net/jpg/04/74/13/10/240_F_474131081_SwhJcfuc3WVkaMzUxSKX71rfJnDGp2S8.jpg); }
 
+   .dynBG .bg3 {
+     z-index: 10;
+     animation-name: bg3Anim;
+     animation-duration: 16s;
+     transform: rotate(180deg);
+     animation-iteration-count: infinite;
+     background-image: url(https://t3.ftcdn.net/jpg/04/74/13/10/240_F_474131081_SwhJcfuc3WVkaMzUxSKX71rfJnDGp2S8.jpg); }
 
-.center
-{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  margin: auto;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  border-radius: 3px;
-}
-.center h1{
-  text-align:center;
-  color:white;
-  font-family: 'Source Code Pro', monospace;
-  text-transform:uppercase;
-}
+ @keyframes bg1Anim {
+   0% {
+     opacity: 0;
+     transform: scale(1.1); }
+   50% {
+     opacity: .8;
+     transform: scale(3.5); }
+   100% {
+     opacity: 0;
+     transform: scale(1.1); } }
+
+@keyframes bg2Anim {
+  0% {
+    opacity: .8;
+    transform: scale(2); }
+  50% {
+    opacity: 0;
+    transform: scale(1.1); }
+  100% {
+    opacity: .8;
+    transform: scale(2); } }
+
+ @keyframes bg3Anim {
+   0% {
+     opacity: 1;
+     transform: scale(2);
+     left: -10%; }
+   50% {
+     opacity: 1;
+     transform: scale(2);
+     left: 10%; }
+   100% {
+     opacity: 1;
+     transform: scale(2);
+     left: 10%; } }
