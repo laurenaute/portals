@@ -10,5 +10,11 @@ application.register("adventure-modal", AdventureModalController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import HomeStarsController from "./home_stars_controller"
+application.register("home-stars", HomeStarsController)
+
+import NavbarController from "./navbar_controller"
+application.register("navbar", NavbarController)
+
 import TypedJsController from "./typed_js_controller"
 application.register("typed-js", TypedJsController)

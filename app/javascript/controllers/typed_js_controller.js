@@ -6,7 +6,7 @@ export default class extends Controller {
   connect() {
     new Typed(this.element, {
       strings: ["Live your adventure", "A unique adventure"],
-      typeSpeed: 50,
+      typeSpeed: 90,
       loop: true
     })
   }
