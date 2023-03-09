@@ -20,13 +20,13 @@ export default class extends Controller {
           }
         },
         "color": {
-          "value": "#ffffff"
+          "value": "#ffffff",
         },
         "shape": {
           "type": "circle",
           "stroke": {
             "width": 0,
-            "color": "#000000"
+            "color": "#FCFFFF"
           },
           "polygon": {
             "nb_sides": 5
@@ -38,7 +38,7 @@ export default class extends Controller {
           }
         },
         "opacity": {
-          "value": 0.58927153781200905,
+          "value": 0.83927153781200905,
           "random": false,
           "anim": {
             "enable": true,
@@ -48,7 +48,7 @@ export default class extends Controller {
           }
         },
         "size": {
-          "value": 2,
+          "value": 3,
           "random": true,
           "anim": {
             "enable": true,
@@ -101,7 +101,7 @@ export default class extends Controller {
           },
           "bubble": {
             "distance": 83.91608391608392,
-            "size": 1,
+            "size": 3,
             "duration": 3,
             "opacity": 1,
             "speed": 3
@@ -111,14 +111,15 @@ export default class extends Controller {
             "duration": 0.4
           },
           "push": {
-            "particles_nb": 4
+            "particles_nb": 6
           },
           "remove": {
-            "particles_nb": 2
+            "particles_nb": 4
           }
         }
       },
       "retina_detect": true
     });
+
   }
 }
