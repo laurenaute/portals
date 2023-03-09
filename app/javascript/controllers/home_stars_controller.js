@@ -20,7 +20,7 @@ export default class extends Controller {
           }
         },
         "color": {
-          "value": "#ffffff",
+          "value": "#C7F9FF",
         },
         "shape": {
           "type": "circle",
@@ -43,12 +43,12 @@ export default class extends Controller {
           "anim": {
             "enable": true,
             "speed": 0.2,
-            "opacity_min": 0.5,
+            "opacity_min": 0.4,
             "sync": false
           }
         },
         "size": {
-          "value": 3,
+          "value": 2.5,
           "random": true,
           "anim": {
             "enable": true,

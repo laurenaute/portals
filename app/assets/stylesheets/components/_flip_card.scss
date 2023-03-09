@@ -15,7 +15,7 @@
   text-transform:uppercase;
   font-weight: bold;
   padding-top: 2em;
-  z-index: 1;
+  z-index: 1  ;
   position: relative;
 }
 
@@ -46,7 +46,7 @@
     &.card-1 {
         &::before {
             background-image: url("https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png");
-            background-position: left;
+            background-position: 0px -7px;
             border-radius:         200px / 260px;
         }
     }
