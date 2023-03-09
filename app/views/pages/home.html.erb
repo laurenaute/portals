@@ -1,14 +1,15 @@
 <div class="main-background">
-  <div class="container">
-    <div>
-      <h1 id="main-title">PORTALS</h1>
-      <%# <h3 id="main-subtitle">Live your adventure</
-      h3> %>
-      <h3 id="main-subtitle"><span data-controller="typed-js"></span></h3>
-    </div>
+  <div class="home-stars-background" id="particles-js" data-controller="home-stars"></div>
+    <div class="container">
+      <div class="title-container">
+        <h1 id="main-title">PORTALS</h1>
+        <%# <h3 id="main-subtitle">Live your adventure</
+        h3> %>
+        <h3 id="main-subtitle"><span data-controller="typed-js"></span></h3>
+      </div>
 
-    <div class="btn-div">
-      <%= link_to "Start Your Journey", universes_path, class: "btn-home", id:"main-btn" %>
+      <div class="btn-div">
+        <%= link_to "Start Your Journey", universes_path, class: "btn-home", id:"main-btn" %>
+      </div>
     </div>
-  </div>
 </div>
