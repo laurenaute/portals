@@ -1,2 +1,31 @@
-<h1>Adventures#new</h1>
-<p>Find me in app/views/adventures/new.html.erb</p>
+<div class="character-background ">
+  <div class="container h-screen ">
+    <h1 class="text-center">Adventures#new</h1>
+    <h1 class="text-center"><%= @character.name %></h1>
+    <div class="character-creation d-flex">
+      <div class="character-info box-display d-flex">
+        <div class="character-card-creation">
+          <img class="class-img character-creation-img" src=<%= @character.image_url %> alt="">
+          <div class="characteristic-point">
+            <p>Strength: <%= @character.strength %></p>
+            <p>Dexterity: <%= @character.dexterity %></p>
+            <p>Constitution: <%= @character.constitution %></p>
+            <p>Intelligence: <%= @character.intelligence %></p>
+            <p>Wisdom: <%= @character.wisdom %></p>
+            <p>Charisma: <%= @character.charisma %></p>
+          </div>
+        </div>
+        <div class="character-text">
+          <%= @character.description %>
+        </div>
+      </div>
+      <div class="box-display">
+        <%= simple_form_for [@character, @adventure] do |f| %>
+          <%= f.input :character_name %>
+          <%= f.input :difficulty, priority: [ "Normal" ], collection: [ "Easy", "Normal", "Hard"]%>
+          <%= f.button :submit, class: "btn btn-primary mt-3" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
