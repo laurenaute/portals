@@ -1,5 +1,6 @@
 <div class="universe-background h-screen">
   <div class="container">
+    <h1 class="text-center"><%= @universe.theme %></h1>
     <div class="description">
      <%= @universe.description %>
     </div>
@@ -11,13 +12,10 @@
                 <h3 class="character-name text-center mt-auto ps-3"><%= character.name %></h3>
               </div>
               <div class="card-product-infos">
-                <p><%= character.parameters %></p>
-                <div class="characteristics">
                   <div class="d-flex justify-content-around height">
                     <div> <%= character.get_max_asset.first.capitalize %> : <%= character.get_max_asset.last %></div>
                     <div> <%= character.get_min_asset.first.capitalize %> : <%= character.get_min_asset.last%></div>
                   </div>
-                </div>
               </div>
         </button>
         <div class="modal fade character-modal" id="ModalCenter-<%= character.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
@@ -30,7 +28,7 @@
                   <div class="character-card">
                     <img class="img-modal" src="<%=character.image_url%>" alt="">
                     <div class="modal-display">
-                      <%= character.description %>
+                      <p><%= character.description %></p>
                       <div class="row">
                         <div class="col-4">
                           <div class="pe-2 fw-bold text-lg text-nowrap text-center">Strength: <%= character.strength %></div>

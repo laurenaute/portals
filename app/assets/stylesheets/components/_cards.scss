@@ -1,13 +1,12 @@
 .card-display {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 
 .card-product {
   border-radius: 10px;
   background: #7a7a7a3d;
-  margin: 10px;
   padding: 0;
   border: none;
   box-shadow: 0 0 20px #303030;
