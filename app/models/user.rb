@@ -2,6 +2,7 @@ require 'securerandom'
 
 class User < ApplicationRecord
   has_many :adventures, dependent: :nullify
+  has_many :messages, dependent: :nullify
 
   before_save :generate_token
 

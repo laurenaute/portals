@@ -1,4 +1,4 @@
-
+<%#
 <div class="adventure-play">
   <div class="flex-1 overflow-hidden">
     <div class="w-full border-b border-black/10 dark:border-gray-900/50 text-gray-800 dark:text-gray-100 group bg-gray-50 dark:bg-[#444654]">
@@ -66,7 +66,7 @@
       </div>
     </div>
   </form>
-</div>
+</div> %>
 
 
     <%#= simple_form_for @adventure, class: "d-flex chat-control" do |f| %>
@@ -79,6 +79,42 @@
 <%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adventureStart">
   Launch demo modal
 </button> %>
+
+<div class="adventure-play">
+  <div class="container p-5">
+    <h1 class="mb-4">Play your adventure</h1>
+    <div class="chat-content">
+      <% @messages.each do |message| %>
+        <div class="row mb-3">
+          <div class="col-2">
+            <p class="me-3"><strong>
+              <% case message.role %>
+                <% when "user" %>
+                  <%= message.user.username %>
+                <% when "assistant" %>
+                  Gamemaster
+              <% end %>
+            </strong></p>
+          </div>
+          <div class="col-10">
+            <p style="white-space: pre-line;"><%= message.content %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+      <div class="chat-input mt-3">
+        <%= simple_form_for [@adventure, @message], wrapper: :inline_form, html: { class: 'row' } do |f| %>
+          <div class="col-10">
+            <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ..."%>
+          </div>
+          <div class="col-2">
+            <%= f.button :submit, value: "Send", class: "btn-play "%>
+          </div>
+        <% end %>
+      </div>
+
+  </div>
+</div>
 
 <div data-controller="adventure-modal">
   <div class="modal fade show <%#= d-block %>"  id="adventureStart" tabindex="-1" aria-labelledby="adventureStartLabel" aria-modal="true" role="dialog" data-adventure-modal-target="adventureStart">
@@ -102,16 +138,4 @@
       </div>
     </div>
   </div>
-<h1>Adventure</h1>
-<div class="adventure">
-  <% @messages.each do |message| %>
-    <div class="d-flex">
-      <p class="me-3"><strong><%= message.role %></strong></p>
-      <p style="white-space: pre-line;"><%= message.content %></p>
-    </div>
-  <% end %>
-  <%= simple_form_for [@adventure, @message] do |f| %>
-    <%= f.input :content %>
-    <%= f.button :submit %>
-  <% end %>
 </div>

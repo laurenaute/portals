@@ -13,7 +13,7 @@
 .adventure-play {
   background-color: $adventure-play-background;
   color: $adventure-play-text;
-  // min-height: 93vh;
+  min-height: 93vh;
 }
 
 .bubble {
@@ -56,4 +56,12 @@
   border-bottom-color: rgba(255, 255, 255, 0.3);
   transform: rotateZ(90deg);
   right: -16px;
+}
+
+.chat-content {
+  width: 100%;
+  height: 72vh;
+  overflow: scroll;
+  border-bottom: 1px solid #ccc;
+  // background: linear-gradient(40deg, rgba(255, 255, 255, 0.2) 00%, rgba(255, 255, 255, 0.3) 100%);
 }

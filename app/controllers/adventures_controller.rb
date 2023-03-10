@@ -10,7 +10,7 @@ class AdventuresController < ApplicationController
   def show
     @message = Message.new
 
-    if @adventure.messages.last == nil
+    if @adventure.messages.last.nil?
       initializer = Message.new
       initializer.adventure = @adventure
       initializer.role = "system"
@@ -56,8 +56,10 @@ class AdventuresController < ApplicationController
       )
       initializer.adventure = @adventure
       initializer.role = "assistant"
+      initializer.user = current_user
       initializer.content = response.dig("choices", 0, "message", "content")#response["choices"][0]["text"]
       initializer.save
+
     end
 
     @messages = @adventure.messages
