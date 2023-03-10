@@ -4,7 +4,7 @@ class User < ApplicationRecord
   has_many :adventures, dependent: :nullify
   has_many :messages, dependent: :nullify
 
-  before_save :generate_token
+  # before_save :generate_token
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
