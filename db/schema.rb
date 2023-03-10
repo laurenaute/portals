@@ -51,9 +51,11 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_144922) do
     t.integer "prompt_tokens"
     t.integer "completion_tokens"
     t.integer "total_tokens"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["adventure_id"], name: "index_messages_on_adventure_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "prompts", force: :cascade do |t|
@@ -97,4 +99,5 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_144922) do
   add_foreign_key "adventures", "users"
   add_foreign_key "characters", "universes"
   add_foreign_key "messages", "adventures"
+  add_foreign_key "messages", "users"
 end

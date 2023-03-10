@@ -5,6 +5,7 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @message.adventure = Adventure.find(params[:adventure_id])
     @message.role = "user"
+    @message.user = current_user
     @message.save
 
 
@@ -56,6 +57,7 @@ class MessagesController < ApplicationController
     message_response.adventure = Adventure.find(params[:adventure_id])
     message_response.role = response.dig("choices", 0, "message", "role")
     message_response.content = response.dig("choices", 0, "message", "content") #response["choices"][0]["text"] #response["choices"].map { |c| c["text"] }#response.dig("choices", 0, "message", "content")
+    message_response.user = current_user
     message_response.save
     redirect_to adventure_path(@message.adventure)
   end

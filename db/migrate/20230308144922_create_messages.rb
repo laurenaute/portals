@@ -7,6 +7,7 @@ class CreateMessages < ActiveRecord::Migration[7.0]
       t.integer :prompt_tokens
       t.integer :completion_tokens
       t.integer :total_tokens
+      t.references :user, null: false, foreign_key: true
 
       t.timestamps
     end

@@ -1,0 +1,67 @@
+// .footer-modal {
+//   position: fixed;
+//   left: 0;
+//   bottom: 0;
+//   width: 100%;
+//   text-align: center;
+// }
+
+// .modal-content-adventure {
+//   background-color: $modal-background;
+// }
+
+.adventure-play {
+  background-color: $adventure-play-background;
+  color: $adventure-play-text;
+  min-height: 93vh;
+}
+
+.bubble {
+  float: left;
+  width: auto;
+  max-width: 80%;
+  position: relative;
+  clear: both;
+  background: #95c2fd;
+  padding: 0.5em 1em;
+  background: linear-gradient(40deg, rgba(255, 255, 255, 0.2) 00%, rgba(255, 255, 255, 0.3) 100%);
+  border-radius: 3px;
+  box-shadow: 0 5px 30px rgba(255, 255, 255, 0.1);
+  margin-bottom: 10px;
+  color: rgba(255, 255, 255, 0.7);
+  word-wrap: break-word;
+  font-size: 1em;
+  margin-top: 30px;
+  opacity: 0;
+}
+
+.bubble:after {
+  border-radius: 20px / 5px;
+  content: '';
+  display: block;
+  position: absolute;
+  border: 8px solid transparent;
+  border-bottom-color: rgba(255, 255, 255, 0.2);
+  bottom: 1px;
+  transform: rotateZ(-90deg);
+  left: -15px;
+}
+
+.bubble-alt {
+  float: right;
+}
+
+.bubble-alt:after {
+  left: auto;
+  border-bottom-color: rgba(255, 255, 255, 0.3);
+  transform: rotateZ(90deg);
+  right: -16px;
+}
+
+.chat-content {
+  width: 100%;
+  height: 72vh;
+  overflow: scroll;
+  border-bottom: 1px solid #ccc;
+  // background: linear-gradient(40deg, rgba(255, 255, 255, 0.2) 00%, rgba(255, 255, 255, 0.3) 100%);
+}
