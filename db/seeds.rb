@@ -213,15 +213,15 @@ User.create(
 )
 puts "Created user test"
 
-puts "Creating an adventure"
-Adventure.create(
-  character_id: 1,
-  character_name: "Luke Skywalker",
-  difficulty: "Easy",
-  choices: true,
-  user_id: 1
-)
-puts "Created an adventure"
+# puts "Creating an adventure"
+# Adventure.create(
+#   character_id: 1,
+#   character_name: "Luke Skywalker",
+#   difficulty: "Easy",
+#   choices: true,
+#   user_id: 1
+# )
+# puts "Created an adventure"
 
 
 puts "Creating user jean"
