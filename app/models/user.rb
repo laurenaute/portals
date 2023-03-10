@@ -21,4 +21,4 @@ class User < ApplicationRecord
 #       break api_token unless self.class.exists?(api_token: api_token)
 #     end
 #   end
-# end
+end
