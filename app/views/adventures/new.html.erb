@@ -21,7 +21,7 @@
       </div>
       <div class="box-display">
         <%= simple_form_for [@character, @adventure] do |f| %>
-          <%= f.input :character_name, required: true %>
+          <%= f.input :character_name %>
           <%= f.input :difficulty, priority: [ "Normal" ], collection: [ "Easy", "Normal", "Hard"]%>
           <%= f.button :submit, class: "btn btn-primary mt-3" %>
         <% end %>
