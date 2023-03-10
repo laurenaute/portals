@@ -1,11 +1,9 @@
 <div class="universe-background h-screen">
-  <h1 class="text-center">Universes#show</h1>
   <div class="container">
     <div class="description">
      <%= @universe.description %>
     </div>
-s
-    <div class="card-display">
+    <div class="card-display ">
       <% @universe.characters.each do |character|%>
         <button type="" class="card-product" data-bs-toggle="modal" data-bs-target="#ModalCenter-<%= character.id %>">
               <%# <img class="class-img" src=<%#= character.image_url %>
