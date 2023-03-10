@@ -1,6 +1,7 @@
 .card-display {
   display: flex;
   justify-content: space-between;
+  margin-top: 30px;
 }
 
 
@@ -14,5 +15,7 @@
 
   .card-product-infos {
     padding: 10px;
+    color: whitesmoke;
+    text-shadow: 0 0 10px black;
   }
 }
