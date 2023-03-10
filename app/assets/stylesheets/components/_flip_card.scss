@@ -5,7 +5,13 @@
     justify-content: space-around;
     align-items: center;
     padding: 3em;
+  a {
+    border-radius: 100%;
+  }
+}
 
+.radius-card-universes {
+  border-radius: 100%;
 }
 
 .title-universe {
@@ -13,119 +19,104 @@
   color:rgb(253, 253, 253);
   font-family: 'Source Code Pro', monospace;
   text-transform:uppercase;
+  font-weight: bold;
   padding-top: 2em;
-  z-index: 1;
+  z-index: 1  ;
   position: relative;
 }
 
-.card-uni {
-    position: relative;
-    height: 420px;
-    width: 300px;
-    box-shadow: 0 0 1.5rem rgba(0, 0, 0, 0.25);
-    background-color: rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    -webkit-border-radius: 200px / 260px;
-    -moz-border-radius:    200px / 260px;
-    border-radius:         200px / 260px;
-    z-index: 10;
+.container-universe a {
+  overflow: hidden;
+  position: relative;
+  &:hover {
 
-    &::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        transition: all .25s ease;
-        z-index: -1;
+    .title-theme {
+      opacity: 1;
     }
-
-    &.card-1 {
-        &::before {
-            background-image: url("https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png");
-            background-position: left;
-            border-radius:         200px / 260px;
-        }
-    }
-
-    &.card-2 {
-        &::before {
-            background-image: url("https://cdn.midjourney.com/650aba53-94e4-464f-8030-2974cddf8614/grid_0.png");
-            background-position: center;
-            border-radius:         200px / 260px;
-
-        }
-    }
-
-    &.card-3 {
-        &::before {
-            background-image: url("https://cdn.midjourney.com/aaf7127d-3b25-4404-9000-419b1766b8cb/grid_0.png");
-            background-position: center;
-            border-radius:         200px / 260px;
-
-
-        }
-    }
-
-    .card-content {
-        display: flex;
-        height: 100%;
-        width: 100%;
-        padding: 1.5rem;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        z-index: 1;
-        color: #FFF;
-        transition: background-color .25s ease, opacity .25s ease;
-        opacity: 0;
-
-
-        .title-theme {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-        }
-
-        p {
-            text-align: center;
-            font-weight: 200;
-        }
-    }
-
-    &:hover {
-        &:before {
-            transform: scale(1.2);
-        }
-
-        .card-content {
-            opacity: 1;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(8px);
-        }
-    }
+  }
 }
 
+.card-uni {
+  background-position: center;
+  border-radius: 100%;
+  background-size: cover;
+  background-position: center;
+  height: 420px;
+  width: 300px;
+  z-index: 10;
+  position: relative;
+  transform: scale(1);
+  transition: transform 0.25s ease;
+  filter: none;
+  overflow: hidden;
+
+
+  &:hover {
+    filter: brightness(50%) blur(8px);
+    transform: scale(1.2);
+    transition: transform 0.25s ease;
+
+  }
+
+  &.card-1 {
+    background-image: url("https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png");
+    background-position: 0px -7px;
+    background-size: cover;
+  }
+
+  &.card-2 {
+    background-image: url("https://cdn.midjourney.com/650aba53-94e4-464f-8030-2974cddf8614/grid_0.png");
+  }
+
+  &.card-3 {
+    background-image: url("https://cdn.midjourney.com/aaf7127d-3b25-4404-9000-419b1766b8cb/grid_0.png");
+  }
+}
+
+.title-theme {
+  opacity: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 15;
+  transform: translate(-50%, -50%);
+  width: 100%;
+
+  &:hover {
+    opacity: 1;
+    + .card-uni {
+        filter: brightness(50%) blur(8px);
+        transform: scale(1.2);
+        transition: transform 0.25s ease;
+    }
+  }
+}
+
+
 @media (max-width: 992px) {
-    .header-uni {
-        padding: 4rem 2rem;
-    }
+  .header-uni {
+      padding: 4rem 2rem;
+  }
 
-    .container-universe {
-        flex-direction: row;
-        padding: 0 2rem;
-    }
+  .container-universe {
+      flex-direction: row;
+      padding: 0 2rem;
+  }
 
-    .card-uni {
-        margin: 2rem 0;
-        width: 100%;
+  .card-uni {
+    margin: 2rem 0;
+    width: 100%;
 
-        &::before {
-            background-position: center;
-        }
+    &::before {
+      background-position: center;
     }
+  }
 }
 
 a:link {text-decoration:none}
