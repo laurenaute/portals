@@ -6,7 +6,7 @@ Universe.destroy_all
 puts "Database cleaned"
 
 puts "Creating sci-fi universe"
-Universe.create(
+scifi = Universe.create(
   theme: "Sci-Fi",
   description: "
   Welcome to the year 2323, where space travel is common and humanity has colonized many planets
@@ -19,7 +19,7 @@ Universe.create(
    But the planet is not as lifeless as it seems, and you will have to fight for your
     lives against the planet's native inhabitants, who are not happy about the humans' presence.",
   parameters: "Act with the following rules :
-  - Act as if you are a Gamemaster of a gamebook in the star wars universe and we are playing
+  - Act as if you are a Gamemaster of a gamebook in a sci-fi universe in 2323 and we are playing
   - I, the user, is the player
   - You describe the environment and can create dialogue for the NPCs
   - Don't ever break out of your character, and you must not refer to yourself in any way
@@ -110,7 +110,7 @@ Character.create(
   description: "Highly trained combat specialist, proficient in a variety of weapons and tactics.\n
   Able to adapt to changing circumstances quickly and are skilled in working under pressure.\n
   In addition to their combat skills, Soldiers are also trained in survival techniques and are able to navigate difficult terrain, find shelter, and procure food and water in the field.",
-  universe_id: 1,
+  universe_id: scifi,
   image_url: "https://cdn.midjourney.com/64566c22-6cf7-412b-874d-218df4699646/grid_0.png",
   strength: 15,
   dexterity: 12,
@@ -130,7 +130,7 @@ Character.create(
   duties.\n
   In addition to their medical training, Medics are also skilled in combat, able to defend
   themselves in dangerous situations.",
-  universe_id: 1,
+  universe_id: scifi,
   image_url: "https://cdn.midjourney.com/6eb51ca4-21dc-4a4c-8c61-418bf689ce28/grid_0.png",
   strength: 8,
   dexterity: 12,
@@ -151,7 +151,7 @@ Character.create(
   creatively and come up with innovative solutions to complex issues. Identifying problems and
   finding ways to fix them, whether it's repairing a damaged spacecraft or developing a new
   piece of technology to aid in the mission.",
-  universe_id: 1,
+  universe_id: scifi,
   image_url: "https://cdn.midjourney.com/ed2f6390-9a6f-4356-9371-3525c7f25a0a/grid_0.png",
   strength: 13,
   dexterity: 12,
@@ -172,7 +172,7 @@ Character.create(
   find creative ways to acquire rare or valuable items that they may need for their mission.\n
   They may also be called upon to assist with diplomatic tasks, using their negotiation skills
   to build relationships with other factions and gain valuable information.",
-  universe_id: 1,
+  universe_id: scifi,
   image_url: "https://cdn.midjourney.com/14b8f463-43bc-4d05-83df-16b8987c2676/grid_0.png",
   strength: 7,
   dexterity: 13,
@@ -192,7 +192,7 @@ Character.create(
   able to read maps and charts to find the most direct and efficient route to their destination.\n
   They may also be called upon to assist with reconnaissance or scouting missions, using their
   knowledge of the terrain and their flying skills to gather information about the area.",
-  universe_id: 1,
+  universe_id: scifi,
   image_url: "https://cdn.midjourney.com/3a0485ac-0812-44cf-a828-1f771da610a3/grid_0.png",
   strength: 10,
   dexterity: 16,
@@ -219,7 +219,6 @@ Adventure.create(
   character_name: "Luke Skywalker",
   difficulty: "Easy",
   choices: true,
-  save_adventure: "You have chosen the path of the Jedi.",
   user_id: 1
 )
 puts "Created an adventure"
