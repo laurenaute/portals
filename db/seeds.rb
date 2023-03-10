@@ -1,12 +1,9 @@
-
 puts "Cleaning database..."
-Universe.destroy_all
-Character.destroy_all
-Adventure.destroy_all
 Message.destroy_all
+Adventure.destroy_all
+Character.destroy_all
+Universe.destroy_all
 puts "Database cleaned"
-
-
 
 puts "Creating sci-fi universe"
 Universe.create(

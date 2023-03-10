@@ -1,5 +1,5 @@
 class Universe < ApplicationRecord
-  has_many :characters
+  has_many :characters, dependent: :nullify
 
   validates :theme, presence: true
   validates :description, presence: true
