@@ -1,3 +1,13 @@
+
+puts "Cleaning database..."
+Universe.destroy_all
+Character.destroy_all
+Adventure.destroy_all
+Message.destroy_all
+puts "Database cleaned"
+
+
+
 puts "Creating sci-fi universe"
 Universe.create(
   theme: "Sci-Fi",
@@ -216,3 +226,14 @@ Adventure.create(
   user_id: 1
 )
 puts "Created an adventure"
+
+
+puts "Creating user jean"
+User.create(
+  email: "jean@portals-ai.me",
+  username: "JaguarRocka",
+  password: ENV["ADMIN_PASSWORD"],
+  password_confirmation: ENV["ADMIN_PASSWORD"],
+  admin: false
+)
+puts "Created user jean"

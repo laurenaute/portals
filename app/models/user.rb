@@ -12,6 +12,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable
 
   validates :email, presence: true
+  validates :email, uniqueness: true
   validates :api_token, uniqueness: true
 
   def generate_token(length = 50)
