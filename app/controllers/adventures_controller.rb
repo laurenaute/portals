@@ -101,12 +101,14 @@ class AdventuresController < ApplicationController
   def create
     @character = Character.find(params[:character_id])
     @adventure = Adventure.new(adventure_params)
+
     @adventure.character = @character
     @adventure.user = current_user
+
     if @adventure.save
       redirect_to adventure_path(@adventure)
     else
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

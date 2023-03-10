@@ -1,9 +1,14 @@
-.modal-dialog {
-  background-image: url('https://cdn.midjourney.com/461e3adc-3c57-4ee0-a136-5db797c8bae7/grid_0.png');
-}
-
 .modal-content {
   background-color: transparent;
+  border: none;
+}
+
+.modal-header {
+  border-bottom: none;
+}
+
+.modal-footer {
+  border-top: none;
 }
 
 .img-modal {
@@ -26,13 +31,5 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-}
-
- // ca peut poser des problemes
-.modal-link {
-  text-decoration: none;
-  color: white;
-}
-.modal-link:hover {
-  color: white;
+  padding: 50px;
 }

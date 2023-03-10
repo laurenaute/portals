@@ -1,6 +1,5 @@
 <div class="character-background ">
   <div class="container h-screen ">
-    <h1 class="text-center">Adventures#new</h1>
     <h1 class="text-center"><%= @character.name %></h1>
     <div class="character-creation d-flex">
       <div class="character-info box-display d-flex">
@@ -19,12 +18,15 @@
           <%= @character.description %>
         </div>
       </div>
-      <div class="box-display">
+      <div class="box-display ">
+        <div class="form-display">
         <%= simple_form_for [@character, @adventure] do |f| %>
           <%= f.input :character_name %>
-          <%= f.input :difficulty, priority: [ "Normal" ], collection: [ "Easy", "Normal", "Hard"]%>
-          <%= f.button :submit, class: "btn btn-primary mt-3" %>
+          <%= f.input :difficulty, priority: [ "Normal" ], collection: [ "Easy", "Normal", "Hard"], as: :radio_buttons,
+                      label_method: lambda { |difficulty| render "difficulty_label", difficulty: difficulty } %>
+          <%= f.button :submit, class: "btn-home" %>
         <% end %>
+        </div>
       </div>
     </div>
   </div>

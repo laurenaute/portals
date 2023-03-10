@@ -5,6 +5,9 @@
 .character-info {
   display: flex;
   flex-direction: column;
+  .character-text {
+    padding: 30px;
+  }
 }
 
 .character-card-creation {
