@@ -8,15 +8,19 @@
     <div class="navbar">
       <div class="top-navbar">
         <ul class="ul-navbar">
-          <li class="li-navbar">Context</li>
-          <li class="li-navbar"><%= link_to "Character", "/characters/1/adventures/new", class: "nav-link" %></li>
-          <li class="li-navbar"><%= link_to "Home", root_path, class: "nav-link"%></li>
+          <%# <div>
+            <%= image_tag("logo-portal.png", size: "30px")%>
+            <%# <img src="app/assets/images/logo-portal.png" alt="portal logo"> %>
+          <%# </div> %>
+          <li class="li-navbar"><i class="fa-sharp fa-solid fa-house"></i>&nbsp;&nbsp; <%= link_to "Home", root_path, class: "nav-link"%></li>
+          <li class="li-navbar"><i class="fa-solid fa-book-open"></i>&nbsp;&nbsp;Context</li>
+          <li class="li-navbar"><i class="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;&nbsp; <%= link_to "Character", "/characters/1/adventures/new", class: "nav-link" %></li>
         </ul>
       </div>
       <div class="bottom-navbar">
         <ul class="ul-navbar">
-          <li class="li-navbar">Profil</li>
-          <li class="li-navbar"><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+          <li class="li-navbar"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; Profil</li>
+          <li class="li-navbar"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp; <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
         </ul>
       </div>
     </div>

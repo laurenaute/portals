@@ -13,7 +13,7 @@ export default class extends Controller {
     particlesJS("particles-js", {
       "particles": {
         "number": {
-          "value": 355,
+          "value": 600,
           "density": {
             "enable": true,
             "value_area": 789.1476416322727
