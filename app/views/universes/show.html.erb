@@ -1,14 +1,14 @@
 <div class="universe-background h-screen">
-  <div class="container">
+  <div class="container py-5">
     <h1 class="title"><%= @universe.theme %></h1>
     <div class="description">
      <%= @universe.description %>
     </div>
-    <div class="card-display ">
+    <div class="card-display">
       <% @universe.characters.each do |character|%>
         <button type="" class="card-product" data-bs-toggle="modal" data-bs-target="#ModalCenter-<%= character.id %>">
               <%# <img class="class-img" src=<%#= character.image_url %>
-              <div class="d-flex flex-column align-items-start justify-content-end" style="background-image: url(<%=  character.image_url %>); height: 250px; width: 250px; background-position: center; background-size: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+              <div class="d-flex flex-column align-items-start justify-content-end" style="background-image: url(<%=  character.image_url %>); height: 250px; object-fit: fill; background-position: center; background-size: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
                 <h3 class="character-name text-center mt-auto ps-3"><%= character.name %></h3>
               </div>
               <div class="card-product-infos">
@@ -55,5 +55,4 @@
       <% end %>
     </div>
   </div>
-
 </div>
