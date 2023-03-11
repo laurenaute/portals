@@ -1,5 +1,7 @@
 .character-card {
   display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .character-info {
@@ -20,4 +22,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media (max-width: 1024px) {
+  .character-card {
+    flex-direction: column;
+    align-items: center;
+  }
 }

@@ -8,7 +8,7 @@
       <% @universe.characters.each do |character|%>
         <button type="" class="card-product" data-bs-toggle="modal" data-bs-target="#ModalCenter-<%= character.id %>">
               <%# <img class="class-img" src=<%#= character.image_url %>
-              <div class="d-flex flex-column align-items-start justify-content-end" style="background-image: url(<%=  character.image_url %>); height: 250px; object-fit: fill; background-position: center; background-size: cover; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+              <div class="d-flex flex-column align-items-start justify-content-end card-background" style="background-image: url(<%=  character.image_url %>);">
                 <h3 class="character-name text-center mt-auto ps-3"><%= character.name %></h3>
               </div>
               <div class="card-product-infos">
@@ -19,7 +19,7 @@
               </div>
         </button>
         <div class="modal fade character-modal" id="ModalCenter-<%= character.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered character-background" role="document">
+          <div class="modal-dialog modal-dialog-centered character-background" role="document" style="background-image: url(https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png);">
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title" id="ModalLabel"><%= character.name %></h1>
@@ -29,19 +29,13 @@
                     <img class="img-modal" src="<%=character.image_url%>" alt="">
                     <div class="modal-display">
                       <p><%= character.description %></p>
-                      <div class="row">
-                        <div class="col-4">
-                          <div class="pe-2 fw-bold text-lg text-nowrap text-center">Strength: <%= character.strength %></div>
-                          <div class="pe-2 fw-bold text-lg text-nowrap text-center">Dexterity: <%= character.dexterity %></div>
-                        </div>
-                        <div class="col-4">
-                          <div class="pe-2 fw-bold text-lg text-nowrap text-center">Constitution: <%= character.constitution %></div>
-                          <div class="pe-2 fw-bold text-lg text-nowrap text-center">Intelligence: <%= character.intelligence %></div>
-                        </div>
-                        <div class="col-4">
-                          <div class="pe-2 fw-bold text-lg text-nowrap text-center">Wisdom: <%= character.wisdom %></div>
-                          <div class="pe-2 fw-bold text-lg text-nowrap text-center">Charisma: <%= character.charisma %></div>
-                        </div>
+                      <div class="statistics">
+                          <div class="statistic">Strength: <%= character.strength %></div>
+                          <div class="statistic">Dexterity: <%= character.dexterity %></div>
+                          <div class="statistic">Constitution: <%= character.constitution %></div>
+                          <div class="statistic">Intelligence: <%= character.intelligence %></div>
+                          <div class="statistic">Wisdom: <%= character.wisdom %></div>
+                          <div class="statistic">Charisma: <%= character.charisma %></div>
                       </div>
                     </div>
                   </div>

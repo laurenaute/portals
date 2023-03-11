@@ -8,3 +8,17 @@
   width: 100vw;
   margin: auto auto;
 }
+
+.statistics {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  width: 100%;
+}
+
+.statistic {
+  text-align: center;
+  font-weight: bold;
+  width: 140px;
+  margin: auto;
+}
