@@ -4,7 +4,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    padding: 3em;
+    flex-wrap: wrap;
   a {
     border-radius: 100%;
   }
@@ -28,6 +28,7 @@
 .container-universe a {
   overflow: hidden;
   position: relative;
+  margin-top: 2em;
   &:hover {
 
     .title-theme {
@@ -49,6 +50,7 @@
   transition: transform 0.25s ease;
   filter: none;
   overflow: hidden;
+  margin: 2em;
 
 
   &:hover {
@@ -98,25 +100,30 @@
   }
 }
 
-
 @media (max-width: 992px) {
-  .header-uni {
-      padding: 4rem 2rem;
-  }
-
-  .container-universe {
-      flex-direction: row;
-      padding: 0 2rem;
-  }
-
   .card-uni {
     margin: 2rem 0;
-    width: 100%;
-
-    &::before {
-      background-position: center;
-    }
   }
 }
+
+// @media (max-width: 992px) {
+//   .header-uni {
+//       padding: 4rem 2rem;
+//   }
+
+//   .container-universe {
+//       flex-direction: row;
+//       padding: 0 2rem;
+//   }
+
+//   .card-uni {
+//     margin: 2rem 0;
+//     width: 100%;
+
+//     &::before {
+//       background-position: center;
+//     }
+//   }
+// }
 
 a:link {text-decoration:none}
