@@ -5,6 +5,7 @@
 }
 
 .character-info {
+  width: 70%;
   display: flex;
   flex-direction: column;
   .character-text {
@@ -14,8 +15,10 @@
 
 .character-card-creation {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: start;
+  flex-direction: row;
   align-items: center;
+  gap: 3em;
 }
 
 .characteristic-point {
@@ -27,6 +30,19 @@
 @media (max-width: 1024px) {
   .character-card {
     flex-direction: column;
-    align-items: center;
+  }
+
+  .character-info {
+    width: 100%;
+  }
+
+  .character-card-creation {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .character-card-creation {
+    flex-direction: column;
   }
 }

@@ -1,5 +1,6 @@
 .character-creation-img {
-  width: 300px;
-  height: 300px;
+  max-width: 45vw;
+  max-height: 45vh;
   border-radius: 10px;
+  object-fit: cover;
 }

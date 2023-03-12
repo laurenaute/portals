@@ -1,11 +1,11 @@
-<div class="character-background ">
-  <div class="container h-screen ">
+<div class="character-background h-screen" style="background: url(https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png);">
+  <div class="container py-5">
     <h1 class="title"><%= @character.name %></h1>
-    <div class="character-creation d-flex">
+    <div class="character-creation">
       <div class="character-info box-display d-flex">
         <div class="character-card-creation">
           <img class="class-img character-creation-img" src=<%= @character.image_url %> alt="">
-          <div class="characteristic-point">
+          <div class="statistics">
             <p>Strength: <%= @character.strength %></p>
             <p>Dexterity: <%= @character.dexterity %></p>
             <p>Constitution: <%= @character.constitution %></p>

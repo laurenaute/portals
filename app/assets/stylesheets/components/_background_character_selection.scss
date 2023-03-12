@@ -1,12 +1,11 @@
 .universe-background {
-  background-image: url('https://cdn.midjourney.com/461e3adc-3c57-4ee0-a136-5db797c8bae7/grid_0.png');
-  background-size: cover;
-  background-position: bottom;
+  // background-image: url('https://cdn.midjourney.com/461e3adc-3c57-4ee0-a136-5db797c8bae7/grid_0.png');
+  background-size: cover !important;
+  background-position: center !important;
   // display: flex;
   // align-items: center;
   // justify-content: center;
   width: 100vw;
-  margin: auto auto;
 }
 
 .statistics {
@@ -16,7 +15,7 @@
   width: 100%;
 }
 
-.statistic {
+.statistics p {
   text-align: center;
   font-weight: bold;
   width: 140px;
