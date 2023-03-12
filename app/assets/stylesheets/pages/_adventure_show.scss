@@ -65,3 +65,41 @@
   border-bottom: 1px solid #ccc;
   // background: linear-gradient(40deg, rgba(255, 255, 255, 0.2) 00%, rgba(255, 255, 255, 0.3) 100%);
 }
+
+.chat-message {
+  display: flex;
+}
+
+.chat-message-role {
+  width: 20%;
+}
+
+.chat-message-content {
+  width: 80%;
+}
+
+.chat-form {
+  display: flex;
+}
+
+.chat-form-input {
+  width: 80%;
+}
+
+.chat-form-submit {
+  width: 20%;
+}
+
+@media (max-width: 768px) {
+  .chat-message {
+    display: block;
+  }
+
+  .chat-message-role {
+    width: 100%;
+  }
+
+  .chat-message-content {
+    width: 100%;
+  }
+}

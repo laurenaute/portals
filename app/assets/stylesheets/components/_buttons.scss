@@ -30,3 +30,9 @@
   }
   margin-left: .3em;
 }
+
+@media (max-width: 768px) {
+  .btn-play {
+    padding: 0;
+  }
+}
