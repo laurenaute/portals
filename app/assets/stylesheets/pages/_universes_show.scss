@@ -8,16 +8,15 @@
   width: 100vw;
 }
 
-.statistics {
-  display: grid;
-  gap: 1em;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  width: 100%;
+.character-name {
+  color: white;
+  text-shadow: 0 0 10px black;
 }
 
-.statistics p {
-  text-align: center;
-  font-weight: bold;
-  width: 140px;
-  margin: auto;
+.description {
+  padding: 20px;
+  background: #7a7a7a3d;
+  backdrop-filter: blur(5px);
+  border-radius: 10px;
+  box-shadow: 0 0 20px #303030;
 }
