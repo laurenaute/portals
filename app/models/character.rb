@@ -10,6 +10,7 @@ class Character < ApplicationRecord
   validates :intelligence, presence: true
   validates :wisdom, presence: true
   validates :charisma, presence: true
+  validates :name, uniqueness: { scope: :universe }
 
   def get_max_asset
     assets = {

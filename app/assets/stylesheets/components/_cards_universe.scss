@@ -5,10 +5,9 @@
 }
 
 .card-uni {
-  background-position: center;
+  background-position: center !important;
   border-radius: 100%;
-  background-size: cover;
-  background-position: center;
+  background-size: cover !important;
   height: 420px;
   width: 300px;
   z-index: 10;
@@ -23,21 +22,6 @@
     filter: brightness(50%) blur(8px);
     transform: scale(1.2);
     transition: transform 0.25s ease;
-
-  }
-
-  &.card-1 {
-    background-image: url("https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png");
-    background-position: 0px -7px;
-    background-size: cover;
-  }
-
-  &.card-2 {
-    background-image: url("https://cdn.midjourney.com/650aba53-94e4-464f-8030-2974cddf8614/grid_0.png");
-  }
-
-  &.card-3 {
-    background-image: url("https://cdn.midjourney.com/aaf7127d-3b25-4404-9000-419b1766b8cb/grid_0.png");
   }
 }
 

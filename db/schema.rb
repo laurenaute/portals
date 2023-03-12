@@ -31,7 +31,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_144922) do
     t.string "name"
     t.text "description"
     t.text "parameters"
-    t.string "image_url"
+    t.string "image_card_url"
+    t.string "image_background_card_url"
+    t.string "image_background_page_url"
     t.bigint "universe_id", null: false
     t.integer "strength"
     t.integer "dexterity"
@@ -70,7 +72,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_144922) do
     t.text "description"
     t.text "parameters"
     t.text "initializer"
-    t.string "image_url"
+    t.string "image_card_url"
+    t.string "image_background_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

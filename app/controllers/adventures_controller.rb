@@ -50,7 +50,7 @@ class AdventuresController < ApplicationController
           messages: messages, # Required.
           temperature: 0.7,
           max_tokens: 500,
-          # user: current_user.api_token
+          user: current_user.api_token
           # stream: true
         }
       )
@@ -114,15 +114,17 @@ class AdventuresController < ApplicationController
     end
   end
 
-  def update
-    user_prompt = params[:user_message]
-    session[:chat_history] ||= []
+  # def edit
+    #   @character = Character.find(params[:character_id])
+  # end
 
-    session[:chat_history] << "You: #{user_prompt}"
-
-    @adventure.update(adventure_params)
-    redirect_to adventure_path(@adventure)
-  end
+  # def update
+    # if @adventure.update(adventure_params)
+    #   redirect_to adventure_path(@adventure)
+    # else
+    #   render :edit, status: :unprocessable_entity
+    # end
+  # end
 
   private
 
