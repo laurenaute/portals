@@ -26,42 +26,27 @@
             </strong></p>
           </div>
           <div class="chat-message-content">
-            <p style="white-space: pre-line;"><%= message.content %></p>
+            <p style="white-space: pre-line;"><%= message.content.gsub(/\d\. .+/, '' ) %></p>
+            <% if Message.last == message %>
+              <%= simple_form_for  [@adventure, @message], data: {controller: "adventure-form"} do |f| %>
+                <%= f.input :content, :label=> '', as: :radio_buttons, collection: message.content.scan(/\d\. .+/),
+                            label_method: lambda {|content| render "select_action", content: content },
+                            input_html: {data: {action: "change->adventure-form#submit"}} %>
+              <% end %>
+            <% end %>
           </div>
         </div>
       <% end %>
     </div>
-      <div class="chat-input mt-3">
-        <%= simple_form_for [@adventure, @message], wrapper: :inline_form, html: { class: 'chat-form' } do |f| %>
-          <div class="chat-form-input">
-            <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ..."%>
-          </div>
-          <div class="chat-form-submit">
-            <%= f.button :submit, value: "Send", class: "btn-play "%>
-          </div>
-        <% end %>
-      </div>
-
-  </div>
-</div>
-
-<div data-controller="adventure-modal">
-  <div class="modal fade show <%#= d-block %>"  id="adventureStart" tabindex="-1" aria-labelledby="adventureStartLabel" aria-modal="true" role="dialog" data-adventure-modal-target="adventureStart">
-    <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content align-item-center">
-        <div class="modal-content-adventure">
-          <div class="container mt-5">
-            <div class="d-flex justify-content-between">
-              <h1 class="modal-title fs-4" id="adventureStartLabel">Your adventure start here</h1>
-              <button type="button" class="btn-close" data-action="click->adventure-modal#close" aria-label="Close"></button>
-            </div>
-            <p><%= @adventure.character.universe.description %></p>
-          </div>
-          <div class="footer-modal">
-            <button type="button" class="btn btn-secondary" data-action="click->adventure-modal#close">Close</button>
-          </div>
+    <div class="chat-input mt-3">
+      <%= simple_form_for [@adventure, @message], wrapper: :inline_form, html: { class: 'chat-form' } do |f| %>
+        <div class="chat-form-input">
+          <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ..."%>
         </div>
-      </div>
+        <div class="chat-form-submit">
+          <%= f.button :submit, value: "Send", class: "btn-play "%>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
