@@ -53,34 +53,26 @@ input[type=radio] {
 //   transform: scale(0);
 }
 
+/*** CSS - APP USE ***/
 
-input[type=radio]:checked + label > .radio-group {
-  color: white;
-  background-color: #124652;
-  border-radius: 5px;
+.btn-wrapper:not(:first-child) {
+	margin-top: 15px;
 }
 
-.adventure_difficulty {
-  .form-check{
-    width: 31%;
-  }
-  label {
-    width: 100%;
-  }
-}
+.btn-wrapper {
+	display: grid;
+	grid-template-columns: 20px auto;
+	grid-gap: 10px;
+	min-width: 250px;
+	height: 35px;
+	margin-left: 10px;
+	transform: skewX(-30deg);
 
-.radio-group {
-  background-color: $color-btn;
-  border-radius: 5px;
-  padding: 7px 12px;
-  overflow: hidden;
+	--bg-color: whitesmoke;
+	--font-color: #39555c ;
+	--bg-color-hovered: #507D88;
+	--font-color-hovered: whitesmoke;
   cursor: pointer;
-  transition-duration: 0.8s;
-  text-align: center;
-  &:hover{
-    color: $color-btn;
-    background-color: white ;
-  }
 }
 
 .btn-wrapper > * {
