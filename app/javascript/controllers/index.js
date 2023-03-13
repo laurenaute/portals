@@ -7,6 +7,9 @@ import { application } from "./application"
 import AdventureModalController from "./adventure_modal_controller"
 application.register("adventure-modal", AdventureModalController)
 
+import AdventureSubscriptionController from "./adventure_subscription_controller"
+application.register("adventure-subscription", AdventureSubscriptionController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

@@ -4,11 +4,16 @@ require 'json'
 class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
-    @message.adventure = Adventure.find(params[:adventure_id])
+    @adventure = Adventure.find(params[:adventure_id])
+    @message.adventure = @adventure
     @message.role = "user"
     @message.user = current_user
     @message.save
-
+    AdventureChannel.broadcast_to(
+      @adventure,
+      render_to_string(partial: "message", locals: { message: @message })
+    )
+    head :ok
 
     client = OpenAI::Client.new
     # start_sequence = "\nassistant:"
@@ -63,7 +68,12 @@ class MessagesController < ApplicationController
     message_response.user = current_user
     # raise
     message_response.save
-    redirect_to adventure_path(@message.adventure)
+    AdventureChannel.broadcast_to(
+      @adventure,
+      render_to_string(partial: "message", locals: { message: message_response })
+    )
+    head :ok
+    # redirect_to adventure_path(@message.adventure)
   end
 
   private
