@@ -1,14 +1,3 @@
-    <%#= simple_form_for @adventure, class: "d-flex chat-control" do |f| %>
-      <%#= f.input :save_adventure, placeholder: '', input_html: { value: '' }, class: "chat-input" %>
-      <%#= f.button :submit, class: "btn-play"%>
-    <%# end %>
-
-
-
-<%# <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#adventureStart">
-  Launch demo modal
-</button> %>
-
 <div class="adventure-play" data-controller="adventure-subscription" data-adventure-subscription-adventure-id-value="<%= @adventure.id %>">
   <div class="container p-5">
     <h1 class="mb-4">Play your adventure</h1>
@@ -25,29 +14,3 @@
     </div>
   </div>
 </div>
-
-<%# <div data-controller="adventure-modal">
-  <div class="modal fade show = d-block"  id="adventureStart" tabindex="-1" aria-labelledby="adventureStartLabel" aria-modal="true" role="dialog" data-adventure-modal-target="adventureStart"> %>
-    <%# <div class="modal-dialog modal-fullscreen">
-      <div class="modal-content align-item-center">
-        <div class="modal-content-adventure">
-          <div class="container mt-5">
-            <div class="d-flex justify-content-between">
-              <h1 class="modal-title fs-4" id="adventureStartLabel">Your adventure start here</h1>
-              <button type="button" class="btn-close" data-action="click->adventure-modal#close" aria-label="Close"></button>
-            </div> %>
-            <%# <p><%= @adventure.character.universe.description %>
-            <%# </p>
-            <div>
-              <img src=<%= @adventure.character.universe.image_url %>
-              <%# alt="" width="100%">
-            </div>
-          </div>
-          <div class="footer-modal">
-            <button type="button" class="btn btn-secondary" data-action="click->adventure-modal#close">Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> %>

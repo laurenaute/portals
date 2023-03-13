@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import AdventureFormController from "./adventure_form_controller"
+application.register("adventure-form", AdventureFormController)
+
 import AdventureModalController from "./adventure_modal_controller"
 application.register("adventure-modal", AdventureModalController)
 
