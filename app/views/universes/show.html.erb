@@ -2,7 +2,7 @@
   <div class="container py-5">
     <h1 class="title"><%= @universe.theme %></h1>
     <div class="description">
-     <%= @universe.description %>
+     <p><span><%= @universe.description %></span></p>
     </div>
     <div class="card-display">
       <% @universe.characters.each do |character|%>
@@ -19,7 +19,7 @@
               </div>
         </button>
         <div class="modal fade character-modal" id="ModalCenter-<%= character.id %>" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true">
-          <div class="modal-dialog modal-dialog-centered character-background" role="document" style="background-image: url(https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png);">
+          <div class="modal-dialog modal-dialog-centered character-background block" role="document" style="background-image: url(https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png);">
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title" id="ModalLabel"><%= character.name %></h1>

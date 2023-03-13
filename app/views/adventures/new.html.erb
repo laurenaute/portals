@@ -22,6 +22,7 @@
         <div class="form-display">
         <%= simple_form_for [@character, @adventure] do |f| %>
           <%= f.input :character_name %>
+          <%= f.input :choices, as: :boolean, input_html: { class: "toggle" } %>
           <%= f.input :difficulty, priority: [ "Normal" ], collection: [ "Easy", "Normal", "Hard"], as: :radio_buttons,
                       label_method: lambda { |difficulty| render "difficulty_label", difficulty: difficulty } %>
           <%= f.button :submit, class: "btn-home" %>
