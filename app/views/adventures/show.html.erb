@@ -26,7 +26,13 @@
             </strong></p>
           </div>
           <div class="chat-message-content">
-            <p style="white-space: pre-line;"><%= message.content %></p>
+            <p style="white-space: pre-line;"><%= message.content.gsub(/\d\. .+/, '') %></p>
+            <% if Message.last == message %>
+              <%= simple_form_for  [@adventure, @message], data: {controller: "adventure-form"} do |f| %>
+                <%= f.input :content, as: :radio_buttons, collection: message.content.scan(/\d\. .+/),
+                            label_method: lambda {|content| render "select_action", content: content } %>
+              <% end %>
+            <% end %>
           </div>
         </div>
       <% end %>
@@ -57,7 +63,7 @@
             </div>
             <p><%= @adventure.character.universe.description %></p>
             <div>
-              <img src=<%= @adventure.character.universe.image_url %> alt="" width="100%">
+              <img src=<%= @adventure.character.universe.image_background_url %> alt="" width="100%">
             </div>
           </div>
           <div class="footer-modal">
