@@ -53,6 +53,7 @@ input[type=radio] {
 //   transform: scale(0);
 }
 
+
 .adventure_difficulty {
   .form-check{
     width: 31%;
@@ -66,57 +67,96 @@ input[type=radio] {
 	background-color: var(--bg-color);
 }
 
+//radio btn gauthier part
 
-.btn-wrapper:hover .btn-tail {
-  background-color: var(--bg-color-hovered);
-}
+.adventure-play {
+  input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+  //   display: none;
+  //   transform: scale(0);
+  }
 
-.btn-body {
-  position: relative;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	color: var(--font-color);
-  width: 50vw;
-}
 
-.btn-wrapper:hover .btn-body {
-  color: var(--font-color-hovered);
-}
+  /*** CSS - APP USE ***/
 
-.btn-body::before {
-  content: "";
-	position: absolute;
-	width: 0;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background-color: var(--bg-color-hovered);
-	transition: all 0.3s ease-out;
-}
+  .btn-wrapper:not(:first-child) {
+    margin-top: 15px;
+  }
 
-.btn-wrapper:hover .btn-body::before {
-  width: 100%;
-}
+  .btn-wrapper {
+    display: grid;
+    grid-template-columns: 20px auto;
+    grid-gap: 10px;
+    min-width: 250px;
+    height: 35px;
+    margin-left: 10px;
+    transform: skewX(-30deg);
 
-.btn-body p {
-  margin-left: 15px;
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	transform: skewX(30deg);
-}
+    --bg-color: whitesmoke;
+    --font-color: #39555c ;
+    --bg-color-hovered: #507D88;
+    --font-color-hovered: whitesmoke;
+    cursor: pointer;
+  }
 
-.btn-tail {
-  transition: all 0s ease-out 0.3s;
-}
+  .btn-wrapper > * {
+    background-color: var(--bg-color);
+  }
 
-.btn-wrapper:hover .btn-tail {
-  transition: none;
-}
 
-.radio_buttons:checked + label .btn-tail,
-.radio_buttons:checked + label .btn-body {
-  background-color: var(--bg-color-hovered);
+  .btn-wrapper:hover .btn-tail {
+    background-color: var(--bg-color-hovered);
+  }
+
+  .btn-body {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--font-color);
+    width: 50vw;
+  }
+
+  .btn-wrapper:hover .btn-body {
+    color: var(--font-color-hovered);
+  }
+
+  .btn-body::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--bg-color-hovered);
+    transition: all 0.3s ease-out;
+  }
+
+  .btn-wrapper:hover .btn-body::before {
+    width: 100%;
+  }
+
+  .btn-body p {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transform: skewX(30deg);
+  }
+
+  .btn-tail {
+    transition: all 0s ease-out 0.3s;
+  }
+
+  .btn-wrapper:hover .btn-tail {
+    transition: none;
+  }
+
+  .radio_buttons:checked + label .btn-tail,
+  .radio_buttons:checked + label .btn-body {
+    background-color: var(--bg-color-hovered);
+  }
+
 }
 
 .adventure-new {
