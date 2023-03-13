@@ -5,7 +5,7 @@ export default class extends Controller {
   static targets = [ "sidebar",]
 
   connect() {
-    console.log(this.sidebarTarget)
+    // console.log(this.sidebarTarget)
   }
 
   slide() {

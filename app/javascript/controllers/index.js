@@ -19,6 +19,9 @@ application.register("hello", HelloController)
 import HomeStarsController from "./home_stars_controller"
 application.register("home-stars", HomeStarsController)
 
+import LoadingPageController from "./loading_page_controller"
+application.register("loading-page", LoadingPageController)
+
 import NavbarController from "./navbar_controller"
 application.register("navbar", NavbarController)
 

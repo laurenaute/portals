@@ -34,6 +34,18 @@
   object-fit: cover;
 }
 
+// .mb-3.radio-buttons-required-adventure-difficulty{
+//     display: flex;
+//     flex-wrap: wrap;
+//     justify-content: space-between;
+//     margin-left: 0;
+// }
+
+.form-check {
+  padding-left: 0px;
+}
+
+
 @media (max-width: 1024px) {
   .character-creation {
     flex-direction: column;
