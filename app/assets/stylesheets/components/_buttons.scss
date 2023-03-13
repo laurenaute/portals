@@ -31,6 +31,11 @@
   margin-left: .3em;
 }
 
+.btn-back .btn-home {
+  display: inline-block;
+  margin-top: 1rem;
+}
+
 @media (max-width: 768px) {
   .btn-play {
     padding: 0;
