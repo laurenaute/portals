@@ -9,7 +9,6 @@ export default class extends Controller {
   }
 
   launchLoader() {
-    console.log("je charge");
     this.loaderTarget.style.display = "initial";
     new Typed(this.loaderTextTarget, {
       strings: ["Your game is loading ..."],

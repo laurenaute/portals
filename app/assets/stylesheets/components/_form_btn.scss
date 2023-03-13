@@ -52,16 +52,33 @@ input[type=radio] {
   display: none;
 }
 
-input[type=radio]:checked + label{
+input[type=radio]:checked + label > .radio-group {
   color: white;
-  background: #507d88;
+  background-color: #124652;
+  border-radius: 5px;
+}
+
+.adventure_difficulty {
+  .form-check{
+    width: 31%;
+  }
+  label {
+    width: 100%;
+  }
 }
 
 .radio-group {
-  border: solid 3px #507d88;
+  background-color: $color-btn;
   border-radius: 5px;
-  padding: 5px ;
+  padding: 7px 12px;
   overflow: hidden;
+  cursor: pointer;
+  transition-duration: 0.8s;
+  text-align: center;
+  &:hover{
+    color: $color-btn;
+    background-color: white ;
+  }
 }
 
 
