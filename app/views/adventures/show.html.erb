@@ -33,31 +33,29 @@
     </div>
       <div class="chat-input mt-3">
         <%= simple_form_for [@adventure, @message], wrapper: :inline_form, html: { class: 'chat-form' } do |f| %>
-          <div class="chat-form-input">
-            <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ..."%>
-          </div>
-          <div class="chat-form-submit">
-            <%= f.button :submit, value: "Send", class: "btn-play "%>
-          </div>
+            <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ...", wrapper_html: {class: "chat-form-input"}%>
+            <%= f.submit "Send", class: "btn-play ", wrapper_html: {class: "chat-form-submit"}%>
         <% end %>
       </div>
 
   </div>
 </div>
 
-<div data-controller="adventure-modal">
-  <div class="modal fade show <%#= d-block %>"  id="adventureStart" tabindex="-1" aria-labelledby="adventureStartLabel" aria-modal="true" role="dialog" data-adventure-modal-target="adventureStart">
-    <div class="modal-dialog modal-fullscreen">
+<%# <div data-controller="adventure-modal">
+  <div class="modal fade show = d-block"  id="adventureStart" tabindex="-1" aria-labelledby="adventureStartLabel" aria-modal="true" role="dialog" data-adventure-modal-target="adventureStart"> %>
+    <%# <div class="modal-dialog modal-fullscreen">
       <div class="modal-content align-item-center">
         <div class="modal-content-adventure">
           <div class="container mt-5">
             <div class="d-flex justify-content-between">
               <h1 class="modal-title fs-4" id="adventureStartLabel">Your adventure start here</h1>
               <button type="button" class="btn-close" data-action="click->adventure-modal#close" aria-label="Close"></button>
-            </div>
-            <p><%= @adventure.character.universe.description %></p>
+            </div> %>
+            <%# <p><%= @adventure.character.universe.description %>
+            <%# </p>
             <div>
-              <img src=<%= @adventure.character.universe.image_url %> alt="" width="100%">
+              <img src=<%= @adventure.character.universe.image_url %>
+              <%# alt="" width="100%">
             </div>
           </div>
           <div class="footer-modal">
@@ -67,4 +65,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> %>

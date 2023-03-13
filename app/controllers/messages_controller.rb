@@ -1,4 +1,5 @@
 require 'openai'
+require 'json'
 
 class MessagesController < ApplicationController
   def create
@@ -53,11 +54,14 @@ class MessagesController < ApplicationController
         # stream: true
       }
     )
+    # parsed_response = JSON.parse(response.parsed_response)
+    # raise
     message_response = Message.new
     message_response.adventure = Adventure.find(params[:adventure_id])
     message_response.role = response.dig("choices", 0, "message", "role")
     message_response.content = response.dig("choices", 0, "message", "content") #response["choices"][0]["text"] #response["choices"].map { |c| c["text"] }#response.dig("choices", 0, "message", "content")
     message_response.user = current_user
+    # raise
     message_response.save
     redirect_to adventure_path(@message.adventure)
   end
