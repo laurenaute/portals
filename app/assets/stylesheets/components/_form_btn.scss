@@ -53,33 +53,12 @@ input[type=radio] {
 //   transform: scale(0);
 }
 
-
-input[type=radio]:checked + label > .radio-group {
-  color: white;
-  background-color: #124652;
-  border-radius: 5px;
-}
-
 .adventure_difficulty {
   .form-check{
     width: 31%;
   }
   label {
     width: 100%;
-  }
-}
-
-.form-adventure-new .radio-group {
-  background-color: $color-btn;
-  border-radius: 5px;
-  padding: 7px 12px;
-  overflow: hidden;
-  cursor: pointer;
-  transition-duration: 0.8s;
-  text-align: center;
-  &:hover{
-    color: $color-btn;
-    background-color: white ;
   }
 }
 
@@ -138,4 +117,26 @@ input[type=radio]:checked + label > .radio-group {
 .radio_buttons:checked + label .btn-tail,
 .radio_buttons:checked + label .btn-body {
   background-color: var(--bg-color-hovered);
+}
+
+.adventure-new {
+  .radio-group {
+    background-color: $color-btn;
+    border-radius: 5px;
+    padding: 7px 12px;
+    overflow: hidden;
+    cursor: pointer;
+    transition-duration: 0.8s;
+    text-align: center;
+    &:hover{
+      color: $color-btn;
+      background-color: white ;
+    }
+  }
+
+  input[type=radio]:checked + label > .radio-group {
+    color: white;
+    background-color: #124652;
+    border-radius: 5px;
+  }
 }

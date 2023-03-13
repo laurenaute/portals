@@ -1,4 +1,4 @@
-<div class="character-background h-screen" style="background: url(<%= @character.image_background_page_url %>);">
+<div class="character-background h-screen adventure-new" style="background: url(<%= @character.image_background_page_url %>);">
   <div class="container pt-5 pb-2">
     <h1 class="title"><%= @character.name %></h1>
     <div class="character-creation">
@@ -27,7 +27,7 @@
           <%= f.input :choices, as: :boolean, input_html: { class: "toggle" } %>
           <%= f.input :difficulty, checked: "Normal", collection: [ "Easy", "Normal", "Hard"], as: :radio_buttons,
                       label_method: lambda { |difficulty| render "difficulty_label", difficulty: difficulty },
-                      wrapper_html: {class: "d-flex flex-wrap justify-content-between"}%>
+                      wrapper_html: {class: "d-flex flex-wrap justify-content-between"} %>
           <%= f.button :submit, class: "btn-home", data: { action: "click->loading-page#launchLoader" } %>
         <% end %>
         </div>
