@@ -44,90 +44,121 @@
   left: 18px;
 }
 
-//radio btn
+// radio btn jean part
 
-input[type=radio] {
-  position: absolute;
-  visibility: hidden;
-//   display: none;
-//   transform: scale(0);
+input[type=radio]:checked + label > .radio-group {
+  color: white;
+  background-color: #124652;
+  border-radius: 5px;
 }
-
-/*** CSS - APP USE ***/
-
-.btn-wrapper:not(:first-child) {
-	margin-top: 15px;
+.adventure_difficulty {
+  .form-check{
+    width: 31%;
+  }
+  label {
+    width: 100%;
+  }
 }
-
-.btn-wrapper {
-	display: grid;
-	grid-template-columns: 20px auto;
-	grid-gap: 10px;
-	min-width: 250px;
-	height: 35px;
-	margin-left: 10px;
-	transform: skewX(-30deg);
-
-	--bg-color: whitesmoke;
-	--font-color: #39555c ;
-	--bg-color-hovered: #507D88;
-	--font-color-hovered: whitesmoke;
+.form-adventure-new .radio-group {
+  background-color: $color-btn;
+  border-radius: 5px;
+  padding: 7px 12px;
+  overflow: hidden;
   cursor: pointer;
+  transition-duration: 0.8s;
+  text-align: center;
+  &:hover{
+    color: $color-btn;
+    background-color: white ;
+  }
 }
+//radio btn gauthier part
 
-.btn-wrapper > * {
-	background-color: var(--bg-color);
-}
+.adventure-play {
+  input[type=radio] {
+    position: absolute;
+    visibility: hidden;
+  //   display: none;
+  //   transform: scale(0);
+  }
+
+  /*** CSS - APP USE ***/
+
+  .btn-wrapper:not(:first-child) {
+    margin-top: 15px;
+  }
+
+  .btn-wrapper {
+    display: grid;
+    grid-template-columns: 20px auto;
+    grid-gap: 10px;
+    min-width: 250px;
+    height: 35px;
+    margin-left: 10px;
+    transform: skewX(-30deg);
+
+    --bg-color: whitesmoke;
+    --font-color: #39555c ;
+    --bg-color-hovered: #507D88;
+    --font-color-hovered: whitesmoke;
+    cursor: pointer;
+  }
+
+  .btn-wrapper > * {
+    background-color: var(--bg-color);
+  }
 
 
-.btn-wrapper:hover .btn-tail {
-  background-color: var(--bg-color-hovered);
-}
+  .btn-wrapper:hover .btn-tail {
+    background-color: var(--bg-color-hovered);
+  }
 
-.btn-body {
-  position: relative;
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
-	color: var(--font-color);
-  width: 50vw;
-}
+  .btn-body {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    color: var(--font-color);
+    width: 50vw;
+  }
 
-.btn-wrapper:hover .btn-body {
-  color: var(--font-color-hovered);
-}
+  .btn-wrapper:hover .btn-body {
+    color: var(--font-color-hovered);
+  }
 
-.btn-body::before {
-  content: "";
-	position: absolute;
-	width: 0;
-	height: 100%;
-	left: 0;
-	top: 0;
-	background-color: var(--bg-color-hovered);
-	transition: all 0.3s ease-out;
-}
+  .btn-body::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--bg-color-hovered);
+    transition: all 0.3s ease-out;
+  }
 
-.btn-wrapper:hover .btn-body::before {
-  width: 100%;
-}
+  .btn-wrapper:hover .btn-body::before {
+    width: 100%;
+  }
 
-.btn-body p {
-  margin-left: 15px;
-	font-size: 1.5rem;
-	text-transform: uppercase;
-	transform: skewX(30deg);
-}
+  .btn-body p {
+    margin-left: 15px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    transform: skewX(30deg);
+  }
 
-.btn-tail {
-  transition: all 0s ease-out 0.3s;
-}
+  .btn-tail {
+    transition: all 0s ease-out 0.3s;
+  }
 
-.btn-wrapper:hover .btn-tail {
-  transition: none;
-}
+  .btn-wrapper:hover .btn-tail {
+    transition: none;
+  }
 
-.radio_buttons:checked + label .btn-tail,
-.radio_buttons:checked + label .btn-body {
-  background-color: var(--bg-color-hovered);
+  .radio_buttons:checked + label .btn-tail,
+  .radio_buttons:checked + label .btn-body {
+    background-color: var(--bg-color-hovered);
+  }
+
 }
