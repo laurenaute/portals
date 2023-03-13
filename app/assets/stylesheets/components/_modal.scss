@@ -1,6 +1,7 @@
 .modal-content {
   background-color: transparent;
   border: none;
+  backdrop-filter: blur(3px);
 }
 
 .modal-header {
