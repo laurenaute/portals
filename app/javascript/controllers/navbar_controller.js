@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="navbar"
 export default class extends Controller {
-  static targets = [ "sidebar"]
+  static targets = [ "sidebar",]
 
   connect() {
     console.log(this.sidebarTarget)
