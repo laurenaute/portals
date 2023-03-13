@@ -1,7 +1,8 @@
 .character-background {
-  background-image: url('https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png');
-  background-size: cover;
-  background-position: bottom;
+  // background-image: url('https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png');
+  background-size: cover !important;
+  background-position: center !important;
   color: whitesmoke;
   text-shadow: 0 0 10px black;
+  width: 100vw;
 }

@@ -1,8 +1,23 @@
 .universe-background {
-  background-image: url('https://cdn.midjourney.com/461e3adc-3c57-4ee0-a136-5db797c8bae7/grid_0.png');
-  background-size: cover;
-  background-position: bottom;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  // background-image: url('https://cdn.midjourney.com/461e3adc-3c57-4ee0-a136-5db797c8bae7/grid_0.png');
+  background-size: cover !important;
+  background-position: center !important;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+  width: 100vw;
+}
+
+.statistics {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  width: 100%;
+}
+
+.statistics p {
+  text-align: center;
+  font-weight: bold;
+  width: 140px;
+  margin: auto;
 }
