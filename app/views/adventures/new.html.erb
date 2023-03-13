@@ -1,5 +1,5 @@
 <div class="character-background h-screen" style="background: url(<%= @character.image_background_page_url %>);">
-  <div class="container py-5">
+  <div class="container pt-5 pb-2">
     <h1 class="title"><%= @character.name %></h1>
     <div class="character-creation">
       <div class="character-info box-display d-flex">
@@ -32,6 +32,9 @@
         <% end %>
         </div>
       </div>
+    </div>
+    <div class="btn-back">
+      <%= link_to '<', universe_path(@character.universe), class:"btn-home"%>
     </div>
   </div>
 </div>

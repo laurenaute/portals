@@ -83,11 +83,16 @@
 }
 
 .chat-form-input {
-  width: 80%;
+  width: 90%;
+  flex-grow: 1;
+  textarea {
+  border-radius: 15px 0px 0px 15px;
+  }
 }
 
 .chat-form-submit {
-  width: 20%;
+  // width: 20%;
+  // height: 100%;
 }
 
 @media (max-width: 768px) {
