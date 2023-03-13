@@ -10,9 +10,7 @@ class AdventuresController < ApplicationController
   def show
     @message = Message.new
 
-    sleep(10)
-    redirect_to new_character_adventure_path(@adventure.character)
-    if @adventure.messages.last.exist?
+    if @adventure.messages.last.nil?
       initializer = Message.new
       initializer.adventure = @adventure
       initializer.role = "system"
