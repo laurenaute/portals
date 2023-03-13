@@ -2,21 +2,13 @@
   <div class="container h-screen">
   <h1 class="title-universe">Choose your universe</h1>
   <div class="container-universe">
-     <%= link_to universe_path(@universes[0]) do %>
-          <div class="title-theme">Sci-Fi</div>
-        <div class="card-uni card-1 radius-card-universes">
+    <% @universes.order(:id).each do |universe| %>
+      <%= link_to universe_path(universe) do %>
+          <div class="title-theme"><%= universe.theme %></div>
+        <div class="card-uni radius-card-universes" style="background: url(<%= universe.image_card_url %>)">
         </div>
       <% end %>
-      <%= link_to universe_path(@universes[1]) do %>
-          <div class="title-theme">Fantasy</div>
-        <div class="card-uni card-2 radius-card-universes">
-        </div>
-      <% end %>
-      <%= link_to universe_path(@universes[2]) do %>
-          <div class="title-theme text-center">Post-Apocalyptic</div>
-        <div class="card-uni card-3 radius-card-universes">
-        </div>
-      <% end %>
+    <% end %>
     </div>
   </div>
 </div>

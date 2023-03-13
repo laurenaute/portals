@@ -39,7 +39,8 @@ scifi = Universe.create(
   - Always finish by listing actions the player
   - The adventure start in a space ship
   ",
-  image_url: "https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png"
+  image_card_url: "https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png",
+  image_background_url: "https://cdn.midjourney.com/461e3adc-3c57-4ee0-a136-5db797c8bae7/grid_0.png",
 )
 puts "Created sci-fi universe"
 
@@ -80,7 +81,8 @@ Universe.create(
   - Always finish by listing actions the player
   - the adventure start in a inn
   ",
-  image_url: "https://cdn.midjourney.com/650aba53-94e4-464f-8030-2974cddf8614/grid_0.png"
+  image_card_url: "https://cdn.midjourney.com/650aba53-94e4-464f-8030-2974cddf8614/grid_0.png",
+  image_background_url: "https://cdn.midjourney.com/2a3b5502-7cbf-4f88-900f-b53df90baaf7/grid_0.png"
 )
 puts "Created fantasy universe"
 
@@ -100,18 +102,32 @@ Universe.create(
    to adapt to a world that is now unrecognizable. But if you can make it through, you just might find that there's
    still hope for humanity, even in a world that's been shattered by war and destruction.",
   parameters: "- Post-apocalyptic world with factions, scavenging, and survival\n",
-  image_url: "https://cdn.midjourney.com/aaf7127d-3b25-4404-9000-419b1766b8cb/grid_0.png"
+  initializer: "Act with the following rules :
+  - Act as if you are a Gamemaster of a gamebook in the star wars universe and we are playing
+  - I, the user, is the player
+  - You describe the environment and can create dialogue for the NPCs
+  - Don't ever break out of your character, and you must not refer to yourself in any way
+  - If I want to give you instructions outside the context of the game, I will use curly brackets {like this} but otherwise you are to stick to being the text adventure program
+  - Be descriptive
+  - Never explain yourself
+  - Always finish by listing actions the player
+  - The adventure start in a space ship
+  ",
+  image_card_url: "https://cdn.midjourney.com/aaf7127d-3b25-4404-9000-419b1766b8cb/grid_0.png",
+  image_background_url: "https://cdn.midjourney.com/81ae6149-c0ab-4632-9d24-0f3306ae7912/grid_0.png"
 )
 puts "Created post-apocalyptic universe"
 
 puts "Creating character soldier"
-Character.create(
+Character.create!(
   name: "Soldier",
   description: "Highly trained combat specialist, proficient in a variety of weapons and tactics.\n
   Able to adapt to changing circumstances quickly and are skilled in working under pressure.\n
   In addition to their combat skills, Soldiers are also trained in survival techniques and are able to navigate difficult terrain, find shelter, and procure food and water in the field.",
-  universe_id: scifi,
-  image_url: "https://cdn.midjourney.com/64566c22-6cf7-412b-874d-218df4699646/grid_0.png",
+  universe: scifi,
+  image_card_url: "https://cdn.midjourney.com/64566c22-6cf7-412b-874d-218df4699646/grid_0.png",
+  image_background_card_url: "https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png",
+  image_background_page_url: "https://cdn.midjourney.com/ff4eda65-12d4-4e9b-80ca-5444cdd78742/grid_0.png",
   strength: 15,
   dexterity: 12,
   constitution: 15,
@@ -130,8 +146,10 @@ Character.create(
   duties.\n
   In addition to their medical training, Medics are also skilled in combat, able to defend
   themselves in dangerous situations.",
-  universe_id: scifi,
-  image_url: "https://cdn.midjourney.com/6eb51ca4-21dc-4a4c-8c61-418bf689ce28/grid_0.png",
+  universe: scifi,
+  image_card_url: "https://cdn.midjourney.com/6eb51ca4-21dc-4a4c-8c61-418bf689ce28/grid_0.png",
+  image_background_card_url: "https://cdn.midjourney.com/ae411e1c-726b-4d25-aa44-1ff280116e82/grid_0.png",
+  image_background_page_url: "https://cdn.midjourney.com/ae411e1c-726b-4d25-aa44-1ff280116e82/grid_0.png",
   strength: 8,
   dexterity: 12,
   constitution: 12,
@@ -151,8 +169,10 @@ Character.create(
   creatively and come up with innovative solutions to complex issues. Identifying problems and
   finding ways to fix them, whether it's repairing a damaged spacecraft or developing a new
   piece of technology to aid in the mission.",
-  universe_id: scifi,
-  image_url: "https://cdn.midjourney.com/ed2f6390-9a6f-4356-9371-3525c7f25a0a/grid_0.png",
+  universe: scifi,
+  image_card_url: "https://cdn.midjourney.com/ed2f6390-9a6f-4356-9371-3525c7f25a0a/grid_0.png",
+  image_background_card_url: "https://cdn.midjourney.com/151830cf-699c-4c2e-9ca5-7cf1f22332af/grid_0.png",
+  image_background_page_url: "https://cdn.midjourney.com/b6a6a37e-6c15-46a0-89d9-9d15a7b7b3d2/grid_0.png",
   strength: 13,
   dexterity: 12,
   constitution: 12,
@@ -172,8 +192,10 @@ Character.create(
   find creative ways to acquire rare or valuable items that they may need for their mission.\n
   They may also be called upon to assist with diplomatic tasks, using their negotiation skills
   to build relationships with other factions and gain valuable information.",
-  universe_id: scifi,
-  image_url: "https://cdn.midjourney.com/14b8f463-43bc-4d05-83df-16b8987c2676/grid_0.png",
+  universe: scifi,
+  image_card_url: "https://cdn.midjourney.com/14b8f463-43bc-4d05-83df-16b8987c2676/grid_0.png",
+  image_background_card_url: "https://cdn.midjourney.com/19453283-bb0d-4d69-ac47-462029c8fb5c/grid_0.png",
+  image_background_page_url: "https://cdn.midjourney.com/6a17f5a9-1af3-4c9f-aad7-2668e480afb3/grid_0.png",
   strength: 7,
   dexterity: 13,
   constitution: 11,
@@ -192,8 +214,10 @@ Character.create(
   able to read maps and charts to find the most direct and efficient route to their destination.\n
   They may also be called upon to assist with reconnaissance or scouting missions, using their
   knowledge of the terrain and their flying skills to gather information about the area.",
-  universe_id: scifi,
-  image_url: "https://cdn.midjourney.com/3a0485ac-0812-44cf-a828-1f771da610a3/grid_0.png",
+  universe: scifi,
+  image_card_url: "https://cdn.midjourney.com/3a0485ac-0812-44cf-a828-1f771da610a3/grid_0.png",
+  image_background_card_url: "https://cdn.midjourney.com/5b875094-a994-477c-b9b0-2c38a767bbf2/grid_0.png",
+  image_background_page_url: "https://cdn.midjourney.com/4f895648-b011-49af-9d66-c0671268b1be/grid_0.png",
   strength: 10,
   dexterity: 16,
   constitution: 12,

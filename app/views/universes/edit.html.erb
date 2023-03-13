@@ -1,0 +1,13 @@
+<%# edit page for universe with a container, a title and a form %>
+<div class="container">
+  <h1>Edit universe</h1>
+  <%= simple_form_for @universe do |f| %>
+    <%= f.input :theme %>
+    <%= f.input :description %>
+    <%= f.input :parameters %>
+    <%= f.input :initializer %>
+    <%= f.input :image_card_url %>
+    <%= f.input :image_background_url %>
+    <%= f.submit %>
+  <% end %>
+</div>

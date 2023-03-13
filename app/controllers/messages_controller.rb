@@ -49,7 +49,7 @@ class MessagesController < ApplicationController
         messages: messages, # Required.
         temperature: 0.7,
         max_tokens: 300,
-        # user: current_user.api_token
+        user: current_user.api_token
         # stream: true
       }
     )
