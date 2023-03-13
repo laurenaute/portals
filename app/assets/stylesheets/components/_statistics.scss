@@ -1,0 +1,13 @@
+.statistics {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  width: 100%;
+}
+
+.statistics p {
+  text-align: center;
+  font-weight: bold;
+  width: 140px;
+  margin: auto;
+}
