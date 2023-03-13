@@ -37,17 +37,16 @@
         </div>
       <% end %>
     </div>
-      <div class="chat-input mt-3">
-        <%= simple_form_for [@adventure, @message], wrapper: :inline_form, html: { class: 'chat-form' } do |f| %>
-          <div class="chat-form-input">
-            <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ..."%>
-          </div>
-          <div class="chat-form-submit">
-            <%= f.button :submit, value: "Send", class: "btn-play "%>
-          </div>
-        <% end %>
-      </div>
-
+    <div class="chat-input mt-3">
+      <%= simple_form_for [@adventure, @message], wrapper: :inline_form, html: { class: 'chat-form' } do |f| %>
+        <div class="chat-form-input">
+          <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ..."%>
+        </div>
+        <div class="chat-form-submit">
+          <%= f.button :submit, value: "Send", class: "btn-play "%>
+        </div>
+      <% end %>
+    </div>
   </div>
 </div>
 
