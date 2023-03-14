@@ -16,6 +16,15 @@
   backdrop-filter: blur(5px);
   width: fit-content;
   align-items:center;
+  &:hover {
+    transform: scale(1.06);
+    transition: transform 0.25s ease;
+    color: whitesmoke;
+    text-shadow: 0 0 10px black;
+    .card-background{
+      filter: contrast(107%);
+    }
+  }
 
   .card-product-infos {
     padding: 10px;
