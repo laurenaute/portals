@@ -1,3 +1,9 @@
+#adventure_character_name {
+  background: #bbbbbb94;
+  border: none;
+  border-radius: 10px;
+}
+
 .toggle {
   position: absolute;
   transform: scale(0);
@@ -73,8 +79,8 @@ input[type=radio] {
   input[type=radio] {
     position: absolute;
     visibility: hidden;
-  //   display: none;
-  //   transform: scale(0);
+    display: none;
+    transform: scale(0);
   }
 
 
