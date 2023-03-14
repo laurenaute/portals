@@ -10,7 +10,6 @@
     </strong></p>
   </div>
   <div class="chat-message-content">
-    <p style="white-space: pre-line;"><%= message.content %></p>
     <p style="white-space: pre-line;"><%= message.content.gsub(/\d\. .+/, '' ) %></p>
     <% if Message.last == message %>
       <%= simple_form_for  [@adventure, @message], data: {controller: "adventure-form"} do |f| %>
