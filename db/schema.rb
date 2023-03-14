@@ -54,6 +54,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_144922) do
     t.integer "completion_tokens"
     t.integer "total_tokens"
     t.bigint "user_id", null: false
+    t.string "log"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["adventure_id"], name: "index_messages_on_adventure_id"

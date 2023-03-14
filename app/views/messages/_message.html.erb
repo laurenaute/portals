@@ -1,4 +1,4 @@
-<div class="chat-message">
+<div class="chat-message" data-controller="adventure-subscription" data-adventure-subscription-adventure-id-value="<%= @adventure.id %>">
   <div class="chat-message-role">
     <p class="me-3"><strong>
       <% case message.role %>
@@ -10,13 +10,18 @@
     </strong></p>
   </div>
   <div class="chat-message-content">
-    <p style="white-space: pre-line;"><%= message.content %></p>
+    <% if message.content.nil? %>
+      <p style="white-space: pre-line;"><%= message.log %></p>
+    <% elsif message.role == "user" %>
+      <p style="white-space: pre-line;"><%= message.content %></p>
+    <% else %>
     <p style="white-space: pre-line;"><%= message.content.gsub(/\d\. .+/, '' ) %></p>
-    <% if Message.last == message %>
-      <%= simple_form_for  [@adventure, @message], data: {controller: "adventure-form"} do |f| %>
-        <%= f.input :content, :label=> '', as: :radio_buttons, collection: message.content.scan(/\d\. .+/),
-                    label_method: lambda {|content| render "select_action", content: content },
-                    input_html: {data: {action: "change->adventure-form#submit"}} %>
+      <% if Message.last == message %>
+        <%= simple_form_for [@adventure, Message.new], data: {controller: "adventure-form"} do |f| %>
+          <%= f.input :content, :label=> '', as: :radio_buttons, collection: message.content.scan(/\d\. .+/),
+                      label_method: lambda {|content| render "adventures/select_action", content: content },
+                      input_html: {data: {action: "change->adventure-form#submit"}} %>
+        <% end %>
       <% end %>
     <% end %>
   </div>

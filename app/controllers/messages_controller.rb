@@ -11,9 +11,8 @@ class MessagesController < ApplicationController
     @message.save
     AdventureChannel.broadcast_to(
       @adventure,
-      render_to_string(partial: "message", locals: { message: @message })
+      render_to_string(partial: "messages/message", locals: { message: @message, message_new: @message_new, adventure: @adventure} )
     )
-    head :ok
 
     client = OpenAI::Client.new
     # start_sequence = "\nassistant:"
@@ -62,6 +61,7 @@ class MessagesController < ApplicationController
     # parsed_response = JSON.parse(response.parsed_response)
     # raise
     message_response = Message.new
+    message_response.log = response
     message_response.adventure = Adventure.find(params[:adventure_id])
     message_response.role = response.dig("choices", 0, "message", "role")
     message_response.content = response.dig("choices", 0, "message", "content") #response["choices"][0]["text"] #response["choices"].map { |c| c["text"] }#response.dig("choices", 0, "message", "content")
@@ -70,7 +70,7 @@ class MessagesController < ApplicationController
     message_response.save
     AdventureChannel.broadcast_to(
       @adventure,
-      render_to_string(partial: "message", locals: { message: message_response })
+      render_to_string(partial: "messages/message", locals: { message: message_response, message_new: @message_new, adventure: @adventure} )
     )
     head :ok
     # redirect_to adventure_path(@message.adventure)
