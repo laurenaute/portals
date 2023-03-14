@@ -1,13 +1,33 @@
 .statistics {
-  display: grid;
+/*   display: grid;
   gap: 1em;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  width: 100%;
+  width: 100%; */
+  flex-grow: 1;
 }
 
 .statistics p {
-  text-align: center;
+/*   text-align: center;
   font-weight: bold;
-  width: 140px;
+  width: 140px; */
   margin: auto;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 10px;
+  font-weight: 400;
+  border-radius: 5px;
+  &:nth-of-type(odd) {
+    background: #0e00005c;
+  }
+
+  span {
+    display: inline-block;
+    margin-left: 20px;
+    text-align: right;
+    font-size: 20px;
+    font-weight: 700;
+  }
+
 }

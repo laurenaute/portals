@@ -18,12 +18,12 @@
   height: 20px;
   top: 0;
   left: 0;
-  background-color: grey;
+  background-color: whitesmoke;
   border-radius: 50rem;
 }
 
 .toggle:checked + label::before {
-  background-color: #507D88;
+  background-color: $blue;
 }
 
 .toggle + label::after {
@@ -35,12 +35,13 @@
   height: 16px;
   top: 2px;
   left: 2px;
-  background-color: whitesmoke;
+  background-color: $blue;
   border-radius: 50%;
   transition: left 0.2s ease;
 }
 
 .toggle:checked + label::after {
+  background-color: whitesmoke;
   left: 18px;
 }
 
@@ -56,7 +57,7 @@ input[type=radio] {
 
 input[type=radio]:checked + label > .radio-group {
   color: white;
-  background-color: #124652;
+  background-color: $blue;
   border-radius: 5px;
 }
 
@@ -70,13 +71,15 @@ input[type=radio]:checked + label > .radio-group {
 }
 
 .radio-group {
-  background-color: $color-btn;
+  background-color: whitesmoke;
   border-radius: 5px;
   padding: 7px 12px;
   overflow: hidden;
   cursor: pointer;
   transition-duration: 0.8s;
   text-align: center;
+  color: $dark-blue;
+  text-shadow: none;
   &:hover{
     color: $color-btn;
     background-color: white ;
