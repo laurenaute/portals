@@ -1,3 +1,5 @@
+<% content_for(:back_url, universe_path(@character.universe)) %>
+
 <div class="character-background h-screen adventure-new" style="background: url(<%= @character.image_background_page_url %>);">
   <div class="container pt-5 pb-2">
     <h1 class="title"><%= @character.name %></h1>
@@ -30,9 +32,6 @@
         <% end %>
         </div>
       </div>
-    </div>
-    <div class="back-btn">
-      <%= link_to '<', universe_path(@character.universe), class:"btn-back"%>
     </div>
   </div>
 </div>

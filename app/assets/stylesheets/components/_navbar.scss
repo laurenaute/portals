@@ -5,7 +5,7 @@
   background: $color-navbar;
   left: -230px;
   transition: 0.5s ease-out;
-  z-index: 4;
+  z-index: 50;
 }
 
 #side-bar.non-visible {
@@ -16,7 +16,7 @@
   top: 0;
   left: 0px;
   transition: 0.5s ease-out;
-  z-index: 4;
+  z-index: 50;
 }
 
 .non-visible ~ .content{
@@ -43,6 +43,10 @@ opacity: 0;
   cursor: pointer;
   height: 50px;
   width: 50px;
+  transition-duration: 0.5s ease;
+  &:hover{
+    text-shadow: 0px 0px 5px white;
+  }
 }
 
 .toggle-btn span {
@@ -93,4 +97,24 @@ opacity: 0;
 
 .logo-navbar{
   width: 30px;
+}
+
+.return-page-navbar{
+  font-size: 2.5rem;
+  color: whitesmoke;
+  position: absolute;
+  bottom: 30px;
+  left: 240px;
+  cursor: pointer;
+  height: 50px;
+  width: 50px;
+  > a {
+    text-decoration: none;
+    text-decoration: none;
+    color: whitesmoke;
+    transition-duration: 0.5s ease-in-out;
+  }
+  > a:hover{
+    text-shadow: 0px 0px 5px white;
+  }
 }
