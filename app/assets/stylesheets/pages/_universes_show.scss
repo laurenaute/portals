@@ -21,3 +21,44 @@
   box-shadow: 0 0 20px #303030;
   white-space: pre-line;
 }
+
+.universe-background{
+  .modal-display{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 2em;
+    backdrop-filter: blur(5px);
+    background: #43434394;
+    border-radius: 10px;
+    margin-left: 15px;
+  }
+  .statistics{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 3px;
+    grid-row-gap: 3px;
+    width: 85%;
+    margin: auto;
+  }
+  #stat-1{
+    grid-area: 1 / 1 / 2 / 2;
+  }
+  #stat-2{
+    grid-area: 1 / 2 / 2 / 3;
+  }
+  #stat-3{
+    grid-area: 1 / 3 / 2 / 4;
+  }
+  #stat-4{
+    grid-area: 2 / 1 / 3 / 2;
+  }
+  #stat-5{
+    grid-area: 2 / 2 / 3 / 3;
+  }
+  #stat-6{
+    grid-area: 2 / 3 / 3 / 4;
+  }
+}

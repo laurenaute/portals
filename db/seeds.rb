@@ -112,7 +112,7 @@ Character.create!(
   In addition to their combat skills, Soldiers are also trained in survival techniques and are able to navigate difficult terrain, find shelter, and procure food and water in the field.",
   universe: scifi,
   image_card_url: "https://cdn.midjourney.com/64566c22-6cf7-412b-874d-218df4699646/grid_0.png",
-  image_background_card_url: "https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png",
+  image_background_card_url: "https://cdn.midjourney.com/aeb6f4db-fd51-4ddc-9a8d-3cd6685486cb/grid_0.png",
   image_background_page_url: "https://cdn.midjourney.com/ff4eda65-12d4-4e9b-80ca-5444cdd78742/grid_0.png",
   strength: 15,
   dexterity: 12,

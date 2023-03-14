@@ -22,12 +22,10 @@
         <div class="form-display form-adventure-new">
         <%= simple_form_for [@character, @adventure] do |f| %>
           <%= f.input :character_name %>
-
-
           <%= f.input :choices, as: :boolean, input_html: { class: "toggle" } %>
           <%= f.input :difficulty, checked: "Normal", collection: [ "Easy", "Normal", "Hard"], as: :radio_buttons,
                       label_method: lambda { |difficulty| render "difficulty_label", difficulty: difficulty },
-                      wrapper_html: {class: "d-flex flex-wrap justify-content-between"} %>
+                      wrapper_html: { class: "d-flex flex-wrap justify-content-between"} %>
           <%= f.button :submit, class: "btn-home", data: { action: "click->loading-page#launchLoader" } %>
         <% end %>
         </div>

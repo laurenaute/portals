@@ -1,5 +1,5 @@
 #side-bar {
-  position: absolute;
+  position: fixed;
   width: 230px;
   height: 100%;
   background: $color-navbar;
@@ -9,7 +9,7 @@
 }
 
 #side-bar.non-visible {
-  position: absolute;
+  position: fixed;
   width: 230px;
   height: 100%;
   background: $color-navbar;
