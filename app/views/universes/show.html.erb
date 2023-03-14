@@ -1,3 +1,5 @@
+<% content_for(:back_url, universes_path) %>
+
 <div class="universe-background h-screen" style="background: url(<%= @universe.image_background_url %>)">
   <div class="container py-3">
     <h1 class="title"><%= @universe.theme %></h1>

@@ -4,8 +4,15 @@
       <span></span>
       <span></span>
     </div>
-    <div class="return-page-navbar">
-    <%= link_to " ", :back, class: "fas fa-chevron-left" %></div>
+    <% unless controller_name == 'universes' && action_name == 'index' %>
+      <div class="return-page-navbar">
+        <% if content_for?(:back_url)  %>
+        <%= link_to " ", content_for(:back_url), class: "fas fa-chevron-left" %>
+        <% else %>
+        <%= link_to " ", :back, class: "fas fa-chevron-left" %>
+        <% end %>
+      </div>
+    <% end %>
     <%# <i class="fas fa-chevron-left"></i></div> %>
 
     <div class="navbar">
