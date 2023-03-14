@@ -6,12 +6,12 @@
         <div class="character-card-creation">
           <img class="class-img character-creation-img" src=<%= @character.image_card_url %> alt="">
           <div class="statistics">
-            <p>Strength: <%= @character.strength %></p>
-            <p>Dexterity: <%= @character.dexterity %></p>
-            <p>Constitution: <%= @character.constitution %></p>
-            <p>Intelligence: <%= @character.intelligence %></p>
-            <p>Wisdom: <%= @character.wisdom %></p>
-            <p>Charisma: <%= @character.charisma %></p>
+            <p>Strength <span><%= @character.strength %></span></p>
+            <p>Dexterity <span><%= @character.dexterity %></span></p>
+            <p>Constitution <span><%= @character.constitution %></span></p>
+            <p>Intelligence <span><%= @character.intelligence %></span></p>
+            <p>Wisdom <span><%= @character.wisdom %></span></p>
+            <p>Charisma <span><%= @character.charisma %></span></p>
           </div>
         </div>
         <div class="character-text">
@@ -31,8 +31,8 @@
         </div>
       </div>
     </div>
-    <div class="btn-back">
-      <%= link_to '<', universe_path(@character.universe), class:"btn-home"%>
+    <div class="back-btn">
+      <%= link_to '<', universe_path(@character.universe), class:"btn-back"%>
     </div>
   </div>
 </div>
