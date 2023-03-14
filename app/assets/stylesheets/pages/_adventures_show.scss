@@ -11,9 +11,29 @@
 // }
 
 .adventure-play {
-  background-color: $adventure-play-background;
+  // background-color: $adventure-play-background;
+  // background-image:linear-gradient(170deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url(https://media.discordapp.net/attachments/1083356555954622534/1084875851436404836/Sparday_space_spaceship_battle_a1c56058-19ab-4060-9760-4fc9c276475d.png?width=1968&height=1124);
+  // height: 100%;
+  // width: 100vh;
   color: $adventure-play-text;
-  min-height: 93vh;
+  text-shadow: 2px 2px 5px #0e000075;
+}
+
+.background-adventures-show{
+  background-image:linear-gradient(170deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1.9)), url(https://media.discordapp.net/attachments/1083356555954622534/1084875851436404836/Sparday_space_spaceship_battle_a1c56058-19ab-4060-9760-4fc9c276475d.png?width=1968&height=1124);
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  display: block;
+  filter: blur(7px);
+  // -webkit-filter: blur(5px);
+  // height: 800px;
+  left: 0;
+  position: fixed;
+  // background: #43434394;
+  right: 0;
+  z-index: -1;
+  transform: scale(1.1);
 }
 
 .bubble {
@@ -71,11 +91,11 @@
 }
 
 .chat-message-role {
-  width: 20%;
+  width: 13%;
 }
 
 .chat-message-content {
-  width: 80%;
+  width: 87%;
 }
 
 .chat-form {
