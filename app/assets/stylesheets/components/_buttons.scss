@@ -1,16 +1,49 @@
+.btn-homepage{
+  border-radius: 15px;
+  background-color: $blue;
+  padding: 20px 50px;
+  border: 1px solid $blue;
+  text-decoration: none;
+  color: whitesmoke;
+  font-weight: bold;
+  font-size: 18px;
+  transition-duration: 0.7s;
+  &:hover{
+    color: $blue;
+    background-color: whitesmoke ;
+    border: 1px solid $blue;
+  }
+}
+
 .btn-home {
   border-radius: 15px;
   background-color: $color-btn;
   padding: 20px 50px;
   border: 1px solid $color-btn;
   text-decoration: none;
-  color: white;
+  color: whitesmoke;
   font-weight: bold;
-  transition-duration: 0.8s;
+  font-size: 18px;
+  transition-duration: 0.4s;
   &:hover{
-    color: $color-btn;
-    background-color: whitesmoke ;
+    color: whitesmoke;
+    background-color: $darker-blue ;
   }
+}
+
+.btn-back {
+  border-radius: 15px;
+    background-color: #0e000061;
+    padding: 20px 50px;
+    text-decoration: none;
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: 22px;
+    transition-duration: 0.4s;
+    &:hover{
+      color: whitesmoke;
+      background-color: black ;
+    }
 }
 
 .btn-play {
@@ -28,7 +61,7 @@
   }
 }
 
-.btn-back .btn-home {
+.back-btn .btn-back {
   display: inline-block;
   margin-top: 1rem;
 }

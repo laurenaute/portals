@@ -2,7 +2,6 @@
 
 // For example:
 $red: #FD1015;
-$blue: #0D6EFD;
 $yellow: #FFC65A;
 $orange: #E67E22;
 $green: #1EDD88;
@@ -10,7 +9,10 @@ $gray: #0E0000;
 $light-gray: #F4F4F4;
 
 // UI Kit
-$color-btn: #507D88;
+$blue: #507D88;
+$dark-blue: #11424d;
+$darker-blue: #0a3039;
+$color-btn: $dark-blue;
 $color-navbar: #323232;
 $adventure-play-background: #525252;
 $adventure-play-text: #F4F4F4;

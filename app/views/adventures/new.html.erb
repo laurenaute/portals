@@ -1,3 +1,5 @@
+<% content_for(:back_url, universe_path(@character.universe)) %>
+
 <div class="character-background h-screen adventure-new" style="background: url(<%= @character.image_background_page_url %>);">
   <div class="container pt-5 pb-2">
     <h1 class="title"><%= @character.name %></h1>
@@ -6,12 +8,12 @@
         <div class="character-card-creation">
           <img class="class-img character-creation-img" src=<%= @character.image_card_url %> alt="">
           <div class="statistics">
-            <p>Strength: <%= @character.strength %></p>
-            <p>Dexterity: <%= @character.dexterity %></p>
-            <p>Constitution: <%= @character.constitution %></p>
-            <p>Intelligence: <%= @character.intelligence %></p>
-            <p>Wisdom: <%= @character.wisdom %></p>
-            <p>Charisma: <%= @character.charisma %></p>
+            <p>Strength <span><%= @character.strength %></span></p>
+            <p>Dexterity <span><%= @character.dexterity %></span></p>
+            <p>Constitution <span><%= @character.constitution %></span></p>
+            <p>Intelligence <span><%= @character.intelligence %></span></p>
+            <p>Wisdom <span><%= @character.wisdom %></span></p>
+            <p>Charisma <span><%= @character.charisma %></span></p>
           </div>
         </div>
         <div class="character-text">
@@ -30,9 +32,6 @@
         <% end %>
         </div>
       </div>
-    </div>
-    <div class="btn-back">
-      <%= link_to '<', universe_path(@character.universe), class:"btn-home"%>
     </div>
   </div>
 </div>
