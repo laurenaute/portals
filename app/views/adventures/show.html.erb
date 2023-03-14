@@ -1,16 +1,19 @@
-<div class="adventure-play h-screen" data-controller="adventure-subscription" data-adventure-subscription-adventure-id-value="<%= @adventure.id %>">
-  <div class="background-adventures-show"></div>
+<div class="adventure-play" data-controller="adventure-subscription" data-controller="adventure-form" data-adventure-subscription-adventure-id-value="<%= @adventure.id %>">
   <div class="container p-5">
     <h1 class="mb-4">Play your adventure</h1>
     <div class="chat-content" data-adventure-subscription-target="messages">
       <% @messages.each do |message| %>
-        <%= render partial: "messages/message", locals: { message: message, message_new: @message_new, adventure: @adventure } %>
+        <%= render partial: "messages/message", locals: { message: message } %>
       <% end %>
     </div>
-    <div class="chat-input mt-3">
+    <div class="chat-input mt-3" data-controller="adventure-form">
+      <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons">
+        <%= render partial: "buttons", locals: { message: Message.last } %>
+      </div>
+
       <%= simple_form_for [@adventure, @message_new], wrapper: :inline_form, html: { data: { action: "turbo:submit-end->adventure-subscription#resetForm" }, class: 'chat-form' } do |f| %>
-          <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ...", wrapper_html: {class: "chat-form-input"}%>
-          <%= f.submit "Send", class: "btn-play ", wrapper_html: {class: "chat-form-submit"}%>
+          <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ...", wrapper_html: {class: "chat-form-input"}, input_html: {data: {"adventure-form-target": "input"}}%>
+          <%= f.submit "Send", class: "btn-play", wrapper_html: {class: "chat-form-submit"}%>
       <% end %>
     </div>
   </div>

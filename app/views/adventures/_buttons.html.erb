@@ -1,0 +1,7 @@
+<% message.content.scan(/\d\. .+/).each do |content| %>
+  <div data-adventure-form-target= "button">
+    <div data-action="click->adventure-form#submit" data-content="<%= content %>">
+      <%= render "adventures/select_action", content: content %>
+    </div>
+  </div>
+<% end %>
