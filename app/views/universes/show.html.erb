@@ -1,5 +1,5 @@
 <div class="universe-background h-screen" style="background: url(<%= @universe.image_background_url %>)">
-  <div class="container py-5">
+  <div class="container py-3">
     <h1 class="title"><%= @universe.theme %></h1>
     <div class="description">
      <p><span><%= @universe.description %></span></p>
@@ -48,8 +48,8 @@
         </div>
       <% end %>
     </div>
-  <div class="btn-div mt-2">
+  <%# <div class="btn-div mt-2">
     <%= link_to '<', universes_path, class:"btn-back"%>
-  </div>
+  <%# </div> %>
   </div>
 </div>
