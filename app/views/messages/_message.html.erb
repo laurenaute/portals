@@ -11,7 +11,7 @@
   </div>
   <div class="chat-message-content">
     <% if message.content.nil? %>
-      <p style="white-space: pre-line;"><%= message.log %></p>
+      <p style="white-space: pre-line;"><%= Sorry ! An error occurred. Please retry %></p>
     <% elsif message.role == "user" %>
       <p style="white-space: pre-line;"><%= message.content %></p>
     <% else %>
