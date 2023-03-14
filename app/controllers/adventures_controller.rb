@@ -8,7 +8,7 @@ class AdventuresController < ApplicationController
   end
 
   def show
-    @message = Message.new
+    @message_new = Message.new
 
     if @adventure.messages.last.nil?
       initializer = Message.new
@@ -54,6 +54,7 @@ class AdventuresController < ApplicationController
           # stream: true
         }
       )
+      initializer.log = response
       initializer.adventure = @adventure
       initializer.role = "assistant"
       initializer.user = current_user
