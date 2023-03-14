@@ -11,7 +11,7 @@ class MessagesController < ApplicationController
     @message.save
     AdventureChannel.broadcast_to(
       @adventure,
-      render_to_string(partial: "messages/message", locals: { message: @message, message_new: @message_new, adventure: @adventure} )
+      render_to_string(partial: "messages/message", locals: { message: @message } )
     )
 
     client = OpenAI::Client.new
@@ -70,7 +70,11 @@ class MessagesController < ApplicationController
     message_response.save
     AdventureChannel.broadcast_to(
       @adventure,
-      render_to_string(partial: "messages/message", locals: { message: message_response, message_new: @message_new, adventure: @adventure} )
+      render_to_string(partial: "messages/message", locals: { message: message_response } )
+    )
+    AdventureChannel.broadcast_to(
+      @adventure,
+      render_to_string(partial: "adventures/buttons", locals: { message: message_response } )
     )
     head :ok
     # redirect_to adventure_path(@message.adventure)
