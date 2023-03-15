@@ -13,13 +13,18 @@
   text-shadow: 0 0 10px black;
 }
 
+.univers-title {
+  margin-bottom: 0;
+  text-align: center;
+}
 .description {
-  padding: 20px;
+  padding: 0px 15px;
   background: #43434394;
   backdrop-filter: blur(5px);
   border-radius: 10px;
   box-shadow: 0 0 20px #303030;
   white-space: pre-line;
+  margin-top: 2%;
 }
 
 .universe-background{
@@ -41,6 +46,9 @@
     grid-column-gap: 3px;
     grid-row-gap: 3px;
     width: 85%;
+    margin: auto;
+  }
+  .modal-header{
     margin: auto;
   }
   #stat-1{
