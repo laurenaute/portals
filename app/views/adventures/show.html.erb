@@ -11,17 +11,17 @@
       <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons" class="d-flex flex-wrap w-100">
         <%= render partial: "buttons", locals: { message: Message.last } %>
       </div>
-    </div>
 
-    <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-      OH Look!
-    </button>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body jean-body">
-        <%= simple_form_for [@adventure, @message_new], wrapper: :inline_form, html: { data: { action: "turbo:submit-end->adventure-subscription#resetForm" }, class: 'chat-form' } do |f| %>
-          <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ...", wrapper_html: {class: "chat-form-input"}, input_html: {data: {"adventure-form-target": "input"}}%>
-          <%= f.submit "Send", class: "btn-play", wrapper_html: {class: "chat-form-submit"}%>
-        <% end %>
+      <button class="btn btn-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        OH Look!
+      </button>
+      <div class="collapse" id="collapseExample">
+        <div class="card card-body jean-body">
+          <%= simple_form_for [@adventure, @message_new], wrapper: :inline_form, html: { data: { action: "turbo:submit-end->adventure-subscription#resetForm" }, class: 'chat-form' } do |f| %>
+            <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ...", wrapper_html: {class: "chat-form-input"}, input_html: {data: {"adventure-form-target": "input"}}%>
+            <%= f.submit "Send", class: "btn-play", wrapper_html: {class: "chat-form-submit"}%>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
