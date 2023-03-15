@@ -9,7 +9,7 @@
     </div>
 
     <div class="chat-input mt-2 max-h-40" data-controller="adventure-form">
-      <div id="adventure-text-loader" data-loader-adventure-page-target="loader" data-adventure-subscription-target="loader"></div>
+      <div id="adventure-text-loader" data-loader-adventure-page-target="loader" data-adventure-subscription-target="loader"><p id="loading-text-adventure" data-loader-adventure-page-target="text">CHARGEMENT</p></div>
       <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons" data-loader-adventure-page-target="button" class="d-flex flex-wrap w-100">
         <%= render partial: "buttons", locals: { message: Message.last } %>
       </div>
