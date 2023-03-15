@@ -81,8 +81,8 @@
   overflow: scroll;
   border-bottom: 1px solid #ccc;
   // always start at the bottom
-  display: flex;
-  flex-direction: column-reverse;
+  // display: flex;
+  // flex-direction: column-reverse;
 
   // background: linear-gradient(40deg, rgba(255, 255, 255, 0.2) 00%, rgba(255, 255, 255, 0.3) 100%);
 }

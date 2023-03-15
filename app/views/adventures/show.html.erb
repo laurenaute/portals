@@ -3,13 +3,14 @@
   <div class="container p-5">
     <h1 class="mb-4">Play your adventure</h1>
     <div class="chat-content" data-adventure-subscription-target="box">
-      <div class="new_message" >
-          <span data-adventure-subscription-target="new"></span>
-      </div>
+
       <div data-adventure-subscription-target="messages">
         <% @messages.each do |message| %>
           <%= render partial: "messages/message", locals: { message: message } %>
         <% end %>
+      </div>
+      <div class="new_message" >
+          <span data-adventure-subscription-target="new"></span>
       </div>
     </div>
 

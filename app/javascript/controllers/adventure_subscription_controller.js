@@ -13,6 +13,8 @@ export default class extends Controller {
       { received: data => this.#insertMessageAndScrollDown(data) }
     );
     console.log(`Connecting to Adventure #${this.adventureIdValue}`);
+    this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+
   }
 
   disconnect() {
@@ -28,18 +30,14 @@ export default class extends Controller {
   // Private methods
 
   #insertMessageAndScrollDown(data) {
-    //Use Typed.js to animate the message
     if (data.search("message") != -1) {
       if (data.search("Gamemaster") != -1) {
         const options = {
           strings: [data],
           typeSpeed: 0,
           showCursor: false,
-          onStart: (self) => {
-            this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
-          },
-          // scroll to bottom of box while typing
-          onStringTyped: (self) => {
+          onBegin: (self) => {
+            this.newTarget.innerHTML = ">"
             this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
           },
           onComplete: (self) => {
@@ -48,6 +46,7 @@ export default class extends Controller {
             this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
           }
         }
+        this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
         new Typed(this.newTarget, options)
 
       }
@@ -56,12 +55,6 @@ export default class extends Controller {
       this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
       }
     }
-
-
-
-
-      // this.messagesTarget.insertAdjacentHTML("beforeend", data)
-      // this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
 
     if (data.search("button") != -1) {
       this.buttonsTarget.insertAdjacentHTML("beforeend", data)
