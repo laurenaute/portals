@@ -1,13 +1,13 @@
 import { Controller } from "@hotwired/stimulus"
 import { createConsumer } from "@rails/actioncable";
+import Typed from "typed.js"
 
 // Connects to data-controller="adventure-subscription"
 export default class extends Controller {
   static values = { adventureId: Number }
-  static targets = [ "messages", "buttons" ]
+  static targets = [ "messages", "buttons", "new", "box"]
 
   connect() {
-    // Connect to the ActionCable channel
     this.channel = createConsumer().subscriptions.create(
       { channel: "AdventureChannel", id: this.adventureIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
@@ -28,25 +28,43 @@ export default class extends Controller {
   // Private methods
 
   #insertMessageAndScrollDown(data) {
-    // Detect if the data is a message or a button
-    // if it is a message, insert it in the messages target
-    // if it is a button, insert it in the buttons target
-    // scroll down the messages target
-
+    //Use Typed.js to animate the message
     if (data.search("message") != -1) {
+      if (data.search("Gamemaster") != -1) {
+        const options = {
+          strings: [data],
+          typeSpeed: 0,
+          showCursor: false,
+          onStart: (self) => {
+            this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+          },
+          // scroll to bottom of box while typing
+          onStringTyped: (self) => {
+            this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+          },
+          onComplete: (self) => {
+            this.newTarget.innerHTML = ""
+            this.messagesTarget.insertAdjacentHTML("beforeend", data)
+            this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+          }
+        }
+        new Typed(this.newTarget, options)
+
+      }
+      else {
       this.messagesTarget.insertAdjacentHTML("beforeend", data)
-      this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+      this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+      }
     }
+
+
+
+
+      // this.messagesTarget.insertAdjacentHTML("beforeend", data)
+      // this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+
     if (data.search("button") != -1) {
       this.buttonsTarget.insertAdjacentHTML("beforeend", data)
     }
-
-
-
-
-
-
-
-
   }
 }

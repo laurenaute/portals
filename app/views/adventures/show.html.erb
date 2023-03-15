@@ -2,11 +2,17 @@
   <div class="background-adventures-show"></div>
   <div class="container p-5">
     <h1 class="mb-4">Play your adventure</h1>
-    <div class="chat-content" data-adventure-subscription-target="messages">
-      <% @messages.each do |message| %>
-        <%= render partial: "messages/message", locals: { message: message } %>
-      <% end %>
+    <div class="chat-content" data-adventure-subscription-target="box">
+      <div class="new_message" >
+          <span data-adventure-subscription-target="new"></span>
+      </div>
+      <div data-adventure-subscription-target="messages">
+        <% @messages.each do |message| %>
+          <%= render partial: "messages/message", locals: { message: message } %>
+        <% end %>
+      </div>
     </div>
+
 
     <div class="chat-input mt-3" data-controller="adventure-form">
       <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons" class="d-flex flex-wrap w-100">
