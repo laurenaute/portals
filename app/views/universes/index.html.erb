@@ -1,6 +1,6 @@
 <div class="move-background">
   <div class="container h-screen">
-  <h1 class="title-universe">Choose your universe</h1>
+  <h1 class="title-universe">choisissez votre univers</h1>
   <div class="container-universe">
     <% @universes.order(:id).each do |universe| %>
       <%= link_to universe_path(universe) do %>

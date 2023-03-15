@@ -5,7 +5,7 @@ import Typed from "typed.js"
 export default class extends Controller {
   connect() {
     new Typed(this.element, {
-      strings: ["Live your adventure", "A unique adventure"],
+      strings: ["Vivez une aventure", "Une aventure unique"],
       typeSpeed: 90,
       loop: true
     })

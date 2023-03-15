@@ -21,9 +21,9 @@
         <%= render partial: "buttons", locals: { message: Message.last } %>
       </div>
 
-      <button class="btn btn-secondary btn-make-your-choice" type="button" data-adventure-subscription-target="choiceButton" data-loader-adventure-page-target="choiceButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        Make your own choice
-      </button>
+      <a class="btn-make-your-choice" type="button" data-adventure-subscription-target="choiceButton" data-loader-adventure-page-target="choiceButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+        <i class="fas fa-pen"></i>
+      </a>
       <div class="collapse" id="collapseExample">
         <div class="card card-body jean-body">
           <%= simple_form_for [@adventure, @message_new], wrapper: :inline_form, html: { data: { action: "turbo:submit-end->adventure-subscription#resetForm" }, class: 'chat-form' } do |f| %>
