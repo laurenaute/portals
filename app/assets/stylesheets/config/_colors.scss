@@ -16,3 +16,49 @@ $color-btn: $dark-blue;
 $color-navbar: #323232;
 $adventure-play-background: #525252;
 $adventure-play-text: #F4F4F4;
+
+
+// Stat color
+$stat-red: #FF0303; // O-3
+$stat-medium-red: #f84851 ; // 3-8
+$stat-medium-orange: #F99417; // 8-10
+$stat-high-orange: #fc6f12; // 10-13
+$stat-medium-green: rgba(0, 225, 149, 1) ; //14-17
+$stat-high-green: rgba(0, 255, 0, 1); // 17-20
+
+.color-medium-red{
+  color: $stat-medium-red;
+  animation: pulse-text-red 1s alternate infinite;
+}
+.color-medium-orange{
+  color: $stat-medium-orange;
+}
+.color-high-orange{
+  color: $stat-high-orange;
+}
+.color-medium-green{
+  color: $stat-medium-green;
+  text-shadow: 0px 0px 1px $stat-medium-green;
+  animation: pulse-text-gold 1s alternate infinite;
+}
+.color-high-green{
+  color: $stat-high-green;
+  text-shadow: 0px 0px 2px $stat-high-green;
+  animation: pulse-text-gold 1s alternate infinite;
+}
+
+@keyframes pulse-text-gold {
+  0%{
+      text-shadow:
+      0 0 5px rgba(255, 204, 0, 0.86),
+      ;
+  }
+}
+
+@keyframes pulse-text-red {
+  0%{
+      text-shadow:
+      0 0 4px rgba(255, 60, 0, 0.658),
+      ;
+  }
+}

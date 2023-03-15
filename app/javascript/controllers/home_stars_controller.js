@@ -13,10 +13,10 @@ export default class extends Controller {
     particlesJS("particles-js", {
       "particles": {
         "number": {
-          "value": 600,
+          "value": 1000,
           "density": {
             "enable": true,
-            "value_area": 789.1476416322727
+            "value_area": 799.1476416322727
           }
         },
         "color": {
@@ -38,7 +38,7 @@ export default class extends Controller {
           }
         },
         "opacity": {
-          "value": 0.83927153781200905,
+          "value": 0.87927153781200905,
           "random": false,
           "anim": {
             "enable": true,
@@ -48,7 +48,7 @@ export default class extends Controller {
           }
         },
         "size": {
-          "value": 2.5,
+          "value": 2.65,
           "random": true,
           "anim": {
             "enable": true,
@@ -101,8 +101,8 @@ export default class extends Controller {
           },
           "bubble": {
             "distance": 83.91608391608392,
-            "size": 3,
-            "duration": 3,
+            "size": 3.5,
+            "duration": 4,
             "opacity": 1,
             "speed": 3
           },

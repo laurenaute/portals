@@ -8,10 +8,12 @@
   font-weight: bold;
   font-size: 18px;
   transition-duration: 0.7s;
+  animation: pulse 1s alternate infinite;
   &:hover{
     color: $blue;
     background-color: whitesmoke ;
     border: 1px solid $blue;
+    animation: none;
   }
 }
 
@@ -69,5 +71,14 @@
 @media (max-width: 768px) {
   .btn-play {
     padding: 0;
+  }
+}
+
+@keyframes pulse {
+  0%{
+      box-shadow:
+      0 0 2px $blue,
+      0 0 6px #dedede;
+      ;
   }
 }

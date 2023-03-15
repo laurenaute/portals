@@ -7,10 +7,11 @@
     <% unless controller_name == 'universes' && action_name == 'index' || controller_name == 'adventures' && action_name == 'show' %>
       <div class="return-page-navbar">
         <% if content_for?(:back_url)  %>
-        <%= link_to " ", content_for(:back_url), class: "fas fa-chevron-left" %>
+        <%= link_to "", content_for(:back_url), class: "fas fa-step-backward", id: "back-btn" %>
         <% else %>
         <%= link_to " ", :back, class: "fas fa-chevron-left" %>
         <% end %>
+        <label for="back-btn" id="text-btn-back">Retour</label>
       </div>
     <% end %>
     <%# <i class="fas fa-chevron-left"></i></div> %>
