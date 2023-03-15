@@ -50,6 +50,13 @@
   background-color: whitesmoke;
   left: 18px;
 }
+// collapse btn
+
+.jean-body {
+  padding: inherit;
+    border-radius: 10px;
+    border: none;
+}
 
 //radio btn
 
@@ -74,12 +81,6 @@
   }
 
   /*** CSS - APP USE ***/
-  .btn-display {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 16px;
-  }
-
   .btn-wrapper {
     text-shadow: none;
     cursor: pointer;
