@@ -28,7 +28,7 @@
             <%= f.input :difficulty, checked: "Normal", collection: [ "Easy", "Normal", "Hard"], as: :radio_buttons,
                         label_method: lambda { |difficulty| render "difficulty_label", difficulty: difficulty },
                         wrapper_html: { class: "d-flex flex-wrap justify-content-between"} %>
-            <%= f.button :submit, class: "btn-home", data: { action: "click->loading-page#launchLoader" } %>
+            <%= f.button :submit, value: "Commencer l'aventure", class: "btn-home", data: { action: "click->loading-page#launchLoader" } %>
           <% end %>
           </div>
         </div>
