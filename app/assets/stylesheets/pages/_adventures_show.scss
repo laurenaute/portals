@@ -125,3 +125,20 @@
     width: 100%;
   }
 }
+
+#adventure-text-loader{
+  display: none;
+  text-align: center;
+  background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNDk0NjAzODAyN2ZiMGMwNjk4OTU0YTY0Yjk3NjVhYTdmODlkNzVjYyZjdD1n/TtbA8dEMBz8xG/giphy.gif');
+  position: relative;
+  height: 21vh;
+  object-fit: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+}
+
+
+.buttons-choice-aventure{
+  // display: none;
+}

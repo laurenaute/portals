@@ -4,7 +4,7 @@ import { createConsumer } from "@rails/actioncable";
 // Connects to data-controller="adventure-subscription"
 export default class extends Controller {
   static values = { adventureId: Number }
-  static targets = [ "messages", "buttons" ]
+  static targets = [ "messages", "buttons", "loader" ]
 
   connect() {
     // Connect to the ActionCable channel
@@ -12,7 +12,6 @@ export default class extends Controller {
       { channel: "AdventureChannel", id: this.adventureIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
     );
-    console.log(`Connecting to Adventure #${this.adventureIdValue}`);
   }
 
   disconnect() {
@@ -39,10 +38,8 @@ export default class extends Controller {
     }
     if (data.search("button") != -1) {
       this.buttonsTarget.insertAdjacentHTML("beforeend", data)
+      this.loaderTarget.style.display = 'none'
     }
-
-
-
 
 
 
