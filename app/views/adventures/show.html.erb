@@ -8,7 +8,7 @@
       <% end %>
     </div>
     <div class="chat-input mt-3" data-controller="adventure-form">
-      <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons">
+      <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons" class="btn-display">
         <%= render partial: "buttons", locals: { message: Message.last } %>
       </div>
 
