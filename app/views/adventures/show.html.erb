@@ -1,13 +1,13 @@
 <div class="adventure-play h-screen" data-controller="adventure-subscription" data-controller="adventure-form" data-adventure-subscription-adventure-id-value="<%= @adventure.id %>">
   <div class="background-adventures-show"></div>
-  <div class="container p-5">
+  <div class="container p-5" data-controller="adventure-form">
     <h1 class="mb-4">Play your adventure</h1>
     <div class="chat-content" data-adventure-subscription-target="messages">
       <% @messages.each do |message| %>
         <%= render partial: "messages/message", locals: { message: message } %>
       <% end %>
     </div>
-    <div class="chat-input mt-3" data-controller="adventure-form">
+    <div class="chat-input mt-3">
       <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons" class="d-flex flex-wrap w-100">
         <%= render partial: "buttons", locals: { message: Message.last } %>
       </div>

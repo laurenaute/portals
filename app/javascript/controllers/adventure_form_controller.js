@@ -6,6 +6,7 @@ export default class extends Controller {
 
 
   connect() {
+    console.log("connected");
   }
 
   submit(event) {
@@ -14,7 +15,7 @@ export default class extends Controller {
     // console.log(event.target);
     // console.log(event.target.innerHTML);
 
-
+    console.log(this.inputTarget);
     this.inputTarget.value = event.target.innerHTML;
 
     // click on the submit button
