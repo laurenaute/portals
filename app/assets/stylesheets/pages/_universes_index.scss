@@ -1,7 +1,7 @@
 
 .container-universe {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -120,7 +120,8 @@
       z-index: 100;
       animation-name: bg1Anim;
       animation-duration: 10s;
-      background-image: url(https://t3.ftcdn.net/jpg/04/74/13/10/240_F_474131081_SwhJcfuc3WVkaMzUxSKX71rfJnDGp2S8.jpg);
+      animation-iteration-count: infinite;
+      background-image: url(https://media.istockphoto.com/id/1288635857/fr/vectoriel/illustration-vectorielle-des-aurores-bor%C3%A9ales-sur-un-fond-fonc%C3%A9.jpg?s=612x612&w=0&k=20&c=fEA2n5sPrzWnJYVYYa06yofHUhwGvz59KaNjv4-Himw=);
     }
 
     .bg2 {
@@ -128,17 +129,15 @@
       animation-name: bg2Anim;
       animation-duration: 10s;
       animation-iteration-count: infinite;
-      background-image: url(https://t3.ftcdn.net/jpg/04/74/13/10/240_F_474131081_SwhJcfuc3WVkaMzUxSKX71rfJnDGp2S8.jpg);
+      background-image: url(https://media.istockphoto.com/id/1288635857/fr/vectoriel/illustration-vectorielle-des-aurores-bor%C3%A9ales-sur-un-fond-fonc%C3%A9.jpg?s=612x612&w=0&k=20&c=fEA2n5sPrzWnJYVYYa06yofHUhwGvz59KaNjv4-Himw=);
     }
 
     .bg3 {
       z-index: 10;
       animation-name: bg3Anim;
-      animation-duration: 16s;
-      transform: rotate(180deg);
+      animation-duration: 10s;
       animation-iteration-count: infinite;
-      background-image: url(https://t3.ftcdn.net/jpg/04/74/13/10/240_F_474131081_SwhJcfuc3WVkaMzUxSKX71rfJnDGp2S8.jpg);
-    }
+      background-image: url(https://media.istockphoto.com/id/1288635857/fr/vectoriel/illustration-vectorielle-des-aurores-bor%C3%A9ales-sur-un-fond-fonc%C3%A9.jpg?s=612x612&w=0&k=20&c=fEA2n5sPrzWnJYVYYa06yofHUhwGvz59KaNjv4-Himw=);
   }
 
   @keyframes bg1Anim {
@@ -164,15 +163,14 @@
     transform: scale(2); } }
 
  @keyframes bg3Anim {
-   0% {
-     opacity: 1;
-     transform: scale(2);
-     left: -10%; }
-   50% {
-     opacity: 1;
-     transform: scale(2);
-     left: 10%; }
-   100% {
-     opacity: 1;
-     transform: scale(2);
-     left: 10%; } }
+  0% {
+    opacity: 1;
+    transform: scale(2);
+   }
+  50% {
+    opacity: 1;
+    transform: scale(2); }
+  100% {
+    opacity: 1;
+    transform: scale(2); } }
+}
