@@ -8,12 +8,12 @@
           <div class="character-card-creation">
             <img class="class-img character-creation-img" src=<%= @character.image_card_url %> alt="">
             <div class="statistics">
-              <p>Strength <span><%= @character.strength %></span></p>
-              <p>Dexterity <span><%= @character.dexterity %></span></p>
-              <p>Constitution <span><%= @character.constitution %></span></p>
-              <p>Intelligence <span><%= @character.intelligence %></span></p>
-              <p>Wisdom <span><%= @character.wisdom %></span></p>
-              <p>Charisma <span><%= @character.charisma %></span></p>
+              <p>Strength <span class="<%= find_color(@character.strength) %>"><%= @character.strength %></span></p>
+              <p>Dexterity <span class="<%= find_color(@character.dexterity) %>"><%= @character.dexterity %></span></p>
+              <p>Constitution <span class="<%= find_color(@character.constitution) %>"><%= @character.constitution %></span></p>
+              <p>Intelligence <span class="<%= find_color(@character.intelligence) %>"><%= @character.intelligence %></span></p>
+              <p>Wisdom <span class="<%= find_color(@character.wisdom) %>"><%= @character.wisdom %></span></p>
+              <p>Charisma <span class="<%= find_color(@character.charisma) %>"><%= @character.charisma %></span></p>
             </div>
           </div>
           <div class="character-text">
