@@ -5,7 +5,7 @@ import Typed from "typed.js"
 // Connects to data-controller="adventure-subscription"
 export default class extends Controller {
   static values = { adventureId: Number }
-  static targets = [ "messages", "buttons", "loader", "new", "box" ]
+  static targets = [ "messages", "buttons", "loader", "new", "box", "choiceButton" ]
 
 
   connect() {
@@ -16,7 +16,7 @@ export default class extends Controller {
 
     console.log(`Connecting to Adventure #${this.adventureIdValue}`);
     this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
-    
+
   }
 
   disconnect() {
@@ -61,6 +61,7 @@ export default class extends Controller {
     if (data.search("button") != -1) {
       this.buttonsTarget.insertAdjacentHTML("beforeend", data)
       this.loaderTarget.style.display = 'none'
+      this.choiceButtonTarget.style.display= 'initial'
     }
   }
 }
