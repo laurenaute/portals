@@ -20,17 +20,14 @@
 }
 
 .background-adventures-show{
-  background-image:linear-gradient(170deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 1.9)), url(https://media.discordapp.net/attachments/1083356555954622534/1084875851436404836/Sparday_space_spaceship_battle_a1c56058-19ab-4060-9760-4fc9c276475d.png?width=1968&height=1124);
+  background-image: linear-gradient(170deg, rgba(0, 0, 0, 0.17), black), url(https://cdn.midjourney.com/62c1c06b-d11f-4eec-b1ac-b6a0f8d56dfd/grid_0.png);
   height: 100%;
   width: 100%;
   background-size: cover;
   display: block;
-  filter: blur(7px);
-  // -webkit-filter: blur(5px);
-  // height: 800px;
+  filter: blur(6px);
   left: 0;
   position: fixed;
-  // background: #43434394;
   right: 0;
   z-index: -1;
   transform: scale(1.1);

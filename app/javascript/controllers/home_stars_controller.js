@@ -102,7 +102,7 @@ export default class extends Controller {
           "bubble": {
             "distance": 83.91608391608392,
             "size": 3.5,
-            "duration": 3,
+            "duration": 4,
             "opacity": 1,
             "speed": 3
           },
