@@ -136,3 +136,41 @@
     width: 100%;
   }
 }
+
+#adventure-text-loader{
+  display: none;
+  opacity: 0;
+  text-align: center;
+  background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjRkNDlkOGQ5M2RjZDYyNjY5OTI2NDAzYjA2ZjBkOWVlMTU1YmEyMSZjdD1n/tL5HmgfZi0Qow/giphy.gif');
+  position: relative;
+  height: 21vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 10px;
+  transition-duration: opacity 2s ease-in-out;
+}
+
+#loading-text-adventure {
+  display: none;
+  opacity: 0;
+  position:relative;
+  top: 45%;
+  transition-duration: opacity 2s ease-in-out;
+  font-weight: bolder;
+  text-shadow: 0px 0px 5px #097f91;
+  animation: pulse-loader-adventure 1s alternate infinite;
+}
+
+.buttons-choice-aventure{
+  // display: none;
+}
+
+@keyframes pulse-loader-adventure {
+  0%{
+      text-shadow:
+      0 0 2px $blue,
+      0 0 6px #dedede;
+      ;
+  }
+}

@@ -9,6 +9,7 @@ class MessagesController < ApplicationController
     @message.role = "user"
     @message.user = current_user
     @message.save
+
     AdventureChannel.broadcast_to(
       @adventure,
       render_to_string(partial: "messages/message", locals: { message: @message } )
@@ -72,6 +73,7 @@ class MessagesController < ApplicationController
       @adventure,
       render_to_string(partial: "messages/message", locals: { message: message_response } )
     )
+
     AdventureChannel.broadcast_to(
       @adventure,
       render_to_string(partial: "adventures/buttons", locals: { message: message_response } )

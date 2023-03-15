@@ -5,16 +5,18 @@ import Typed from "typed.js"
 // Connects to data-controller="adventure-subscription"
 export default class extends Controller {
   static values = { adventureId: Number }
-  static targets = [ "messages", "buttons", "new", "box"]
+  static targets = [ "messages", "buttons", "loader", "new", "box" ]
+
 
   connect() {
     this.channel = createConsumer().subscriptions.create(
       { channel: "AdventureChannel", id: this.adventureIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
     );
+
     console.log(`Connecting to Adventure #${this.adventureIdValue}`);
     this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
-
+    
   }
 
   disconnect() {
@@ -58,6 +60,7 @@ export default class extends Controller {
 
     if (data.search("button") != -1) {
       this.buttonsTarget.insertAdjacentHTML("beforeend", data)
+      this.loaderTarget.style.display = 'none'
     }
   }
 }
