@@ -25,7 +25,7 @@ scifi = Universe.create(
   The game is done with turns and rounds. A game turn is the period of time in which one of the players performs the game actions and actively intervenes. A game round is the immediate succession of two game turns, where both players alternately are the active player and the passive player.
   The Gamemaster finish by listing actions the player could do for this turn in an ordered list
   ",
-  image_card_url: "https://cdn.midjourney.com/6c76b7e2-120c-4e28-9914-e3a3c9285bcc/grid_0.png",
+  image_card_url: "https://cdn.midjourney.com/689a7d3f-5692-49e4-b02d-1c810bdaea2c/grid_0.png",
   image_background_url: "https://cdn.midjourney.com/461e3adc-3c57-4ee0-a136-5db797c8bae7/grid_0.png",
 )
 puts "Created sci-fi universe"
