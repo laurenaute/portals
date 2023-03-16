@@ -4,14 +4,16 @@
       <% case message.role %>
         <% when "user" %>
           <%= message.user.username %>
+          <img src="<%= message.adventure.character.image_card_url %>" alt="" id="character-image-show-adventure">
         <% when "assistant" %>
           Gamemaster
+          <img src="https://cdn.midjourney.com/6dc96cf5-0d3c-4a15-9231-2b89a6b28af0/grid_0.png" alt="" id="gamemaster-image-show-adventure">
         <% end %>
     </strong></p>
   </div>
   <div class="chat-message-content">
     <% if message.content.nil? %>
-      <p style="white-space: pre-line;"> Sorry ! An error occurred. Please retry</p>
+      <p style="white-space: pre-line;"> Désolé, une erreur est apparue ! Recommencez</p>
     <% elsif message.role == "user" %>
       <p style="white-space: pre-line;"><%= message.content %></p>
     <% else %>
