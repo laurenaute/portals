@@ -159,6 +159,10 @@
     background-color: $blue;
     border-radius: 5px;
   }
+
+  form abbr[title] {
+    display: none;
+  }
 }
 
 #adventure_difficulty_easy {
