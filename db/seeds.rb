@@ -243,3 +243,17 @@ User.create(
   admin: false
 )
 puts "Created user jean"
+
+puts "Creating prompts"
+Prompt.create(
+  name: "choices",
+  content: "- Always finish your paragraph by listing 2,3 or 4 actions the player can do in an ordered list."
+)
+Prompt.create(
+  name: "difficulty-hard",
+  content: "- Make the game difficulty hard for the player."
+)
+Prompt.create(
+  name: "difficulty-easy",
+  content: "- Make the game difficulty easy for the player."
+)
