@@ -70,3 +70,19 @@
     grid-area: 2 / 3 / 3 / 4;
   }
 }
+
+
+
+.univers-title {
+  font-size: 24px;
+}
+
+@media (max-width: 1280px) {
+  .univers-title {
+    font-size: 24px;
+  }
+
+  .description{
+    font-size: 14px;
+  }
+}
