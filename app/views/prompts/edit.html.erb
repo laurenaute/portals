@@ -1,0 +1,9 @@
+<%# form to edit a prompt %>
+<div class="container">
+  <h1 class="text-center">Edit Prompt</h1>
+  <%= simple_form_for @prompt do |f| %>
+    <%= f.input :name %>
+    <%= f.input :content %>
+    <%= f.submit "Update Prompt", class: "btn btn-primary" %>
+  <% end %>
+</div>

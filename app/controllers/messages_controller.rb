@@ -16,36 +16,14 @@ class MessagesController < ApplicationController
     )
 
     client = OpenAI::Client.new
-    # start_sequence = "\nassistant:"
-    # # restart_sequence = "\nuser:"
 
-    # messages = ["Act with the following rules :
-    #   - Act as if you are a Gamemaster of a gamebook in the D&D world and we are playing
-    #   - You describe the environment and can create dialogue for the NPCs
-    #   - Don't ever break out of your character, and you must not refer to yourself in any way
-    #   - If I want to give you instructions outside the context of the game, I will use curly brackets {like this} but otherwise you are to stick to being the text adventure program
-    #   - Be descriptive
-    #   - Never explain yourself, do not enter commands on my behalf, do not control my actions
-    #   - Always finish by listing actions the player can do
-    #     "]
-    # Message.last(5).each do |message|
-    #   messages << "#{message.role}: #{message.content}"
-    # end
+    content = Adventure.find(params[:adventure_id]).character.universe.parameters +
+              "\n- The player character name is : " + @adventure.character_name +
+              ( @adventure.choices ? "\n" + Prompt.find_by(name: "choices").content : "" ) +
+              ( @adventure.difficulty == "Easy" ? "\n" + Prompt.find_by(name: "difficulty-easy").content : "" ) +
+              ( @adventure.difficulty == "Hard" ? "\n" + Prompt.find_by(name: "difficulty-hard").content : "" )
 
-    # response = client.completions(
-    #     parameters: {
-    #     model: "text-davinci-003",
-    #     prompt: messages.join + "\n",
-    #     temperature: 0,
-    #     max_tokens: 400,
-    #     top_p: 1,
-    #     frequency_penalty: 0,
-    #     presence_penalty: 0,
-    #     stop: ["user:", "assistant:"]
-    #   }
-    # )
-
-    messages = [{ role: "system", content: Adventure.find(params[:adventure_id]).character.universe.parameters }]
+    messages = [{ role: "system", content: content }]
     Message.last(5).each do |message|
       messages << { role: message.role, content: message.content }
     end

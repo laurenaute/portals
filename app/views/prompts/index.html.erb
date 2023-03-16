@@ -1,0 +1,17 @@
+<%# prompts index %>
+<%# displays all prompts %>
+
+
+<div class="container">
+<h1 class="text-center">All Prompts</h1>
+<%# button to create a new prompt %>
+<%= link_to "New Prompt", new_prompt_path, class: "btn btn-primary" %>
+  <% @prompts.each do |prompt| %>
+    <div class="p-3 m-2 border">
+      <h4><%= prompt.name %></h3>
+      <p><%= prompt.content %></p>
+      <%# button to edit the prompt %>
+      <%= link_to "Edit Prompt", edit_prompt_path(prompt), class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
