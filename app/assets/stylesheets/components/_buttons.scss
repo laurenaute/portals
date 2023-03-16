@@ -63,6 +63,16 @@
   }
 }
 
+.btn-make-your-choice{
+  display: initial;
+  color: #F5F5F5;
+  text-decoration: none;
+  &:hover{
+    color: #F5F5F5;
+    text-shadow: 0px 0px 7px white;
+  }
+}
+
 .back-btn .btn-back {
   display: inline-block;
   margin-top: 1rem;

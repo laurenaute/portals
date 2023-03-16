@@ -11,7 +11,7 @@
   background-size: cover !important;
   background-position: center !important;
   cursor: none;
-  animation: moving-bg 10s ease-in-out;
+  animation: moving-bg 10s alternate infinite;
 }
 
 
@@ -24,7 +24,7 @@
   font-family: $subtitle-main;
   text-shadow: 0px 0px 20px black;
   z-index: 99999;
-  animation: moving-backwards-text 10s ease-in-out;
+  animation: moving-backwards-text 10s alternate infinite;
 }
 
 // test
