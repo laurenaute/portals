@@ -20,7 +20,7 @@
 }
 
 .background-adventures-show{
-  background-image: linear-gradient(170deg, rgba(0, 0, 0, 0.25), black), url(https://cdn.midjourney.com/62c1c06b-d11f-4eec-b1ac-b6a0f8d56dfd/grid_0.png);
+  background-image: url(https://cdn.midjourney.com/62c1c06b-d11f-4eec-b1ac-b6a0f8d56dfd/grid_0.png);
   height: 100%;
   width: 100%;
   background-size: cover;
@@ -31,6 +31,15 @@
   right: 0;
   z-index: -1;
   transform: scale(1.1);
+}
+
+.display-chat {
+  border-radius: 10px;
+  background: #43434394;
+  border: none;
+  box-shadow: 0 0 20px #303030;
+  backdrop-filter: blur(5px);
+  padding: 10px;
 }
 
 .bubble {
