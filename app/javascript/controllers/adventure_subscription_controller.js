@@ -80,6 +80,7 @@ export default class extends Controller {
     if (data.search("button") != -1) {
       this.buttonsTarget.insertAdjacentHTML("beforeend", data)
       this.loaderTarget.style.display = 'none'
+      this.choiceButtonTarget.style.display= 'initial'
     }
   }
 }
