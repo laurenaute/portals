@@ -5,12 +5,11 @@ import Typed from "typed.js"
 export default class extends Controller {
   static targets = [ "button", "loader", "text", "choiceButton" ]
   connect() {
-    console.log("loadddddd");
-    console.log(this.buttonTarget);
-    console.log(this.loaderTarget);
+    // console.log(this.buttonTarget);
+    // console.log(this.loaderTarget);
   }
   loader() {
-    console.log("click")
+    // console.log("click")
     this.loaderTarget.style.display = "block";
     this.loaderTarget.style.opacity = "1";
     this.textTarget.style.display = "initial";

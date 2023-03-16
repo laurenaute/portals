@@ -6,7 +6,7 @@ export default class extends Controller {
 
 
   connect() {
-    console.log("connected");
+    // console.log("connected");
   }
 
   submit(event) {

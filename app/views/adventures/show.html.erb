@@ -6,7 +6,9 @@
       <div class="chat-content max-h-60" data-adventure-subscription-target="box">
         <div data-adventure-subscription-target="messages">
           <% @messages.each do |message| %>
-            <%= render partial: "messages/message", locals: { message: message } %>
+            <div data-adventure-subscription-target="message">
+              <%= render partial: "messages/message", locals: { message: message } %>
+            </div>
           <% end %>
         </div>
         <div class="new_message" >

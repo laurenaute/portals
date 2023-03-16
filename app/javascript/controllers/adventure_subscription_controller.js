@@ -5,10 +5,15 @@ import Typed from "typed.js"
 // Connects to data-controller="adventure-subscription"
 export default class extends Controller {
   static values = { adventureId: Number }
-  static targets = [ "messages", "buttons", "loader", "new", "box", "choiceButton" ]
+  static targets = [ "messages", "buttons", "loader", "new", "box", "choiceButton", "message" ]
 
 
   connect() {
+    const data = this.messageTargets[0].innerHTML
+    if (this.messageTargets.length == 1) {
+      this.messageTargets[0].innerHTML = ""
+    }
+
     this.channel = createConsumer().subscriptions.create(
       { channel: "AdventureChannel", id: this.adventureIdValue },
       { received: data => this.#insertMessageAndScrollDown(data) }
@@ -36,6 +41,20 @@ export default class extends Controller {
     // Start observing the target node for configured mutations
     observer.observe(targetNode, config);
 
+    if (this.messageTargets.length == 1) {
+      const options = {
+        strings: [data],
+        typeSpeed: 0,
+        showCursor: false,
+        onComplete: (self) => {
+          this.newTarget.innerHTML = ""
+          this.messagesTarget.insertAdjacentHTML("beforeend", data)
+          this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+        }
+      }
+      new Typed(this.newTarget, options)
+    }
+
   }
 
   disconnect() {
@@ -57,10 +76,6 @@ export default class extends Controller {
           strings: [data],
           typeSpeed: 0,
           showCursor: false,
-          onBegin: (self) => {
-            this.newTarget.innerHTML = ">"
-            this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
-          },
           onComplete: (self) => {
             this.newTarget.innerHTML = ""
             this.messagesTarget.insertAdjacentHTML("beforeend", data)
