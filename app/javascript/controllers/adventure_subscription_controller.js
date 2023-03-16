@@ -5,7 +5,7 @@ import Typed from "typed.js"
 // Connects to data-controller="adventure-subscription"
 export default class extends Controller {
   static values = { adventureId: Number }
-  static targets = [ "messages", "buttons", "loader", "new", "box" ]
+  static targets = [ "messages", "buttons", "loader", "new", "box", "choiceButton" ]
 
 
   connect() {
