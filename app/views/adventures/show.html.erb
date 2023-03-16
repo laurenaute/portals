@@ -3,33 +3,34 @@
 
   <div class="container pt-3" data-controller="adventure-form">
     <h1 class="mb-4">Portals</h1>
-    <div class="chat-content max-h-60" data-adventure-subscription-target="box">
-
-      <div data-adventure-subscription-target="messages">
-        <% @messages.each do |message| %>
-          <%= render partial: "messages/message", locals: { message: message } %>
-        <% end %>
-      </div>
-      <div class="new_message" >
-          <span data-adventure-subscription-target="new"></span>
-      </div>
-    </div>
-    <div class="chat-input mt-2 max-h-40">
-      <div id="adventure-text-loader" data-loader-adventure-page-target="loader" data-adventure-subscription-target="loader"><p id="loading-text-adventure" data-loader-adventure-page-target="text">CHARGEMENT</p></div>
-      <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons" data-loader-adventure-page-target="button" class="d-flex flex-wrap w-100">
-
-        <%= render partial: "buttons", locals: { message: Message.last } %>
-      </div>
-
-      <a class="btn-make-your-choice" type="button" data-adventure-subscription-target="choiceButton" data-loader-adventure-page-target="choiceButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-        <i class="fas fa-pen"></i>
-      </a>
-      <div class="collapse" id="collapseExample">
-        <div class="card card-body jean-body">
-          <%= simple_form_for [@adventure, @message_new], wrapper: :inline_form, html: { data: { action: "turbo:submit-end->adventure-subscription#resetForm" }, class: 'chat-form' } do |f| %>
-            <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ...", wrapper_html: {class: "chat-form-input"}, input_html: {data: {"adventure-form-target": "input"}}%>
-            <%= f.submit "Send", class: "btn-play", wrapper_html: {class: "chat-form-submit"}, data: { action: "click->loader-adventure-page#loader" }%>
+    <div class="display-chat">
+      <div class="chat-content max-h-60" data-adventure-subscription-target="box">
+        <div data-adventure-subscription-target="messages">
+          <% @messages.each do |message| %>
+            <%= render partial: "messages/message", locals: { message: message } %>
           <% end %>
+        </div>
+        <div class="new_message" >
+            <span data-adventure-subscription-target="new"></span>
+        </div>
+      </div>
+      <div class="chat-input mt-2 max-h-40">
+        <div id="adventure-text-loader" data-loader-adventure-page-target="loader" data-adventure-subscription-target="loader"><p id="loading-text-adventure" data-loader-adventure-page-target="text">CHARGEMENT</p></div>
+        <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons" data-loader-adventure-page-target="button" class="d-flex flex-wrap w-100">
+
+          <%= render partial: "buttons", locals: { message: Message.last } %>
+        </div>
+
+        <a class="btn-make-your-choice" type="button" data-adventure-subscription-target="choiceButton" data-loader-adventure-page-target="choiceButton" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+          <i class="fas fa-pen"></i>
+        </a>
+        <div class="collapse" id="collapseExample">
+          <div class="card card-body jean-body">
+            <%= simple_form_for [@adventure, @message_new], wrapper: :inline_form, html: { data: { action: "turbo:submit-end->adventure-subscription#resetForm" }, class: 'chat-form' } do |f| %>
+              <%= f.input :content, label: false, placeholder: "Number of the action or simply write: I want to ...", wrapper_html: {class: "chat-form-input"}, input_html: {data: {"adventure-form-target": "input"}}%>
+              <%= f.submit "Send", class: "btn-play", wrapper_html: {class: "chat-form-submit"}, data: { action: "click->loader-adventure-page#loader" }%>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
