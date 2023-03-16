@@ -32,7 +32,7 @@ puts "Created sci-fi universe"
 
 puts "Creating fantasy universe"
 Universe.create(
-  theme: "Fantasy",
+  theme: "Fantaisie",
   description:
   "
   The sun had just begun to rise over the misty hills as you set out on your journey. You had heard whispers of
@@ -106,10 +106,10 @@ puts "Created post-apocalyptic universe"
 
 puts "Creating character soldier"
 Character.create!(
-  name: "Soldier",
-  description: "Highly trained combat specialist, proficient in a variety of weapons and tactics.\n
-  Able to adapt to changing circumstances quickly and are skilled in working under pressure.\n
-  In addition to their combat skills, Soldiers are also trained in survival techniques and are able to navigate difficult terrain, find shelter, and procure food and water in the field.",
+  name: "Soldat",
+  description: "Spécialiste du combat hautement qualifié, maîtrisant une variété d'armes et de tactiques.\n
+  Capable de s'adapter rapidement aux circonstances changeantes et habile à travailler sous pression.\n
+  En plus de leurs compétences au combat, les soldats sont également formés aux techniques de survie et sont capables de naviguer sur des terrains difficiles, de trouver un abri et de se procurer de la nourriture et de l'eau sur le terrain.",
   universe: scifi,
   image_card_url: "https://cdn.midjourney.com/64566c22-6cf7-412b-874d-218df4699646/grid_0.png",
   image_background_card_url: "https://cdn.midjourney.com/aeb6f4db-fd51-4ddc-9a8d-3cd6685486cb/grid_0.png",
@@ -125,13 +125,13 @@ puts "Created character soldier"
 
 puts "Creating character medic"
 Character.create(
-  name: "Medic",
-  description: "Highly trained medical specialist, responsible for ensuring the health and
-  well-being of the team during missions. Medics are trained in a variety of medical procedures,
-  from first aid to surgery, and are equipped with advanced medical technology to assist in their
-  duties.\n
-  In addition to their medical training, Medics are also skilled in combat, able to defend
-  themselves in dangerous situations.",
+  name: "Médecin",
+  description: "Médecin spécialiste hautement qualifié, chargé d'assurer la santé et
+  bien-être de l'équipe lors des missions. Les médecins sont formés à une variété de procédures médicales,
+  des premiers secours à la chirurgie, et sont équipés d'une technologie médicale de pointe pour les aider dans leur
+  tâches.\n
+  En plus de leur formation médicale, les Médecins sont également habiles au combat, capables de défendre
+  eux-mêmes dans des situations dangereuses.",
   universe: scifi,
   image_card_url: "https://cdn.midjourney.com/6eb51ca4-21dc-4a4c-8c61-418bf689ce28/grid_0.png",
   image_background_card_url: "https://cdn.midjourney.com/ae411e1c-726b-4d25-aa44-1ff280116e82/grid_0.png",
@@ -147,14 +147,14 @@ puts "Created character medic"
 
 puts "Creating character engineer"
 Character.create(
-  name: "Engineer",
-  description: "highly skilled technical specialist, responsible for maintaining and repairing
-  equipment and technology. Engineers are trained in a variety of disciplines, including
-  mechanical engineering, electrical engineering, and computer science.\n
-  In addition to their technical skills, Engineers are also problem solvers, able to think
-  creatively and come up with innovative solutions to complex issues. Identifying problems and
-  finding ways to fix them, whether it's repairing a damaged spacecraft or developing a new
-  piece of technology to aid in the mission.",
+  name: "Ingénieur",
+  description: "spécialiste technique hautement qualifié, responsable de l'entretien et de la réparation
+  des équipement et technologie. Les ingénieurs sont formés dans une variété de disciplines, y compris
+  génie mécanique, génie électrique et informatique.\n
+  En plus de leurs compétences techniques, les ingénieurs sont également des résolveurs de problèmes, capables de penser
+  créativité et proposer des solutions innovantes à des problèmes complexes. Identifier les problèmes et
+  trouver des moyens de les réparer, qu'il s'agisse de réparer un vaisseau spatial endommagé ou de développer une nouvelle
+  pièce de technologie pour aider à la mission.",
   universe: scifi,
   image_card_url: "https://cdn.midjourney.com/ed2f6390-9a6f-4356-9371-3525c7f25a0a/grid_0.png",
   image_background_card_url: "https://cdn.midjourney.com/151830cf-699c-4c2e-9ca5-7cf1f22332af/grid_0.png",
@@ -170,14 +170,14 @@ puts "Created character engineer"
 
 puts "Creating character merchant"
 Character.create(
-  name: "Merchant",
-  description: "Shrewd business person, responsible for acquiring and selling goods for the team.
-  Merchants are skilled negotiators, able to strike deals with other factions and trade partners
-  to get the best possible prices for their goods.\n
-  In addition to their business skills, Merchants are also resourceful and adaptable, able to
-  find creative ways to acquire rare or valuable items that they may need for their mission.\n
-  They may also be called upon to assist with diplomatic tasks, using their negotiation skills
-  to build relationships with other factions and gain valuable information.",
+  name: "Marchant",
+  description: "Homme d'affaires avisé, responsable de l'acquisition et de la vente de biens pour l'équipe.
+  Les marchands sont des négociateurs qualifiés, capables de conclure des accords avec d'autres factions et partenaires commerciaux
+  pour obtenir les meilleurs prix possibles pour leurs marchandises.\n
+  En plus de leurs compétences commerciales, les commerçants sont également débrouillards et adaptables, capables de
+  trouver des moyens créatifs d'acquérir des objets rares ou de valeur dont ils pourraient avoir besoin pour leur mission.\n
+  Ils peuvent également être appelés à participer à des tâches diplomatiques, en utilisant leurs compétences en négociation
+  pour établir des relations avec d'autres factions et obtenir des informations précieuses.",
   universe: scifi,
   image_card_url: "https://cdn.midjourney.com/14b8f463-43bc-4d05-83df-16b8987c2676/grid_0.png",
   image_background_card_url: "https://cdn.midjourney.com/19453283-bb0d-4d69-ac47-462029c8fb5c/grid_0.png",
@@ -193,13 +193,13 @@ puts "Created character merchant"
 
 puts "Creating character pilot"
 Character.create(
-  name: "Pilot",
-  description: "Skilled operator of various spacecraft and vehicles. Pilots are trained in a
-  variety of flight systems, from small atmospheric vehicles to large interstellar spaceships.\n
-  In addition to their piloting skills, Pilots are also knowledgeable about navigation and are
-  able to read maps and charts to find the most direct and efficient route to their destination.\n
-  They may also be called upon to assist with reconnaissance or scouting missions, using their
-  knowledge of the terrain and their flying skills to gather information about the area.",
+  name: "Pilote",
+  description: "Opérateur qualifié de divers engins spatiaux et véhicules. Les pilotes sont formés dans un
+  variété de systèmes de vol, des petits véhicules atmosphériques aux grands vaisseaux spatiaux interstellaires.\n
+  En plus de leurs compétences de pilotage, les pilotes connaissent également la navigation et sont
+  capable de lire des cartes et des cartes pour trouver l'itinéraire le plus direct et le plus efficace vers leur destination.\n
+  Ils peuvent également être appelés à participer à des missions de reconnaissance ou de repérage, en utilisant leurs
+  connaissance du terrain et leurs compétences de vol pour recueillir des informations sur la région.",
   universe: scifi,
   image_card_url: "https://cdn.midjourney.com/3a0485ac-0812-44cf-a828-1f771da610a3/grid_0.png",
   image_background_card_url: "https://cdn.midjourney.com/5b875094-a994-477c-b9b0-2c38a767bbf2/grid_0.png",
