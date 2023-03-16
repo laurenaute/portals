@@ -54,3 +54,18 @@
     flex-direction: column;
   }
 }
+
+@media (max-width: 1280px) {
+  .character-creation{
+    margin-bottom: 5px;
+    margin-top: 5px;
+  }
+  .title{
+    padding-top: 2px;
+    padding-bottom: 2px;
+  }
+
+  .character-info .character-text {
+    padding: 10px;
+  }
+}

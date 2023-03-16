@@ -53,3 +53,12 @@
     }
   }
 }
+
+
+@media (max-width: 1280px) {
+  .character-modal {
+    .modal-dialog {
+      height: 50%;
+    }
+  }
+}
