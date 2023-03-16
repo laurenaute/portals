@@ -5,7 +5,7 @@ import Typed from "typed.js"
 // Connects to data-controller="adventure-subscription"
 export default class extends Controller {
   static values = { adventureId: Number }
-  static targets = [ "messages", "buttons", "loader", "new", "box", "choiceButton" ]
+  static targets = [ "messages", "buttons", "loader", "new", "box" ]
 
 
   connect() {
@@ -16,6 +16,25 @@ export default class extends Controller {
 
     console.log(`Connecting to Adventure #${this.adventureIdValue}`);
     this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+
+    const targetNode = this.newTarget;
+
+    // Options for the observer (which mutations to observe)
+    const config = { attributes: true, childList: true, subtree: true };
+
+    // Callback function to execute when mutations are observed
+    const callback = (mutationList, observer) => {
+      for (const mutation of mutationList) {
+        if (mutation.type === "childList") {
+          this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+        }
+      }
+    };
+    // Create an observer instance linked to the callback function
+    const observer = new MutationObserver(callback);
+
+    // Start observing the target node for configured mutations
+    observer.observe(targetNode, config);
 
   }
 
@@ -45,7 +64,7 @@ export default class extends Controller {
           onComplete: (self) => {
             this.newTarget.innerHTML = ""
             this.messagesTarget.insertAdjacentHTML("beforeend", data)
-            this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+            this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
           }
         }
         this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
@@ -61,7 +80,6 @@ export default class extends Controller {
     if (data.search("button") != -1) {
       this.buttonsTarget.insertAdjacentHTML("beforeend", data)
       this.loaderTarget.style.display = 'none'
-      this.choiceButtonTarget.style.display= 'initial'
     }
   }
 }

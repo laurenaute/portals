@@ -2,7 +2,7 @@ import { Controller } from "@hotwired/stimulus"
 
 // Connects to data-controller="adventure-form"
 export default class extends Controller {
-  static targets = [ "input", "buttons" ]
+  static targets = [ "input", "buttons", "new" ]
 
 
   connect() {
@@ -15,7 +15,7 @@ export default class extends Controller {
     // console.log(event.target);
     // console.log(event.target.innerHTML);
 
-    console.log(this.inputTarget);
+    // console.log(this.inputTarget);
     this.inputTarget.value = event.target.innerHTML;
 
     // click on the submit button
@@ -23,7 +23,5 @@ export default class extends Controller {
 
     // remove the inside off buttons target
     this.buttonsTarget.innerHTML = "";
-
-
   }
 }
