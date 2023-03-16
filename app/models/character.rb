@@ -14,12 +14,12 @@ class Character < ApplicationRecord
 
   def get_max_asset
     assets = {
-      strength: strength,
-      dexterity: dexterity,
-      constitution: constitution,
+      force: strength,
+      dextérité: dexterity,
+      endurance: constitution,
       intelligence: intelligence,
-      wisdom: wisdom,
-      charisma: charisma
+      sagesse: wisdom,
+      charisme: charisma
     }
 
     # recuperer le nom de la cle dont la valeur est la plus grande
@@ -29,12 +29,12 @@ class Character < ApplicationRecord
 
   def get_min_asset
     assets = {
-      strength: strength,
-      dexterity: dexterity,
-      constitution: constitution,
+      force: strength,
+      dextérité: dexterity,
+      endurance: constitution,
       intelligence: intelligence,
-      wisdom: wisdom,
-      charisma: charisma
+      sagesse: wisdom,
+      charisme: charisma
     }
 
     # recuperer le nom de la cle dont la valeur est la plus grande
