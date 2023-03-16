@@ -19,9 +19,10 @@ class MessagesController < ApplicationController
 
     content = Adventure.find(params[:adventure_id]).character.universe.parameters +
               "\n- The player character name is : " + @adventure.character_name +
+              "\n" + @adventure.character.parameters +
               ( @adventure.choices ? "\n" + Prompt.find_by(name: "choices").content : "" ) +
-              ( @adventure.difficulty == "Easy" ? "\n" + Prompt.find_by(name: "difficulty-easy").content : "" ) +
-              ( @adventure.difficulty == "Hard" ? "\n" + Prompt.find_by(name: "difficulty-hard").content : "" )
+              ( @adventure.difficulty == "Facile" ? "\n" + Prompt.find_by(name: "difficulty-easy").content : "" ) +
+              ( @adventure.difficulty == "Difficile" ? "\n" + Prompt.find_by(name: "difficulty-hard").content : "" )
 
     messages = [{ role: "system", content: content }]
     Message.last(5).each do |message|

@@ -18,10 +18,11 @@ class AdventuresController < ApplicationController
       client = OpenAI::Client.new
 
       content = @adventure.character.universe.initializer +
-              "- The player character name is : " + @adventure.character_name +
-              ( @adventure.choices ? Prompt.find_by(name: "choices").content : "" ) +
-              ( @adventure.difficulty == "Facile" ? Prompt.find_by(name: "difficulty-easy").content : "" ) +
-              ( @adventure.difficulty == "Difficile" ? Prompt.find_by(name: "difficulty-hard").content : "" )
+              "\n- The player character name is : " + @adventure.character_name +
+              "\n" + @adventure.character.parameters +
+              ( @adventure.choices ? "\n" + Prompt.find_by(name: "choices").content : "" ) +
+              ( @adventure.difficulty == "Facile" ? "\n" + Prompt.find_by(name: "difficulty-easy").content : "" ) +
+              ( @adventure.difficulty == "Difficile" ? "\n" + Prompt.find_by(name: "difficulty-hard").content : "" )
 
       messages = [{ role: "system", content: content }]
       response = client.chat(

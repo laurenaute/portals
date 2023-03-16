@@ -41,6 +41,6 @@ class CharactersController < ApplicationController
   end
 
   def character_params
-    params.require(:character).permit(:name, :description, :image_card_url, :image_background_card_url, :image_background_page_url, :universe_id, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma)
+    params.require(:character).permit(:name, :description, :parameters, :image_card_url, :image_background_card_url, :image_background_page_url, :universe_id, :strength, :dexterity, :constitution, :intelligence, :wisdom, :charisma)
   end
 end
