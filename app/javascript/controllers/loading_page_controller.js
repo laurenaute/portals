@@ -11,7 +11,7 @@ export default class extends Controller {
   launchLoader() {
     this.loaderTarget.style.display = "initial";
     new Typed(this.loaderTextTarget, {
-      strings: ["Your game is loading ..."],
+      strings: ["Chargement de la partie ..."],
       typeSpeed: 90,
       loop: true
     });

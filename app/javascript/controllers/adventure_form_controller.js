@@ -15,8 +15,7 @@ export default class extends Controller {
     // console.log(event.target);
     // console.log(event.target.innerHTML);
 
-    // console.log(this.inputTarget);
-    this.inputTarget.value = event.target.innerHTML;
+    this.inputTarget.value = event.target.innerText;
 
     // click on the submit button
     this.element.querySelector("input[type=submit]").click();

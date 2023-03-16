@@ -3,7 +3,7 @@
     <p class="me-3"><strong>
       <% case message.role %>
         <% when "user" %>
-          <%= message.user.username %>
+          <%= message.adventure.character_name %>
           <img src="<%= message.adventure.character.image_card_url %>" alt="" id="character-image-show-adventure">
         <% when "assistant" %>
           Gamemaster
