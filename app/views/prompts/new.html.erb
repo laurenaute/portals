@@ -1,0 +1,9 @@
+<%# simple form to create a new prompt %>
+<div class="container">
+  <h1 class="text-center">New Prompt</h1>
+  <%= simple_form_for @prompt do |f| %>
+    <%= f.input :name %>
+    <%= f.input :content %>
+    <%= f.submit "Create Prompt", class: "btn btn-primary" %>
+  <% end %>
+</div>
