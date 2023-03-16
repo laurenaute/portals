@@ -25,9 +25,9 @@
           <%= simple_form_for [@character, @adventure] do |f| %>
             <%= f.input :character_name, placeholder: 'Entrer le nom de votre héros ...', label: "Nom de votre héros"%>
             <%= f.input :choices, as: :boolean, input_html: { class: "toggle" } %>
-            <%= f.input :difficulty, checked: "Normal", collection: [ "Easy", "Normal", "Hard"], as: :radio_buttons,
+            <%= f.input :difficulty, checked: "Normal", collection: [ "Facile", "Normal", "Difficile"], as: :radio_buttons,
                         label_method: lambda { |difficulty| render "difficulty_label", difficulty: difficulty },
-                        wrapper_html: { class: "d-flex flex-wrap justify-content-between"} %>
+                        wrapper_html: { class: "d-flex flex-wrap justify-content-between"}, label: "Difficulté" %>
             <%= f.button :submit, value: "Commencer l'aventure", class: "btn-home", data: { action: "click->loading-page#launchLoader" } %>
           <% end %>
           </div>
