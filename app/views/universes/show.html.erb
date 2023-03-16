@@ -5,6 +5,7 @@
     <div class="description">
     <h1 class="univers-title"><%= @universe.theme %></h1>
      <p><span><%= @universe.description %></span></p>
+     <p id="player-indication">* Attention ! Le choix du personnage aura un impact sur votre aventure.</p>
     </div>
     <div class="card-display">
       <% @universe.characters.each do |character|%>

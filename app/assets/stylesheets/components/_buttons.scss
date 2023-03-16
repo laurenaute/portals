@@ -8,12 +8,12 @@
   font-weight: bold;
   font-size: 18px;
   transition-duration: 0.7s;
-  animation: pulse 1s alternate infinite;
+  animation: pulse 1.5s alternate infinite;
   &:hover{
     color: $blue;
     background-color: whitesmoke ;
     border: 1px solid $blue;
-    animation: none;
+    animation: pulse 0.3s alternate infinite;
   }
 }
 
@@ -89,6 +89,9 @@
       box-shadow:
       0 0 2px $blue,
       0 0 6px #dedede;
-      ;
+      color: $blue;
+      background-color: whitesmoke ;
+      border: 1px solid $blue;
   }
+
 }
