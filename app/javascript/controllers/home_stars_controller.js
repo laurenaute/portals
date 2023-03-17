@@ -5,8 +5,8 @@ import { particleJS } from "particles.js"
 // Connects to data-controller="home-stars"
 export default class extends Controller {
   connect() {
-    console.log(document.querySelector('#home-stars-background'));
-    console.log("hello", this.element);
+    // console.log(document.querySelector('#home-stars-background'));
+    // console.log("hello", this.element);
     document.querySelector('#home-stars-background')
 
 
