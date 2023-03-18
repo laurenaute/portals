@@ -4,6 +4,7 @@
     <%= f.input :name %>
     <%= f.input :description %>
     <%= f.input :parameters %>
+    <%= f.association :universe, label_method: :theme, value_method: :id %>
     <%= f.input :image_card_url %>
     <%= f.input :image_background_card_url %>
     <%= f.input :image_background_page_url %>
