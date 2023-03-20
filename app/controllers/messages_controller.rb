@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
     @message.adventure = @adventure
     @message.role = "user"
     @message.user = current_user
+    authorize @message
     @message.save
 
     AdventureChannel.broadcast_to(

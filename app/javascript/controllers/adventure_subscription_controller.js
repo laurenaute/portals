@@ -102,6 +102,7 @@ export default class extends Controller {
       this.messagesTarget.insertAdjacentHTML("beforeend", data)
       this.choiceButtonTarget.style.display = "none"
       this.inputFormTarget.style.display = 'none'
+      this.buttonsTarget.innerHTML = ""
       this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
       }
     }
