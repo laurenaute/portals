@@ -5,7 +5,7 @@ import Typed from "typed.js"
 // Connects to data-controller="adventure-subscription"
 export default class extends Controller {
   static values = { adventureId: Number }
-  static targets = [ "messages", "buttons", "loader", "new", "box", "choiceButton", "message" ]
+  static targets = [ "messages", "buttons", "loader", "new", "box", "choiceButton", "message", "inputForm" ]
 
 
   connect() {
@@ -46,10 +46,19 @@ export default class extends Controller {
         strings: [data],
         typeSpeed: 0,
         showCursor: false,
+        // When typed js begins
+        onStart: (self) => {
+          this.choiceButtonTarget.style.display = 'none'
+          this.buttonsTarget.style.display = 'none'
+          this.inputFormTarget.style.display = 'none'
+        },
         onComplete: (self) => {
           this.newTarget.innerHTML = ""
           this.messagesTarget.insertAdjacentHTML("beforeend", data)
           this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+          this.choiceButtonTarget.style.display = 'initial'
+          this.buttonsTarget.style.display = 'initial'
+          this.inputFormTarget.style.display = 'initial'
         }
       }
       new Typed(this.newTarget, options)
@@ -80,6 +89,9 @@ export default class extends Controller {
             this.newTarget.innerHTML = ""
             this.messagesTarget.insertAdjacentHTML("beforeend", data)
             this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
+            this.choiceButtonTarget.style.display= 'initial'
+            this.buttonsTarget.style.display = 'initial'
+            this.inputFormTarget.style.display = 'initial'
           }
         }
         this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
@@ -88,6 +100,8 @@ export default class extends Controller {
       }
       else {
       this.messagesTarget.insertAdjacentHTML("beforeend", data)
+      this.choiceButtonTarget.style.display = "none"
+      this.inputFormTarget.style.display = 'none'
       this.boxTarget.scrollTo(0, this.boxTarget.scrollHeight)
       }
     }
@@ -95,7 +109,8 @@ export default class extends Controller {
     if (data.search("button") != -1) {
       this.buttonsTarget.insertAdjacentHTML("beforeend", data)
       this.loaderTarget.style.display = 'none'
-      this.choiceButtonTarget.style.display= 'initial'
+      this.buttonsTarget.style.display = 'none'
+      this.inputFormTarget.style.display = 'none'
     }
   }
 }

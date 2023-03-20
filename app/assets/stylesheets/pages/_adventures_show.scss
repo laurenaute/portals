@@ -175,8 +175,16 @@
   animation: pulse-loader-adventure 1s alternate infinite;
 }
 
-.buttons-choice-aventure{
-  // display: none;
+.div-buttons-choice {
+  display: initial;
+  opacity: 0;
+  transition-duration: opacity 2s ease-in-out;
+}
+
+.buttons-choice{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
 }
 
 @keyframes pulse-loader-adventure {
