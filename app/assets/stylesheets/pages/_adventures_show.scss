@@ -20,17 +20,16 @@
 }
 
 .background-adventures-show{
-  background-image: url(https://cdn.midjourney.com/62c1c06b-d11f-4eec-b1ac-b6a0f8d56dfd/grid_0.png);
-  height: 100%;
-  width: 100%;
-  background-size: cover;
-  display: block;
+  height: 100% !important;
+  width: 100% !important;
+  background-size: cover !important;
+  display: block !important;
   //filter: blur(6.25px);
-  left: 0;
-  position: fixed;
-  right: 0;
-  z-index: -1;
-  transform: scale(1.1);
+  left: 0 !important;
+  position: fixed !important;
+  right: 0 !important;
+  z-index: -1 !important;
+  transform: scale(1.1) !important;
 }
 
 .display-chat {
@@ -156,14 +155,13 @@
   display: none;
   opacity: 0;
   text-align: center;
-  background-image: url('https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNjRkNDlkOGQ5M2RjZDYyNjY5OTI2NDAzYjA2ZjBkOWVlMTU1YmEyMSZjdD1n/tL5HmgfZi0Qow/giphy.gif');
   position: relative;
   height: 21vh;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  border-radius: 10px;
-  transition-duration: opacity 2s ease-in-out;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  border-radius: 10px !important;
+  transition-duration: opacity 2s ease-in-out !important;
 }
 
 #loading-text-adventure {

@@ -1,6 +1,5 @@
 <div class="adventure-play max-h-screen" data-controller="loader-adventure-page adventure-subscription adventure-form" data-adventure-subscription-adventure-id-value="<%= @adventure.id %>">
-  <div class="background-adventures-show"></div>
-
+  <div class="background-adventures-show" style="background: url(<%= @adventure.character.universe.image_background_play_url %>);"></div>
   <div class="container pt-3" data-controller="adventure-form">
     <div class="display-chat">
       <div class="chat-content max-h-60" data-adventure-subscription-target="box">
@@ -16,7 +15,7 @@
         </div>
       </div>
       <div class="chat-input mt-2 max-h-40">
-        <div id="adventure-text-loader" data-loader-adventure-page-target="loader" data-adventure-subscription-target="loader"><p id="loading-text-adventure" data-loader-adventure-page-target="text">CHARGEMENT</p></div>
+        <div id="adventure-text-loader" data-loader-adventure-page-target="loader" data-adventure-subscription-target="loader" style="background-image: url(<%= @adventure.character.universe.image_loader_url %>);"><p id="loading-text-adventure" data-loader-adventure-page-target="text">CHARGEMENT</p></div>
         <div data-adventure-form-target="buttons" data-adventure-subscription-target="buttons" data-loader-adventure-page-target="button" class="d-flex flex-wrap w-100">
 
           <%= render partial: "buttons", locals: { message: Message.last } %>

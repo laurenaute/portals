@@ -29,7 +29,7 @@
     <%= favicon_link_tag "favicon.png", rel: "icon", type: "image/png" %>
   </head>
 
-  <body data-controller="loading-page">
+  <body>
     <div class="align-items-center justify-content-between">
       <% unless devise_controller? %>
         <%= render "shared/navbar" if action_name != 'home' %>
@@ -41,12 +41,6 @@
 
       <div>
         <%= render "shared/flashes" %>
-      </div>
-
-      <div id="loader" data-loading-page-target="loader">
-        <%# <p id="l" data-loading-page-target="loader-text">Your game is loading ...</p> %>
-        <%# mettre du type JS %>
-        <h3 id="loader-text"><span data-loading-page-target="loaderText"></span></h3>
       </div>
 
     </div>

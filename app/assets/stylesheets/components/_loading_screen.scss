@@ -1,17 +1,16 @@
 
 #loader{
   display: none;
-  position: absolute;
-  left: 0px;
-  top: 0px;
-  width: 110vw;
-  height: 100%;
-  z-index: 99995;
-  background: linear-gradient(170deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url("https://cdn.midjourney.com/7ce3c8ef-6825-4034-b366-32b02e1fc474/grid_0.png");
+  position: absolute !important;
+  left: 0px !important;
+  top: 0px !important;
+  width: 110vw !important;
+  height: 100% !important;
+  z-index: 99995 !important;
   background-size: cover !important;
   background-position: center !important;
-  cursor: none;
-  animation: moving-bg 10s alternate infinite;
+  cursor: none !important;
+  animation: moving-bg 10s alternate infinite !important;
 }
 
 

@@ -1,6 +1,6 @@
 <% content_for(:back_url, universe_path(@character.universe)) %>
 
-<div class="character-background h-screen adventure-new" style="background: url(<%= @character.image_background_page_url %>);">
+<div class="character-background h-screen adventure-new" style="background: url(<%= @character.image_background_page_url %>);" data-controller="loading-page">
   <div class="container pt-5 pb-2">
     <div class="character-creation">
       <h1 class="title"><%= @character.name %></h1>
@@ -34,4 +34,9 @@
         </div>
     </div>
   </div>
+  <div id="loader" style="background: linear-gradient(170deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url(<%= @character.universe.image_background_loading_url %>);" data-loading-page-target="loader">
+      <h3 id="loader-text"><span data-loading-page-target="loaderText"></span></h3>
+  </div>
+
+
 </div>

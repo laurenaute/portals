@@ -7,6 +7,9 @@ class CreateUniverses < ActiveRecord::Migration[7.0]
       t.text :initializer
       t.string :image_card_url
       t.string :image_background_url
+      t.string :image_background_loading_url
+      t.string :image_background_play_url
+      t.string :image_loader_url
 
       t.timestamps
     end
