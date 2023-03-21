@@ -23,15 +23,22 @@
             <%= image_tag("logo-portal.png", size: "30px")%>
             <%# <img src="app/assets/images/logo-portal.png" alt="portal logo"> %>
           <%# </div> %>
-          <li class="li-navbar"><i class="fa-sharp fa-solid fa-house"></i>&nbsp;&nbsp; <%= link_to "Univers", universes_path, class: "nav-link"%></li>
-          <li class="li-navbar"><i class="fa-solid fa-book-open"></i>&nbsp;&nbsp;Contexte</li>
-          <li class="li-navbar"><i class="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;&nbsp; <%= link_to "Personnage", "/characters/1/adventures/new", class: "nav-link" %></li>
+          <% Universe.all.each do |universe| %>
+            <%= link_to universe_path(universe), class: "nav-link" do %>
+              <li class="li-navbar"><i class="fa-regular fa-circle"></i>&nbsp;&nbsp;<%= universe.theme %></li>
+            <% end %>
+          <% end %>
+          <%# <li class="li-navbar"><i class="fa-sharp fa-solid fa-house"></i>&nbsp;&nbsp; <%= link_to "Univers", universes_path, class: "nav-link"</li> %>
+          <%# <li class="li-navbar"><i class="fa-solid fa-book-open"></i>&nbsp;&nbsp;Contexte</li>
+          <li class="li-navbar"><i class="fa-solid fa-user-astronaut"></i>&nbsp;&nbsp;&nbsp; <%= link_to "Personnage", "/characters/1/adventures/new", class: "nav-link" </li> %>
         </ul>
       </div>
       <div class="bottom-navbar">
         <ul class="ul-navbar">
-          <li class="li-navbar"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; Profil</li>
-          <li class="li-navbar"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp; <%= link_to "Déconnexion", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+          <%# <li class="li-navbar"><i class="fa-solid fa-user"></i>&nbsp;&nbsp; Profil</li> %>
+          <%= link_to destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" do %>
+            <li class="li-navbar"><i class="fa-solid fa-right-from-bracket"></i>&nbsp;&nbsp;Déconnexion</li>
+          <% end %>
         </ul>
       </div>
     </div>

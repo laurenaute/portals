@@ -1,7 +1,9 @@
-<% message.content.scan(/\d\. .+/).each do |content| %>
-  <div data-adventure-form-target="button" class='w-50'>
-    <div class="h-100 pb-2 mx-1 buttons-choice-aventure" data-action="click->adventure-form#submit" data-action:="click->loader-adventure-page#loader" data-content="<%= content %>">
-      <%= render "adventures/select_action", content: content %>
+<div class="buttons-choice">
+  <% message.content.scan(/\d\. .+/).each do |content| %>
+    <div data-adventure-form-target="button" class=''>
+      <div class="h-100 pb-2 mx-1 buttons-choice-aventure" data-action="click->adventure-form#submit" data-action:="click->loader-adventure-page#loader" data-content="<%= content %>">
+        <%= render "adventures/select_action", content: content %>
+      </div>
     </div>
-  </div>
-<% end %>
+  <% end %>
+</div>

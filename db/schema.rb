@@ -75,6 +75,9 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_08_144922) do
     t.text "initializer"
     t.string "image_card_url"
     t.string "image_background_url"
+    t.string "image_background_loading_url"
+    t.string "image_background_play_url"
+    t.string "image_loader_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

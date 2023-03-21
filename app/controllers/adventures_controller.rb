@@ -4,10 +4,11 @@ class AdventuresController < ApplicationController
   before_action :set_adventure, only: [:show, :edit, :update, :destroy]
 
   def index
-    @adventures = Adventure.all
+    @adventures = policy_scope(Adventure).order(created_at: :desc)
   end
 
   def show
+    authorize @adventure
     @message_new = Message.new
 
     if @adventure.messages.last.nil?
@@ -50,6 +51,7 @@ class AdventuresController < ApplicationController
   def new
     @adventure = Adventure.new
     @character = Character.find(params[:character_id])
+    authorize @adventure
   end
 
   def create
@@ -58,6 +60,7 @@ class AdventuresController < ApplicationController
 
     @adventure.character = @character
     @adventure.user = current_user
+    authorize @adventure
 
     if @adventure.save
       redirect_to adventure_path(@adventure)

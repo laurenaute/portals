@@ -5,19 +5,19 @@ class CharactersController < ApplicationController
   #   @characters = Character.all
   # end
 
-  def show
-    @character = Character.find(params[:id])
-  end
+  # def show
+  #   @character = Character.find(params[:id])
+  # end
 
   def new
     @character = Character.new
+    @universes = Universe.all
   end
 
   def create
     @character = Character.new(character_params)
-    @character.user = current_user
     if @character.save
-      redirect_to character_path(@character)
+      redirect_to universe_path(@character.universe)
     else
       render :new, :unprocessable_entity
     end
@@ -28,7 +28,7 @@ class CharactersController < ApplicationController
 
   def update
     if @character.update(character_params)
-      redirect_to character_path(@character)
+      redirect_to universe_path(@character.universe)
     else
       render :edit, :unprocessable_entity
     end

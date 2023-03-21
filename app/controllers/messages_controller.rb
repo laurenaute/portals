@@ -8,6 +8,7 @@ class MessagesController < ApplicationController
     @message.adventure = @adventure
     @message.role = "user"
     @message.user = current_user
+    authorize @message
     @message.save
 
     AdventureChannel.broadcast_to(
@@ -33,7 +34,7 @@ class MessagesController < ApplicationController
         model: "gpt-3.5-turbo", # Required.
         messages: messages, # Required.
         temperature: 0.7,
-        max_tokens: 300,
+        max_tokens: 500,
         user: current_user.api_token
         # stream: true
       }

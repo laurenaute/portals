@@ -1,6 +1,6 @@
 <% content_for(:back_url, universe_path(@character.universe)) %>
 
-<div class="character-background h-screen adventure-new" style="background: url(<%= @character.image_background_page_url %>);">
+<div class="character-background h-screen adventure-new" style="background: url(<%= @character.image_background_page_url %>);" data-controller="loading-page">
   <div class="container pt-5 pb-2">
     <div class="character-creation">
       <h1 class="title"><%= @character.name %></h1>
@@ -16,7 +16,7 @@
               <p>Charisme <span class="<%= find_color(@character.charisma) %>"><%= @character.charisma %></span></p>
             </div>
           </div>
-          <div class="character-text">
+          <div class="character-text" style="white-space: pre-line;">
             <%= @character.description %>
           </div>
         </div>
@@ -24,14 +24,20 @@
           <div class="form-display form-adventure-new">
           <%= simple_form_for [@character, @adventure] do |f| %>
             <%= f.input :character_name, placeholder: 'Entrer le nom de votre héros ...', label: "Nom de votre héros"%>
-            <%= f.input :choices, as: :boolean, input_html: { class: "toggle" }, label: " Avoir plusieurs choix" %>
+            <%#= f.input :choices, as: :boolean, input_html: { class: "toggle" }, label: " Avoir plusieurs choix" %>
             <%= f.input :difficulty, checked: "Normal", collection: [ "Facile", "Normal", "Difficile"], as: :radio_buttons,
                         label_method: lambda { |difficulty| render "difficulty_label", difficulty: difficulty },
                         wrapper_html: { class: "d-flex flex-wrap justify-content-between"}, label: "Difficulté" %>
             <%= f.button :submit, value: "Commencer l'aventure", class: "btn-home", data: { action: "click->loading-page#launchLoader" } %>
+            <%= f.input :choices, as: :hidden, input_html: { value: true }, class: "d-none" %>
           <% end %>
           </div>
         </div>
     </div>
   </div>
+  <div id="loader" style="background: linear-gradient(170deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0)), url(<%= @character.universe.image_background_loading_url %>);" data-loading-page-target="loader">
+      <h3 id="loader-text"><span data-loading-page-target="loaderText"></span></h3>
+  </div>
+
+
 </div>

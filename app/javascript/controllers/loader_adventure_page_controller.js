@@ -14,6 +14,5 @@ export default class extends Controller {
     this.loaderTarget.style.opacity = "1";
     this.textTarget.style.display = "initial";
     this.textTarget.style.opacity = "1";
-    this.choiceButtonTarget.style.display = "none";
   }
 }
